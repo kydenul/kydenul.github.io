@@ -37,7 +37,7 @@ func init() {
 	viper.SetDefault("redis.host", "localhost")
 	viper.SetDefault("app.info", map[string]string{
 		"author": "kyden",
-		"email":  "kytedance@gmail.com",
+		"email":  "kydenul@gmail.com",
 	})
 
 	// VIPER_DEMO_xxx

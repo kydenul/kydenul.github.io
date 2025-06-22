@@ -34,8 +34,8 @@
   <meta name="twitter:image" content="http://kydenul.github.io/favicon.png">
   <meta name="twitter:title" content="Cobra 实战指南：10分钟搭建现代化命令行应用">
   <meta name="twitter:description" content="深入浅出地介绍 Cobra 框架的核心特性和最佳实践，从项目初始化到命令构建，手把手教你打造专业级命令行应用。适合想要开发现代化 CLI 工具的 Go 开发者。">
-      <meta name="twitter:site" content="@kytedance">
-<meta name="twitter:creator" content="@kytedance" /><meta name="application-name" content="kyden">
+      <meta name="twitter:site" content="@kydenul">
+<meta name="twitter:creator" content="@kydenul" /><meta name="application-name" content="kyden">
 <meta name="apple-mobile-web-app-title" content="kyden"><meta name="theme-color" data-light="#f8f8f8" data-dark="#1e2024" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="http://kydenul.github.io/posts/go-cobra/" title="Cobra 实战指南：10分钟搭建现代化命令行应用  Kyden&#39;s 博客" /><link rel="prev" type="text/html" href="http://kydenul.github.io/posts/make/" title="Make 构建系统详解：从基础到实战" /><link rel="next" type="text/html" href="http://kydenul.github.io/posts/go-viper/" title="Go 配置管理最佳实践：Viper 从入门到精通" /><link rel="alternate" type="text/markdown" href="http://kydenul.github.io/posts/go-cobra/index.md" title="Cobra 实战指南：10分钟搭建现代化命令行应用  Kyden's 博客"><link rel="stylesheet" href="/css/style.min.f8097809a76aadc015234d6707b99425ff777dc7f319775cca38e5eaf2080b38.css" integrity="sha256-+Al4CadqrcAVI01nB7mUJf93fcfzGXdcyjjl6vIICzg="><link rel="preload" href="/lib/fontawesome-free/all.min.320d572dfb844e7152480b7b62374236c4896ccca3ac9d69bb03f3bc2034acb8.css" integrity="sha256-Mg1XLfuETnFSSAt7YjdCNsSJbMyjrJ1puwPzvCA0rLg=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -486,7 +486,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat ~/.cobra.yaml
-</span></span><span class="line"><span class="cl">author: Kyden &lt;kytedance@gmail.com&gt;
+</span></span><span class="line"><span class="cl">author: Kyden &lt;kydenul@gmail.com&gt;
 </span></span><span class="line"><span class="cl">year: <span class="m">2024</span>
 </span></span><span class="line"><span class="cl">license:
 </span></span><span class="line"><span class="cl">  header: This file is part of CLI application foo.
@@ -498,7 +498,7 @@
 </span></span><span class="line"><span class="cl">    master my life.
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">$ cobra-cli init
-</span></span><span class="line"><span class="cl">Copyright © <span class="m">2024</span> Kyden &lt;kytedance@gmail.com&gt;
+</span></span><span class="line"><span class="cl">Copyright © <span class="m">2024</span> Kyden &lt;kydenul@gmail.com&gt;
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">This is my license. There are many like it, but this one is mine.
 </span></span><span class="line"><span class="cl">My license is my best friend. It is my life. I must master it as I must
@@ -593,7 +593,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="cm">/*
-</span></span></span><span class="line"><span class="cl"><span class="cm">Copyright © 2024 Kyden &lt;kytedance@gmail.com&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cm">Copyright © 2024 Kyden &lt;kydenul@gmail.com&gt;
 </span></span></span><span class="line"><span class="cl"><span class="cm">This file is part of CLI application foo.
 </span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
 </span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">cmd</span>
@@ -726,7 +726,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="cm">/*
-</span></span></span><span class="line"><span class="cl"><span class="cm">Copyright © 2024 Kyden &lt;kytedance@gmail.com&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cm">Copyright © 2024 Kyden &lt;kydenul@gmail.com&gt;
 </span></span></span><span class="line"><span class="cl"><span class="cm">This file is part of CLI application foo.
 </span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
 </span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">cmd</span>
@@ -911,7 +911,7 @@
       </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/go-cobra/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/blob/master/content/posts/go-cobra/go-cobra.md?plain=1" title="View source"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/edit/master/content/posts/go-cobra/go-cobra.md" title="Edit this page"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/issues/new?title=[BUG]%20Cobra&#43;%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97%EF%BC%9A10%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E7%8E%B0%E4%BB%A3%E5%8C%96%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BA%94%E7%94%A8&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cCobra&#43;%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97%EF%BC%9A10%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E7%8E%B0%E4%BB%A3%E5%8C%96%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BA%94%E7%94%A8%7c%0A%7cURL%7chttp://kydenul.github.io/posts/go-cobra/%7c%0A%7cFilename%7chttps://github.com/kydenul/kydenul.github.io/blob/master/content/posts/go-cobra/go-cobra.md?plain=1%7c" title="Report issue"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://kydenul.github.io/posts/go-cobra/" data-title="Cobra 实战指南：10分钟搭建现代化命令行应用" data-via="kytedance" data-hashtags="Go,Golang,Cobra,CLI开发,命令行工具,工具开发,应用框架,开发效率,最佳实践,项目实战"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://kydenul.github.io/posts/go-cobra/" data-title="Cobra 实战指南：10分钟搭建现代化命令行应用" data-via="kydenul" data-hashtags="Go,Golang,Cobra,CLI开发,命令行工具,工具开发,应用框架,开发效率,最佳实践,项目实战"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://kydenul.github.io/posts/go-cobra/" data-hashtag="Go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://kydenul.github.io/posts/go-cobra/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://kydenul.github.io/posts/go-cobra/" data-title="Cobra 实战指南：10分钟搭建现代化命令行应用" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>

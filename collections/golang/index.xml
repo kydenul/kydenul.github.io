@@ -6,14 +6,14 @@
     <description>Kyden&#39;s Blog Site</description>
     <generator>Hugo 0.147.8 &amp; FixIt v0.3.19</generator>
     <language>en</language>
-    <managingEditor>kytedance@gmail.com (kyden)</managingEditor>
-    <webMaster>kytedance@gmail.com (kyden)</webMaster>
+    <managingEditor>kydenul@gmail.com (kyden)</managingEditor>
+    <webMaster>kydenul@gmail.com (kyden)</webMaster>
     <lastBuildDate>Wed, 06 Nov 2024 11:53:42 +0800</lastBuildDate>
     <atom:link href="http://kydenul.github.io/collections/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang Generic</title>
       <link>http://kydenul.github.io/posts/golang-generic/</link>
-      <pubDate>Wed, 06 Nov 2024 11:53:42 +0800</pubDate><author>kytedance@gmail.com (kyden)</author>
+      <pubDate>Wed, 06 Nov 2024 11:53:42 +0800</pubDate><author>kydenul@gmail.com (kyden)</author>
       <guid>http://kydenul.github.io/posts/golang-generic/</guid>
       <category domain="http://kydenul.github.io/categories/golang/">Golang</category>
       <category domain="http://kydenul.github.io/categories/generic/">Generic</category>
@@ -24,7 +24,7 @@
     <item>
       <title>设计模式精讲：从理论到实战的最佳实践指南</title>
       <link>http://kydenul.github.io/posts/design-pattern/</link>
-      <pubDate>Sun, 28 Jul 2024 10:13:24 +0800</pubDate><author>kytedance@gmail.com (kyden)</author>
+      <pubDate>Sun, 28 Jul 2024 10:13:24 +0800</pubDate><author>kydenul@gmail.com (kyden)</author>
       <guid>http://kydenul.github.io/posts/design-pattern/</guid>
       <category domain="http://kydenul.github.io/categories/design-patten/">Design Patten</category>
       <category domain="http://kydenul.github.io/categories/golang/">Golang</category>

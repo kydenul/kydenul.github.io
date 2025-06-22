@@ -119,7 +119,7 @@ func InitGolbalLog(logdir string) *zap.Logger {
 
 func main() {
 	logger := InitGolbalLog("logs")
-	logger.Sugar().Infof("Global::This is info %s", "kytedance")
+	logger.Sugar().Infof("Global::This is info %s", "kydenul")
 	logger.Warn("Warn log test case")
 	zap.L().Error("Error log test case")
 	zap.S().Debugln("Panic log test case")

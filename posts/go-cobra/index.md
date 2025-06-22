@@ -168,7 +168,7 @@ LINCENSE 和 LINCENSE Header 的内容可以通过 cobra 配置文进行配置�
 
 ```bash
 $ cat ~/.cobra.yaml
-author: Kyden <kytedance@gmail.com>
+author: Kyden <kydenul@gmail.com>
 year: 2024
 license:
   header: This file is part of CLI application foo.
@@ -180,7 +180,7 @@ license:
     master my life.
 
 $ cobra-cli init
-Copyright © 2024 Kyden <kytedance@gmail.com>
+Copyright © 2024 Kyden <kydenul@gmail.com>
 
 This is my license. There are many like it, but this one is mine.
 My license is my best friend. It is my life. I must master it as I must
@@ -214,7 +214,7 @@ Your Cobra application is ready at
 
 ```go
 /*
-Copyright © 2024 Kyden <kytedance@gmail.com>
+Copyright © 2024 Kyden <kydenul@gmail.com>
 This file is part of CLI application foo.
 */
 package cmd
@@ -294,7 +294,7 @@ func main() {
 
 ```go
 /*
-Copyright © 2024 Kyden <kytedance@gmail.com>
+Copyright © 2024 Kyden <kydenul@gmail.com>
 This file is part of CLI application foo.
 */
 package cmd
