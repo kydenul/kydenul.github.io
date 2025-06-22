@@ -111,6 +111,6 @@
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/golang-project-layout/  
 

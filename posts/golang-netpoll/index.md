@@ -76,20 +76,20 @@ package main
 import "net"
 
 func main() {
-	l, _ := net.Listen("tcp", "127.0.0.1:2333")
+ l, _ := net.Listen("tcp", "127.0.0.1:2333")
 
-	for {
-		conn, _ := l.Accept()
+ for {
+  conn, _ := l.Accept()
 
-		go func() {
-			defer conn.Close()
+  go func() {
+   defer conn.Close()
 
-			buf := make([]byte, 4096)
-			_, _ = conn.Read(buf)
+   buf := make([]byte, 4096)
+   _, _ = conn.Read(buf)
 
-			conn.Write(buf)
-		}()
-	}
+   conn.Write(buf)
+  }()
+ }
 }
 ```
 
@@ -99,56 +99,56 @@ func main() {
 // src/net/fd_fake.go
 // Network file descriptor.
 type netFD struct {
-	pfd poll.FD
+ pfd poll.FD
 
-	// immutable until Close
-	family      int
-	sotype      int
-	isConnected bool // handshake completed or use of association with peer
-	net         string
-	laddr       Addr
-	raddr       Addr
+ // immutable until Close
+ family      int
+ sotype      int
+ isConnected bool // handshake completed or use of association with peer
+ net         string
+ laddr       Addr
+ raddr       Addr
 
-	// The only networking available in WASI preview 1 is the ability to
-	// sock_accept on a pre-opened socket, and then fd_read, fd_write,
-	// fd_close, and sock_shutdown on the resulting connection. We
-	// intercept applicable netFD calls on this instance, and then pass
-	// the remainder of the netFD calls to fakeNetFD.
-	*fakeNetFD
+ // The only networking available in WASI preview 1 is the ability to
+ // sock_accept on a pre-opened socket, and then fd_read, fd_write,
+ // fd_close, and sock_shutdown on the resulting connection. We
+ // intercept applicable netFD calls on this instance, and then pass
+ // the remainder of the netFD calls to fakeNetFD.
+ *fakeNetFD
 }
 
 // poll.FD`: `src/internal/poll/fd_unix.go
 // FD is a file descriptor. The net and os packages use this type as a
 // field of a larger type representing a network connection or OS file.
 type FD struct {
-	// Lock sysfd and serialize access to Read and Write methods.
-	fdmu fdMutex
+ // Lock sysfd and serialize access to Read and Write methods.
+ fdmu fdMutex
 
-	// System file descriptor. Immutable until Close.
-	Sysfd int
+ // System file descriptor. Immutable until Close.
+ Sysfd int
 
-	// Platform dependent state of the file descriptor.
-	SysFile
+ // Platform dependent state of the file descriptor.
+ SysFile
 
-	// I/O poller.
-	pd pollDesc
+ // I/O poller.
+ pd pollDesc
 
-	// Semaphore signaled when file is closed.
-	csema uint32
+ // Semaphore signaled when file is closed.
+ csema uint32
 
-	// Non-zero if this file has been set to blocking mode.
-	isBlocking uint32
+ // Non-zero if this file has been set to blocking mode.
+ isBlocking uint32
 
-	// Whether this is a streaming descriptor, as opposed to a
-	// packet-based descriptor like a UDP socket. Immutable.
-	IsStream bool
+ // Whether this is a streaming descriptor, as opposed to a
+ // packet-based descriptor like a UDP socket. Immutable.
+ IsStream bool
 
-	// Whether a zero byte read indicates EOF. This is false for a
-	// message based socket connection.
-	ZeroReadIsEOF bool
+ // Whether a zero byte read indicates EOF. This is false for a
+ // message based socket connection.
+ ZeroReadIsEOF bool
 
-	// Whether this is a file rather than a network socket.
-	isFile bool
+ // Whether this is a file rather than a network socket.
+ isFile bool
 }
 
 // Addr represents a network end point address.
@@ -157,26 +157,26 @@ type FD struct {
 // that can be passed as the arguments to [Dial], but the exact form
 // and meaning of the strings is up to the implementation.
 type Addr interface {
-	Network() string // name of the network (for example, "tcp", "udp")
-	String() string  // string form of address (for example, "192.0.2.1:25", "[2001:db8::1]:80")
+ Network() string // name of the network (for example, "tcp", "udp")
+ String() string  // string form of address (for example, "192.0.2.1:25", "[2001:db8::1]:80")
 }
 
 // fdMutex is a specialized synchronization primitive that manages
 // lifetime of an fd and serializes access to Read, Write and Close
 // methods on FD.
 type fdMutex struct {
-	state uint64
-	rsema uint32
-	wsema uint32
+ state uint64
+ rsema uint32
+ wsema uint32
 }
 
 type SysFile struct {
-	// Writev cache.
-	iovecs *[]syscall.Iovec
+ // Writev cache.
+ iovecs *[]syscall.Iovec
 }
 
 type pollDesc struct {
-	runtimeCtx uintptr
+ runtimeCtx uintptr
 }
 ```
 
@@ -214,11 +214,11 @@ type pollDesc struct {
 > // doaddtimer adds t to the current P's heap.
 > // The caller must have locked the timers for pp.
 > func doaddtimer(pp *p, t *timer) {
-> 	// Timers rely on the network poller, so make sure the poller
-> 	// has started.
-> 	if netpollInited.Load() == 0 {
-> 		netpollGenericInit()
-> 	}
+>  // Timers rely on the network poller, so make sure the poller
+>  // has started.
+>  if netpollInited.Load() == 0 {
+>   netpollGenericInit()
+>  }
 >   ...
 > }
 > ```
@@ -241,146 +241,146 @@ type pollDesc struct {
 
 - `startTheWorldWithSema`
 
-	```Go
-	// reason is the same STW reason passed to stopTheWorld. start is the start
-	// time returned by stopTheWorld.
-	//
-	// now is the current time; prefer to pass 0 to capture a fresh timestamp.
-	//
-	// stattTheWorldWithSema returns now.
-	func startTheWorldWithSema(now int64, w worldStop) int64 {
-		assertWorldStopped()
+ ```Go
+ // reason is the same STW reason passed to stopTheWorld. start is the start
+ // time returned by stopTheWorld.
+ //
+ // now is the current time; prefer to pass 0 to capture a fresh timestamp.
+ //
+ // stattTheWorldWithSema returns now.
+ func startTheWorldWithSema(now int64, w worldStop) int64 {
+  assertWorldStopped()
 
-		mp := acquirem() // disable preemption because it can be holding p in a local var
-		if netpollinited() {
-			list, delta := netpoll(0) // non-blocking
-			injectglist(&list)
-			netpollAdjustWaiters(delta)
-		}
-		lock(&sched.lock)
+  mp := acquirem() // disable preemption because it can be holding p in a local var
+  if netpollinited() {
+   list, delta := netpoll(0) // non-blocking
+   injectglist(&list)
+   netpollAdjustWaiters(delta)
+  }
+  lock(&sched.lock)
 
-		procs := gomaxprocs
-		if newprocs != 0 {
-			procs = newprocs
-			newprocs = 0
-		}
-		p1 := procresize(procs)
-		sched.gcwaiting.Store(false)
-		if sched.sysmonwait.Load() {
-			sched.sysmonwait.Store(false)
-			notewakeup(&sched.sysmonnote)
-		}
-		unlock(&sched.lock)
+  procs := gomaxprocs
+  if newprocs != 0 {
+   procs = newprocs
+   newprocs = 0
+  }
+  p1 := procresize(procs)
+  sched.gcwaiting.Store(false)
+  if sched.sysmonwait.Load() {
+   sched.sysmonwait.Store(false)
+   notewakeup(&sched.sysmonnote)
+  }
+  unlock(&sched.lock)
 
-		worldStarted()
-		...
-	}
-	```
+  worldStarted()
+  ...
+ }
+ ```
 
 - `findrunnable`
 
-	```Go
-	// Finds a runnable goroutine to execute.
-	// Tries to steal from other P's, get g from local or global queue, poll network.
-	// tryWakeP indicates that the returned goroutine is not normal (GC worker, trace
-	// reader) so the caller should try to wake a P.
-	func findRunnable() (gp *g, inheritTime, tryWakeP bool) {
-		...
-		// Poll network until next timer.
-		if netpollinited() && (netpollAnyWaiters() || pollUntil != 0) && sched.lastpoll.Swap(0) != 0 {
-			sched.pollUntil.Store(pollUntil)
-			if mp.p != 0 {
-				throw("findrunnable: netpoll with p")
-			}
-			if mp.spinning {
-				throw("findrunnable: netpoll with spinning")
-			}
-			delay := int64(-1)
-			if pollUntil != 0 {
-				if now == 0 {
-					now = nanotime()
-				}
-				delay = pollUntil - now
-				if delay < 0 {
-					delay = 0
-				}
-			}
-			if faketime != 0 {
-				// When using fake time, just poll.
-				delay = 0
-			}
-			list, delta := netpoll(delay) // block until new work is available
-			...
-		}
-		...
-	}
-	```
+ ```Go
+ // Finds a runnable goroutine to execute.
+ // Tries to steal from other P's, get g from local or global queue, poll network.
+ // tryWakeP indicates that the returned goroutine is not normal (GC worker, trace
+ // reader) so the caller should try to wake a P.
+ func findRunnable() (gp *g, inheritTime, tryWakeP bool) {
+  ...
+  // Poll network until next timer.
+  if netpollinited() && (netpollAnyWaiters() || pollUntil != 0) && sched.lastpoll.Swap(0) != 0 {
+   sched.pollUntil.Store(pollUntil)
+   if mp.p != 0 {
+    throw("findrunnable: netpoll with p")
+   }
+   if mp.spinning {
+    throw("findrunnable: netpoll with spinning")
+   }
+   delay := int64(-1)
+   if pollUntil != 0 {
+    if now == 0 {
+     now = nanotime()
+    }
+    delay = pollUntil - now
+    if delay < 0 {
+     delay = 0
+    }
+   }
+   if faketime != 0 {
+    // When using fake time, just poll.
+    delay = 0
+   }
+   list, delta := netpoll(delay) // block until new work is available
+   ...
+  }
+  ...
+ }
+ ```
 
 - `pollWork`
 
-	```Go
-	// pollWork reports whether there is non-background work this P could
-	// be doing. This is a fairly lightweight check to be used for
-	// background work loops, like idle GC. It checks a subset of the
-	// conditions checked by the actual scheduler.
-	func pollWork() bool {
-		if sched.runqsize != 0 {
-			return true
-		}
-		p := getg().m.p.ptr()
-		if !runqempty(p) {
-			return true
-		}
-		if netpollinited() && netpollAnyWaiters() && sched.lastpoll.Load() != 0 {
-			if list, delta := netpoll(0); !list.empty() {
-				injectglist(&list)
-				netpollAdjustWaiters(delta)
-				return true
-			}
-		}
-		return false
-	}
-	```
+ ```Go
+ // pollWork reports whether there is non-background work this P could
+ // be doing. This is a fairly lightweight check to be used for
+ // background work loops, like idle GC. It checks a subset of the
+ // conditions checked by the actual scheduler.
+ func pollWork() bool {
+  if sched.runqsize != 0 {
+   return true
+  }
+  p := getg().m.p.ptr()
+  if !runqempty(p) {
+   return true
+  }
+  if netpollinited() && netpollAnyWaiters() && sched.lastpoll.Load() != 0 {
+   if list, delta := netpoll(0); !list.empty() {
+    injectglist(&list)
+    netpollAdjustWaiters(delta)
+    return true
+   }
+  }
+  return false
+ }
+ ```
 
 - `sysmon`
 
-	```Go
-	// Always runs without a P, so write barriers are not allowed.
-	//
-	//go:nowritebarrierrec
-	func sysmon() {
-		...
-		lock(&sched.sysmonlock)
-		// Update now in case we blocked on sysmonnote or spent a long time
-		// blocked on schedlock or sysmonlock above.
-		now = nanotime()
+ ```Go
+ // Always runs without a P, so write barriers are not allowed.
+ //
+ //go:nowritebarrierrec
+ func sysmon() {
+  ...
+  lock(&sched.sysmonlock)
+  // Update now in case we blocked on sysmonnote or spent a long time
+  // blocked on schedlock or sysmonlock above.
+  now = nanotime()
 
-		// trigger libc interceptors if needed
-		if *cgo_yield != nil {
-			asmcgocall(*cgo_yield, nil)
-		}
-		// poll network if not polled for more than 10ms
-		lastpoll := sched.lastpoll.Load()
-		if netpollinited() && lastpoll != 0 && lastpoll+10*1000*1000 < now {
-			sched.lastpoll.CompareAndSwap(lastpoll, now)
-			list, delta := netpoll(0) // non-blocking - returns list of goroutines
-			if !list.empty() {
-				// Need to decrement number of idle locked M's
-				// (pretending that one more is running) before injectglist.
-				// Otherwise it can lead to the following situation:
-				// injectglist grabs all P's but before it starts M's to run the P's,
-				// another M returns from syscall, finishes running its G,
-				// observes that there is no work to do and no other running M's
-				// and reports deadlock.
-				incidlelocked(-1)
-				injectglist(&list)
-				incidlelocked(1)
-				netpollAdjustWaiters(delta)
-			}
-		}
-		...
-	}
-	```
+  // trigger libc interceptors if needed
+  if *cgo_yield != nil {
+   asmcgocall(*cgo_yield, nil)
+  }
+  // poll network if not polled for more than 10ms
+  lastpoll := sched.lastpoll.Load()
+  if netpollinited() && lastpoll != 0 && lastpoll+10*1000*1000 < now {
+   sched.lastpoll.CompareAndSwap(lastpoll, now)
+   list, delta := netpoll(0) // non-blocking - returns list of goroutines
+   if !list.empty() {
+    // Need to decrement number of idle locked M's
+    // (pretending that one more is running) before injectglist.
+    // Otherwise it can lead to the following situation:
+    // injectglist grabs all P's but before it starts M's to run the P's,
+    // another M returns from syscall, finishes running its G,
+    // observes that there is no work to do and no other running M's
+    // and reports deadlock.
+    incidlelocked(-1)
+    injectglist(&list)
+    incidlelocked(1)
+    netpollAdjustWaiters(delta)
+   }
+  }
+  ...
+ }
+ ```
 
 根据 ready 的事件时 Read 或 Write，分别从 poolDesc 的 rg、wg 上获取该唤醒的 goroutine.
 然后将已经 ready 的 goroutine push 到 toRun 链表，并且 toRun 链表最终会从 `netpoll()` 返回，通过 `injectglist` 进入全局队列.
@@ -394,80 +394,80 @@ type pollDesc struct {
 // delay == 0: does not block, just polls
 // delay > 0: block for up to that many nanoseconds
 func netpoll(delay int64) (gList, int32) {
-	if epfd == -1 {
-		return gList{}, 0
-	}
-	var waitms int32
-	if delay < 0 {
-		waitms = -1
-	} else if delay == 0 {
-		waitms = 0
-	} else if delay < 1e6 {
-		waitms = 1
-	} else if delay < 1e15 {
-		waitms = int32(delay / 1e6)
-	} else {
-		// An arbitrary cap on how long to wait for a timer.
-		// 1e9 ms == ~11.5 days.
-		waitms = 1e9
-	}
-	var events [128]syscall.EpollEvent
+ if epfd == -1 {
+  return gList{}, 0
+ }
+ var waitms int32
+ if delay < 0 {
+  waitms = -1
+ } else if delay == 0 {
+  waitms = 0
+ } else if delay < 1e6 {
+  waitms = 1
+ } else if delay < 1e15 {
+  waitms = int32(delay / 1e6)
+ } else {
+  // An arbitrary cap on how long to wait for a timer.
+  // 1e9 ms == ~11.5 days.
+  waitms = 1e9
+ }
+ var events [128]syscall.EpollEvent
 retry:
-	n, errno := syscall.EpollWait(epfd, events[:], int32(len(events)), waitms)
-	if errno != 0 {
-		if errno != _EINTR {
-			println("runtime: epollwait on fd", epfd, "failed with", errno)
-			throw("runtime: netpoll failed")
-		}
-		// If a timed sleep was interrupted, just return to
-		// recalculate how long we should sleep now.
-		if waitms > 0 {
-			return gList{}, 0
-		}
-		goto retry
-	}
-	var toRun gList
-	delta := int32(0)
-	for i := int32(0); i < n; i++ {
-		ev := events[i]
-		if ev.Events == 0 {
-			continue
-		}
+ n, errno := syscall.EpollWait(epfd, events[:], int32(len(events)), waitms)
+ if errno != 0 {
+  if errno != _EINTR {
+   println("runtime: epollwait on fd", epfd, "failed with", errno)
+   throw("runtime: netpoll failed")
+  }
+  // If a timed sleep was interrupted, just return to
+  // recalculate how long we should sleep now.
+  if waitms > 0 {
+   return gList{}, 0
+  }
+  goto retry
+ }
+ var toRun gList
+ delta := int32(0)
+ for i := int32(0); i < n; i++ {
+  ev := events[i]
+  if ev.Events == 0 {
+   continue
+  }
 
-		if *(**uintptr)(unsafe.Pointer(&ev.Data)) == &netpollBreakRd {
-			if ev.Events != syscall.EPOLLIN {
-				println("runtime: netpoll: break fd ready for", ev.Events)
-				throw("runtime: netpoll: break fd ready for something unexpected")
-			}
-			if delay != 0 {
-				// netpollBreak could be picked up by a
-				// nonblocking poll. Only read the byte
-				// if blocking.
-				var tmp [16]byte
-				read(int32(netpollBreakRd), noescape(unsafe.Pointer(&tmp[0])), int32(len(tmp)))
-				netpollWakeSig.Store(0)
-			}
-			continue
-		}
+  if *(**uintptr)(unsafe.Pointer(&ev.Data)) == &netpollBreakRd {
+   if ev.Events != syscall.EPOLLIN {
+    println("runtime: netpoll: break fd ready for", ev.Events)
+    throw("runtime: netpoll: break fd ready for something unexpected")
+   }
+   if delay != 0 {
+    // netpollBreak could be picked up by a
+    // nonblocking poll. Only read the byte
+    // if blocking.
+    var tmp [16]byte
+    read(int32(netpollBreakRd), noescape(unsafe.Pointer(&tmp[0])), int32(len(tmp)))
+    netpollWakeSig.Store(0)
+   }
+   continue
+  }
 
-		var mode int32
-		if ev.Events&(syscall.EPOLLIN|syscall.EPOLLRDHUP|syscall.EPOLLHUP|syscall.EPOLLERR) != 0 {
-			mode += 'r'
-		}
-		if ev.Events&(syscall.EPOLLOUT|syscall.EPOLLHUP|syscall.EPOLLERR) != 0 {
-			mode += 'w'
-		}
-		if mode != 0 {
-			tp := *(*taggedPointer)(unsafe.Pointer(&ev.Data))
-			pd := (*pollDesc)(tp.pointer())
-			tag := tp.tag()
-			if pd.fdseq.Load() == tag {
-				pd.setEventErr(ev.Events == syscall.EPOLLERR, tag)
-				delta += netpollready(&toRun, pd, mode)
-			}
-		}
-	}
-	return toRun, delta
+  var mode int32
+  if ev.Events&(syscall.EPOLLIN|syscall.EPOLLRDHUP|syscall.EPOLLHUP|syscall.EPOLLERR) != 0 {
+   mode += 'r'
+  }
+  if ev.Events&(syscall.EPOLLOUT|syscall.EPOLLHUP|syscall.EPOLLERR) != 0 {
+   mode += 'w'
+  }
+  if mode != 0 {
+   tp := *(*taggedPointer)(unsafe.Pointer(&ev.Data))
+   pd := (*pollDesc)(tp.pointer())
+   tag := tp.tag()
+   if pd.fdseq.Load() == tag {
+    pd.setEventErr(ev.Events == syscall.EPOLLERR, tag)
+    delta += netpollready(&toRun, pd, mode)
+   }
+  }
+ }
+ return toRun, delta
 }
 
 // netpollready is called by the platform-specific netpoll function.
@@ -482,21 +482,21 @@ retry:
 //
 //go:nowritebarrier
 func netpollready(toRun *gList, pd *pollDesc, mode int32) int32 {
-	delta := int32(0)
-	var rg, wg *g
-	if mode == 'r' || mode == 'r'+'w' {
-		rg = netpollunblock(pd, 'r', true, &delta)
-	}
-	if mode == 'w' || mode == 'r'+'w' {
-		wg = netpollunblock(pd, 'w', true, &delta)
-	}
-	if rg != nil {
-		toRun.push(rg)
-	}
-	if wg != nil {
-		toRun.push(wg)
-	}
-	return delta
+ delta := int32(0)
+ var rg, wg *g
+ if mode == 'r' || mode == 'r'+'w' {
+  rg = netpollunblock(pd, 'r', true, &delta)
+ }
+ if mode == 'w' || mode == 'r'+'w' {
+  wg = netpollunblock(pd, 'w', true, &delta)
+ }
+ if rg != nil {
+  toRun.push(rg)
+ }
+ if wg != nil {
+  toRun.push(wg)
+ }
+ return delta
 }
 ```
 
@@ -521,6 +521,6 @@ func netpollready(toRun *gList, pd *pollDesc, mode int32) int32 {
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/golang-netpoll/  
 

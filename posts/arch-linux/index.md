@@ -300,7 +300,7 @@ $ trans -b :@ja "Saluton, Mondo" #显示发音符号，如果有的话，如日�
 
 # 翻译文件或网页
 $ trans :zh file://<input.txt>
-$ trans :zh https://github.com/kydance/
+$ trans :zh https://github.com/kydenul/
 
 # 进入交互模式
 $ trans -shell
@@ -391,7 +391,7 @@ Steps:
 3. 远程仓库和本地仓库关联
 
     ```bash
-    git remote add origin git@github.com:kydance/<repository name>
+    git remote add origin git@github.com:kydenul/<repository name>
     ```
 
 4. 项目文件添加、提交、推送
@@ -445,8 +445,8 @@ Host github.com
 (`@` 和 `:` 之间的字符串应该与我们在 SSH 配置文件中给出的内容相匹配):
 
 ```bash
-# git clone git@github.com:kydance/dotfiles.git
-git clone git@kyden:kydance/dotfiles.git
+# git clone git@github.com:kydenul/dotfiles.git
+git clone git@kyden:kydenul/dotfiles.git
 ```
 
 {{< /admonition>}}
@@ -934,6 +934,6 @@ wpspdf 依赖于 libtiff5.so.5 以支撑其 PDF 功能。
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/arch-linux/  
 

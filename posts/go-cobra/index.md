@@ -220,18 +220,18 @@ This file is part of CLI application foo.
 package cmd
 
 import (
-	"os"
+ "os"
 
-	"github.com/spf13/cobra"
+ "github.com/spf13/cobra"
 )
 
 
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "cobrademo",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
+ Use:   "cobrademo",
+ Short: "A brief description of your application",
+ Long: `A longer description that spans multiple lines and likely contains
 examples and usage of using your application. For example:
 
 Cobra is a CLI library for Go that empowers applications.
@@ -245,22 +245,22 @@ to quickly create a Cobra application.`,
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	err := rootCmd.Execute()
-	if err != nil {
-		os.Exit(1)
-	}
+ err := rootCmd.Execute()
+ if err != nil {
+  os.Exit(1)
+ }
 }
 
 func init() {
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
+ // Here you will define your flags and configuration settings.
+ // Cobra supports persistent flags, which, if defined here,
+ // will be global for your application.
 
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cobrademo.yaml)")
+ // rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cobrademo.yaml)")
 
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+ // Cobra also supports local flags, which will only run
+ // when this action is called directly.
+ rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 ```
 
@@ -300,38 +300,38 @@ This file is part of CLI application foo.
 package cmd
 
 import (
-	"fmt"
+ "fmt"
 
-	"github.com/spf13/cobra"
+ "github.com/spf13/cobra"
 )
 
 // versionCmd represents the version command
 var versionCmd = &cobra.Command{
-	Use:   "version",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
+ Use:   "version",
+ Short: "A brief description of your command",
+ Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("version called")
-	},
+ Run: func(cmd *cobra.Command, args []string) {
+  fmt.Println("version called")
+ },
 }
 
 func init() {
-	rootCmd.AddCommand(versionCmd)
+ rootCmd.AddCommand(versionCmd)
 
-	// Here you will define your flags and configuration settings.
+ // Here you will define your flags and configuration settings.
 
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// versionCmd.PersistentFlags().String("foo", "", "A help for foo")
+ // Cobra supports Persistent Flags which will work for this command
+ // and all subcommands, e.g.:
+ // versionCmd.PersistentFlags().String("foo", "", "A help for foo")
 
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// versionCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+ // Cobra supports local flags which will only run when this command
+ // is called directly, e.g.:
+ // versionCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
 ```
@@ -397,9 +397,9 @@ rootCmd.Flags().StringVarP(&Source, "source", "s", "", "Source directory to read
 var auther string
 
 func init() {
-	rootCmd.PersistentFlags().StringVar(
+ rootCmd.PersistentFlags().StringVar(
     &auther, "author", "Your Name", "Author name for copyright attribution")
-	viper.BindPFlag("author", rootCmd.PersistentFlags().Lookup("auther"))
+ viper.BindPFlag("author", rootCmd.PersistentFlags().Lookup("auther"))
 }
 ```
 
@@ -420,6 +420,6 @@ rootCmd.MarkFlagRequired("region")
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/go-cobra/  
 

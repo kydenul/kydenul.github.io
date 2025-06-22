@@ -109,6 +109,6 @@ Redis 可以用于实现计数器，例如点赞、评论、访问次数等，�
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/redis/  
 

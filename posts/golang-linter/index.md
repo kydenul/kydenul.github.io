@@ -145,9 +145,9 @@ $ bodyclose
 bodyclose is a tool for static analysis of Go programs.
 
 Usage of bodyclose:
-	bodyclose unit.cfg	# execute analysis specified by config file
-	bodyclose help    	# general help, including listing analyzers and flags
-	bodyclose help name	# help on specific analyzer and its flags
+ bodyclose unit.cfg # execute analysis specified by config file
+ bodyclose help     # general help, including listing analyzers and flags
+ bodyclose help name # help on specific analyzer and its flags
 ```
 
 #### 使用示例
@@ -248,9 +248,9 @@ $ sqlrows
 sqlrows is a tool for static analysis of Go programs.
 
 Usage of sqlrows:
-	sqlrows unit.cfg	# execute analysis specified by config file
-	sqlrows help    	# general help
-	sqlrows help name	# help on specific analyzer and its flags
+ sqlrows unit.cfg # execute analysis specified by config file
+ sqlrows help     # general help
+ sqlrows help name # help on specific analyzer and its flags
 ```
 
 Go 源码【注意 Not Good(NG) 处】
@@ -331,7 +331,7 @@ linters-settings:
 package main
 
 import (
-	"fmt"
+ "fmt"
 )
 
 func main() {
@@ -560,7 +560,7 @@ linters-settings:
 package main
 
 import (
-	"fmt"
+ "fmt"
 )
 
 func main() {
@@ -631,7 +631,7 @@ linters:
 package main
 
 import (
-	"fmt"
+ "fmt"
 )
 
 func main() {
@@ -872,6 +872,6 @@ golangci-lint run ./... 2>&1 | reviewdog -f=golangci-lint -reporter=local
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/golang-linter/  
 

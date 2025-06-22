@@ -94,50 +94,50 @@ database:
 package main
 
 import (
-	"fmt"
-	"log"
+ "fmt"
+ "log"
 
-	"github.com/spf13/viper"
+ "github.com/spf13/viper"
 )
 
 type Config struct {
-	App struct {
-		Name string
-		Port int
-	}
+ App struct {
+  Name string
+  Port int
+ }
 
-	Database struct {
-		Host   string
-		Port   int
-		User   string
-		Passwd string
-	}
+ Database struct {
+  Host   string
+  Port   int
+  User   string
+  Passwd string
+ }
 }
 
 func main() {
-	var cfg Config
+ var cfg Config
 
-	// Set config file
-	viper.AddConfigPath("./config")
-	viper.SetConfigName("cfg")
-	viper.SetConfigType("yaml")
+ // Set config file
+ viper.AddConfigPath("./config")
+ viper.SetConfigName("cfg")
+ viper.SetConfigType("yaml")
 
-	// Read
-	if err := viper.ReadInConfig(); err != nil {
-		log.Fatalf("Error reading config file, %v", err)
-	}
+ // Read
+ if err := viper.ReadInConfig(); err != nil {
+  log.Fatalf("Error reading config file, %v", err)
+ }
 
-	if err := viper.Unmarshal(&cfg); err != nil {
-		log.Fatalf("Unable to decode into struct: %v", err)
-	}
+ if err := viper.Unmarshal(&cfg); err != nil {
+  log.Fatalf("Unable to decode into struct: %v", err)
+ }
 
-	fmt.Printf("App Name: %s\n", cfg.App.Name)
-	fmt.Printf("App Port: %d\n", cfg.App.Port)
+ fmt.Printf("App Name: %s\n", cfg.App.Name)
+ fmt.Printf("App Port: %d\n", cfg.App.Port)
 
-	fmt.Printf("Database Host: %s\n", cfg.Database.Host)
-	fmt.Printf("Database Port: %d\n", cfg.Database.Port)
-	fmt.Printf("Database User: %s\n", cfg.Database.User)
-	fmt.Printf("Database Passwd: %s\n", cfg.Database.Passwd)
+ fmt.Printf("Database Host: %s\n", cfg.Database.Host)
+ fmt.Printf("Database Port: %d\n", cfg.Database.Port)
+ fmt.Printf("Database User: %s\n", cfg.Database.User)
+ fmt.Printf("Database Passwd: %s\n", cfg.Database.Passwd)
 }
 ```
 
@@ -145,7 +145,8 @@ func main() {
 
 ## 使用 viper 读取配置文件内容
 
-在 [浅析现代化命令行框架 Cobra](https://kydance.github.io/posts/go-cobra/) 中，我们了解到可以通过 `cobra-cli init --viper` 生成一个通过 viper 来配置应用程序的 Demo 应用，那么就可以知道它的应用加载逻辑如下：
+在 [浅析现代化命令行框架 Cobra](https://kydenul.github.io/posts/go-cobra/) 中，
+我们了解到可以通过 `cobra-cli init --viper` 生成一个通过 viper 来配置应用程序的 Demo 应用，那么就可以知道它的应用加载逻辑如下：
 
 ```go
 /*
@@ -155,76 +156,76 @@ This file is part of CLI application foo.
 package cmd
 
 import (
-	"fmt"
-	"os"
+ "fmt"
+ "os"
 
-	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
+ "github.com/spf13/cobra"
+ "github.com/spf13/viper"
 )
 
 var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "kydendemo",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
+ Use:   "kydendemo",
+ Short: "A brief description of your application",
+ Long: `A longer description that spans multiple lines and likely contains
 examples and usage of using your application. For example:
 
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
+ // Uncomment the following line if your bare application
+ // has an action associated with it:
+ // Run: func(cmd *cobra.Command, args []string) { },
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	err := rootCmd.Execute()
-	if err != nil {
-		os.Exit(1)
-	}
+ err := rootCmd.Execute()
+ if err != nil {
+  os.Exit(1)
+ }
 }
 
 func init() {
-	cobra.OnInitialize(initConfig)
+ cobra.OnInitialize(initConfig)
 
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
+ // Here you will define your flags and configuration settings.
+ // Cobra supports persistent flags, which, if defined here,
+ // will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(
+ rootCmd.PersistentFlags().StringVar(
     &cfgFile, "config", "", "config file (default is $HOME/.kydendemo.yaml)")
 
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+ // Cobra also supports local flags, which will only run
+ // when this action is called directly.
+ rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
 // initConfig reads in config file and ENV variables if set.
 func initConfig() {
-	if cfgFile != "" {
-		// Use config file from the flag.
-		viper.SetConfigFile(cfgFile)
-	} else {
-		// Find home directory.
-		home, err := os.UserHomeDir()
-		cobra.CheckErr(err)
+ if cfgFile != "" {
+  // Use config file from the flag.
+  viper.SetConfigFile(cfgFile)
+ } else {
+  // Find home directory.
+  home, err := os.UserHomeDir()
+  cobra.CheckErr(err)
 
-		// Search config in home directory with name ".kydendemo" (without extension).
-		viper.AddConfigPath(home)
-		viper.SetConfigType("yaml")
-		viper.SetConfigName(".kydendemo")
-	}
+  // Search config in home directory with name ".kydendemo" (without extension).
+  viper.AddConfigPath(home)
+  viper.SetConfigType("yaml")
+  viper.SetConfigName(".kydendemo")
+ }
 
-	viper.AutomaticEnv() // read in environment variables that match
+ viper.AutomaticEnv() // read in environment variables that match
 
-	// If a config file is found, read it in.
-	if err := viper.ReadInConfig(); err == nil {
-		fmt.Fprintln(os.Stderr, "Using config file:", viper.ConfigFileUsed())
-	}
+ // If a config file is found, read it in.
+ if err := viper.ReadInConfig(); err == nil {
+  fmt.Fprintln(os.Stderr, "Using config file:", viper.ConfigFileUsed())
+ }
 }
 ```
 
@@ -245,37 +246,37 @@ Viper 支持动态加载配置文件的变更，可以通过 `viper.WatchConfig(
 package main
 
 import (
-	"github.com/fsnotify/fsnotify"
-	"github.com/spf13/viper"
+ "github.com/fsnotify/fsnotify"
+ "github.com/spf13/viper"
 )
 
 var DynamicConfig *viper.Viper
 
 func init() {
-	DynamicConfig = viper.New()
+ DynamicConfig = viper.New()
 
-	DynamicConfig.AddConfigPath("./config")
-	DynamicConfig.AddConfigPath(".")
-	DynamicConfig.SetConfigName("dynamic")
-	DynamicConfig.SetConfigType("yaml")
+ DynamicConfig.AddConfigPath("./config")
+ DynamicConfig.AddConfigPath(".")
+ DynamicConfig.SetConfigName("dynamic")
+ DynamicConfig.SetConfigType("yaml")
 
-	if err := DynamicConfig.ReadInConfig(); err != nil {
-		panic(err)
-	}
+ if err := DynamicConfig.ReadInConfig(); err != nil {
+  panic(err)
+ }
 
-	go func(dc *viper.Viper) {
-		dc.WatchConfig()
-		dc.OnConfigChange(func(e fsnotify.Event) {
-			println("Config file changed:", e.Name)
+ go func(dc *viper.Viper) {
+  dc.WatchConfig()
+  dc.OnConfigChange(func(e fsnotify.Event) {
+   println("Config file changed:", e.Name)
 
-			// Reload the configuration
-			if err := dc.ReadInConfig(); err != nil {
-				println("Error reloading config:", err.Error())
-			}
+   // Reload the configuration
+   if err := dc.ReadInConfig(); err != nil {
+    println("Error reloading config:", err.Error())
+   }
 
-			println("Reload config success")
-		})
-	}(DynamicConfig)
+   println("Reload config success")
+  })
+ }(DynamicConfig)
 }
 ```
 
@@ -286,6 +287,6 @@ func init() {
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/go-viper/  
 

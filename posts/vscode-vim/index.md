@@ -75,7 +75,7 @@ VSCodeVim 的相关配置文件是放在 `settings.json` 中，而不是 `vimrc`
 - 对于**代码编辑区**且属于 vim 的热键将其定义在 `settings.json` 文件中
 
 {{< admonition type=tip title="个人配置参考" open=true >}}
-[个人 vscode 配置文件参考：https://github.com/kydance/dotfiles](https://github.com/kydance/dotfiles)
+[个人 vscode 配置文件参考：https://github.com/kydenul/dotfiles](https://github.com/kydenul/dotfiles)
 {{< /admonition >}}
 
 ### 1. 基础配置
@@ -403,6 +403,6 @@ curl -sL dub.sh/cursorreset | python3
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/vscode-vim/  
 

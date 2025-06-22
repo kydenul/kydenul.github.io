@@ -33,10 +33,10 @@ package main
 import "fmt"
 
 func main() {
-	data := []interface{}{1, 2}
-	val := data[0]
-	fmt.Printf("%v\n", val)
-	data[0] = 3
+ data := []interface{}{1, 2}
+ val := data[0]
+ fmt.Printf("%v\n", val)
+ data[0] = 3
 }
 ```
 
@@ -64,10 +64,10 @@ package main
 import "fmt"
 
 func main() {
-	dat := make(map[string]interface{})
-	dat["BlogName"] = "Kyden's Blog"
-	val := dat["BlogName"]
-	fmt.Printf("%v\n", val)
+ dat := make(map[string]interface{})
+ dat["BlogName"] = "Kyden's Blog"
+ val := dat["BlogName"]
+ fmt.Printf("%v\n", val)
 }
 ```
 
@@ -91,14 +91,14 @@ command-line-arguments
 package main
 
 import (
-	"fmt"
+ "fmt"
 )
 
 func main() {
-	dat := make(map[interface{}]interface{})
-	dat["BlogName"] = "Kyden's Blog"
-	val := dat["BlogName"]
-	fmt.Printf("%v\n", val)
+ dat := make(map[interface{}]interface{})
+ dat["BlogName"] = "Kyden's Blog"
+ val := dat["BlogName"]
+ fmt.Printf("%v\n", val)
 }
 ```
 
@@ -124,14 +124,14 @@ command-line-arguments
 package main
 
 import (
-	"fmt"
+ "fmt"
 )
 
 func main() {
-	dat := make(map[string][]string)
-	dat["BlogName"] = []string{"Kyden's Blog"}
-	val := dat["BlogName"]
-	fmt.Printf("%v\n", val)
+ dat := make(map[string][]string)
+ dat["BlogName"] = []string{"Kyden's Blog"}
+ val := dat["BlogName"]
+ fmt.Printf("%v\n", val)
 }
 ```
 
@@ -158,11 +158,11 @@ package main
 import "fmt"
 
 func main() {
-	dat := []*int{nil}
-	a := 10
-	dat[0] = &a
-	fmt.Printf("%v\r\n", *dat[0])
-	fmt.Printf("%v\r\n", dat[0])
+ dat := []*int{nil}
+ a := 10
+ dat[0] = &a
+ fmt.Printf("%v\r\n", *dat[0])
+ fmt.Printf("%v\r\n", dat[0])
 }
 ```
 
@@ -191,15 +191,15 @@ package main
 import "fmt"
 
 func f(a *int) {
-	fmt.Printf("%v\n", *a)
-	return
+ fmt.Printf("%v\n", *a)
+ return
 }
 
 func main() {
-	a := 10
-	fn := f
-	fn(&a)
-	fmt.Printf("a = %v\n", a)
+ a := 10
+ fn := f
+ fn(&a)
+ fmt.Printf("a = %v\n", a)
 }
 ```
 
@@ -218,6 +218,6 @@ $ go build -v -gcflags='-m' ./main.go
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/golang-escape-analysis/  
 

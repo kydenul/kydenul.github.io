@@ -15,7 +15,7 @@
 
 ## Source
 
-由于实现源码太长，给出下载连接：[kyden.css](https://github.com/kydance/dotfiles/blob/master/typora-theme/kyden.css)
+由于实现源码太长，给出下载连接：[kyden.css](https://github.com/kydenul/dotfiles/blob/master/kyden.css)
 
 ```css
 @include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
@@ -623,6 +623,6 @@ footer {
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/typora-theme/  
 

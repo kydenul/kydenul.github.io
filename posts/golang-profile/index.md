@@ -163,7 +163,7 @@ func main() {
         go f()
     }
 
-	for {} // Test
+ for {} // Test
 }
 ```
 
@@ -205,28 +205,28 @@ go tool pprof -http=:9999 localhost:8080/debug/pprof/heap
 package main
 
 import (
-	"fmt"
-	"testing"
+ "fmt"
+ "testing"
 )
 
 func BenchmarkConcat0(b *testing.B) {
-	var str string
+ var str string
 
-	for i := 0; i < b.N; i++ {
-		str = ""
-		str += "userid : " + "1"
-		str += "localtion : " + "ab"
-	}
+ for i := 0; i < b.N; i++ {
+  str = ""
+  str += "userid : " + "1"
+  str += "localtion : " + "ab"
+ }
 }
 
 func BenchmarkConcat1(b *testing.B) {
-	var str string
+ var str string
 
-	for i := 0; i < b.N; i++ {
-		str = ""
-		str += fmt.Sprintf("userid : %v", "1")
-		str += fmt.Sprintf("localtion : %v", "ab")
-	}
+ for i := 0; i < b.N; i++ {
+  str = ""
+  str += fmt.Sprintf("userid : %v", "1")
+  str += fmt.Sprintf("localtion : %v", "ab")
+ }
 }
 ```
 
@@ -234,12 +234,12 @@ func BenchmarkConcat1(b *testing.B) {
 $ go test -bench=. -benchmem
 goos: linux
 goarch: amd64
-pkg: github.com/lutianen/go-test/bench0
+pkg: github.com/kydenul/go-test/bench0
 cpu: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz
 BenchmarkConcat0-16     35702518                32.86 ns/op           24 B/op          1 allocs/op
 BenchmarkConcat1-16      8105732               140.9 ns/op            56 B/op          3 allocs/op
 PASS
-ok      github.com/lutianen/go-test/bench0      2.506s
+ok      github.com/kydenul/go-test/bench0      2.506s
 ```
 
 #### 逃逸分析
@@ -251,11 +251,11 @@ ok      github.com/lutianen/go-test/bench0      2.506s
 package main
 
 func main() {
-	var sl = make([]int, 1024)
-	println(sl[0])
+ var sl = make([]int, 1024)
+ println(sl[0])
 
-	var sl0 = make([]int, 10240)
-	println(sl0[0])
+ var sl0 = make([]int, 10240)
+ println(sl0[0])
 }
 ```
 
@@ -277,47 +277,47 @@ package bench1
 import "testing"
 
 func BenchmarkHorizontal(b *testing.B) {
-	arrLen := 10000
+ arrLen := 10000
 
-	arr := make([][]int, arrLen, arrLen)
+ arr := make([][]int, arrLen, arrLen)
 
-	for i := 0; i < arrLen; i++ {
-		arrInternal := make([]int, arrLen)
-		for j := 0; j < arrLen; j++ {
-			arrInternal[j] = 0
-		}
+ for i := 0; i < arrLen; i++ {
+  arrInternal := make([]int, arrLen)
+  for j := 0; j < arrLen; j++ {
+   arrInternal[j] = 0
+  }
         arr[i] = arrInternal
-	}
+ }
 
-	for i := 0; i < b.N; i++ {
-		for x := 0; x < len(arr); x++ {
-			for y := 0; y < len(arr); y++ {
-				arr[x][y] = 1
-			}
-		}
-	}
+ for i := 0; i < b.N; i++ {
+  for x := 0; x < len(arr); x++ {
+   for y := 0; y < len(arr); y++ {
+    arr[x][y] = 1
+   }
+  }
+ }
 }
 
 func BenchmarkVertical(b *testing.B) {
-	arrLen := 10000
+ arrLen := 10000
 
-	arr := make([][]int, arrLen, arrLen)
+ arr := make([][]int, arrLen, arrLen)
 
-	for i := 0; i < arrLen; i++ {
-		arrInternal := make([]int, arrLen)
-		for j := 0; j < arrLen; j++ {
-			arrInternal[j] = 0
-		}
+ for i := 0; i < arrLen; i++ {
+  arrInternal := make([]int, arrLen)
+  for j := 0; j < arrLen; j++ {
+   arrInternal[j] = 0
+  }
         arr[i] = arrInternal
-	}
+ }
 
-	for i := 0; i < b.N; i++ {
-		for x := 0; x < len(arr); x++ {
-			for y := 0; y < len(arr); y++ {
-				arr[y][x] = 1
-			}
-		}
-	}
+ for i := 0; i < b.N; i++ {
+  for x := 0; x < len(arr); x++ {
+   for y := 0; y < len(arr); y++ {
+    arr[y][x] = 1
+   }
+  }
+ }
 }
 ```
 
@@ -325,12 +325,12 @@ func BenchmarkVertical(b *testing.B) {
 $ go test -bench=. -benchmem
 goos: linux
 goarch: amd64
-pkg: github.com/lutianen/go-test/bench1
+pkg: github.com/kydenul/go-test/bench1
 cpu: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz
 BenchmarkHorizontal-16                15          71020410 ns/op        54629717 B/op        666 allocs/op
 BenchmarkVertical-16                   1        1059649022 ns/op        819445856 B/op     10002 allocs/op
 PASS
-ok      github.com/lutianen/go-test/bench1      3.676s
+ok      github.com/kydenul/go-test/bench1      3.676s
 ```
 
 #### Zero Garbage / Allocation
@@ -356,14 +356,14 @@ CPU 运行过程中修改数据是一个 **cache line**为单位，当两个变�
 
 ```Go
 type NoPad struct {
-	x uint64
-	y uint64
+ x uint64
+ y uint64
 }
 
 type WithPad struct {
-	x uint64
-	_ [6]uint64
-	y uint64
+ x uint64
+ _ [6]uint64
+ y uint64
 }
 ```
 
@@ -375,10 +375,10 @@ type WithPad struct {
 
 ```Go
 func f(wr http.ResponseWriter, r *http.Request) {
-	uuid, _ := exec.Command("uuidgen").Output() // Use exec.Command
+ uuid, _ := exec.Command("uuidgen").Output() // Use exec.Command
 
-	wr.Header()["Content-Type"] = []string{"application/text"}
-	io.WriteString(wr, string(uuid))
+ wr.Header()["Content-Type"] = []string{"application/text"}
+ io.WriteString(wr, string(uuid))
 }
 ```
 
@@ -388,10 +388,10 @@ func f(wr http.ResponseWriter, r *http.Request) {
 import uuid "github.com/satori/go.uuid"
 
 func f(wr http.ResponseWriter, r *http.Request) {
-	uuid, _ := uuid.NewV4() // Replace exec.Command with existing library
+ uuid, _ := uuid.NewV4() // Replace exec.Command with existing library
 
-	wr.Header()["Content-Type"] = []string{"application/text"}
-	io.WriteString(wr, uuid.String())
+ wr.Header()["Content-Type"] = []string{"application/text"}
+ io.WriteString(wr, uuid.String())
 }
 ```
 
@@ -407,17 +407,17 @@ func f(wr http.ResponseWriter, r *http.Request) {
 ```Go
 var mtx sync.Mutex
 var data = map[string]string{
-	"hint": "hello wold",
+ "hint": "hello wold",
 }
 
 func f(wr http.ResponseWriter, r *http.Request) {
-	mtx.Lock()
-	defer mtx.Unlock()
+ mtx.Lock()
+ defer mtx.Unlock()
 
-	buf := data["hint"]
-	time.Sleep(time.Millisecond * 10) // 临界区内的慢操作
-	wr.Header()["Content-Type"] = []string{"application/json"}
-	io.WriteString(wr, buf)
+ buf := data["hint"]
+ time.Sleep(time.Millisecond * 10) // 临界区内的慢操作
+ wr.Header()["Content-Type"] = []string{"application/json"}
+ io.WriteString(wr, buf)
 }
 ```
 
@@ -426,17 +426,17 @@ func f(wr http.ResponseWriter, r *http.Request) {
 ```Go
 var mtx sync.Mutex
 var data = map[string]string{
-	"hint": "hello wold",
+ "hint": "hello wold",
 }
 
 func f(wr http.ResponseWriter, r *http.Request) {
-	mtx.Lock()
-	buf := data["hint"]
-	mtx.Unlock()
+ mtx.Lock()
+ buf := data["hint"]
+ mtx.Unlock()
 
-	time.Sleep(time.Millisecond * 10) // 慢操作放置于临界区之外
-	wr.Header()["Content-Type"] = []string{"application/json"}
-	io.WriteString(wr, buf)
+ time.Sleep(time.Millisecond * 10) // 慢操作放置于临界区之外
+ wr.Header()["Content-Type"] = []string{"application/json"}
+ io.WriteString(wr, buf)
 }
 ```
 
@@ -445,47 +445,47 @@ func f(wr http.ResponseWriter, r *http.Request) {
 
 - **双 Buffer 完全干掉锁阻塞**
 
-	> 使用双 Buffer / RCU 完全消除读阻塞：全量更新，直接替换原 config
+ > 使用双 Buffer / RCU 完全消除读阻塞：全量更新，直接替换原 config
 
-	```Go
-	func updateConfig() {
-		var newConfig = &MyConfig {
-			WhiteList: make(map[int]struct{}),
-		}
+ ```Go
+ func updateConfig() {
+  var newConfig = &MyConfig {
+   WhiteList: make(map[int]struct{}),
+  }
 
-		// Do a lot of compulation
-		for i :=0; i < 1000; i++ {
-			newConfig.WhiteList[i] = struct{}{}
-		}
+  // Do a lot of compulation
+  for i :=0; i < 1000; i++ {
+   newConfig.WhiteList[i] = struct{}{}
+  }
 
-		config.Store(newConfig)
-	}
-	```
+  config.Store(newConfig)
+ }
+ ```
 
-	> 使用双 Buffer / RCU 完全消除读阻塞：部分更新，先拷贝原 config，然后更新 key，最后替换
+ > 使用双 Buffer / RCU 完全消除读阻塞：部分更新，先拷贝原 config，然后更新 key，最后替换
 
-	```Go
-	// Partial update
-	func updateConfig() {
-		var oldConfig = getConfig()
-		var newConfig = &MyConfig{
-			WhiteList: make(map[int]struct{})
-		}
+ ```Go
+ // Partial update
+ func updateConfig() {
+  var oldConfig = getConfig()
+  var newConfig = &MyConfig{
+   WhiteList: make(map[int]struct{})
+  }
 
-		// Copy from old
-		for k,v := range oldConfig.WhiteList {
-			newConfig.WhiteList[k] = v
-		}
+  // Copy from old
+  for k,v := range oldConfig.WhiteList {
+   newConfig.WhiteList[k] = v
+  }
 
-		// Modify some keys
-		newConfig.WhiteList[123] = struct{}{}
-		newConfig.WhiteList[124] = struct{}{}
+  // Modify some keys
+  newConfig.WhiteList[123] = struct{}{}
+  newConfig.WhiteList[124] = struct{}{}
 
-		config.Store(newConfig)
-	}
-	```
+  config.Store(newConfig)
+ }
+ ```
 
-	**NOTE: 当更新可能并发时，则需要在更新时加锁**
+ **NOTE: 当更新可能并发时，则需要在更新时加锁**
 
 > 优化锁阻塞瓶颈的手段总结:
 >
@@ -510,22 +510,22 @@ func f(wr http.ResponseWriter, r *http.Request) {
 
 ```Go
 func BenchmarkMapWithoutPtrs(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		var m = make(map[int]int)
-		for i := 0; i < 10; i++ {
-			m[i] = i
-		}
-	}
+ for i := 0; i < b.N; i++ {
+  var m = make(map[int]int)
+  for i := 0; i < 10; i++ {
+   m[i] = i
+  }
+ }
 }
 
 func BenchmarkMapWithPtrs(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		var m = make(map[int]*int)
-		for i := 0; i < 10; i++ {
-			var v = i
-			m[i] = &v
-		}
-	}
+ for i := 0; i < b.N; i++ {
+  var m = make(map[int]*int)
+  for i := 0; i < 10; i++ {
+   var v = i
+   m[i] = &v
+  }
+ }
 }
 ```
 
@@ -551,17 +551,17 @@ BenchmarkMapWithPtrs-16          2580622               524.8 ns/op           371
 const max = 1 << 14
 //go:noinline
 func Steal() {
-	var buf = make([]int, max)
+ var buf = make([]int, max)
 
-	for j := 0; j < max; j++ {
-		buf = append(buf, make([]int, max)...)
-	}
+ for j := 0; j < max; j++ {
+  buf = append(buf, make([]int, max)...)
+ }
 }
 
 func BenchmarkSteal(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Steal()
-	}
+ for i := 0; i < b.N; i++ {
+  Steal()
+ }
 }
 ```
 
@@ -577,20 +577,20 @@ BenchmarkSteal-16              1        1386661490 ns/op        10764864792 B/op
 1. Goroutine 栈占用的内存(**难优化**，一条 TCP 连接至少对应一个 Goroutine)
 2. TCP Read Buffer 占用的内存(**难优化**，因为大部分连接阻塞在 Read 上，Read Buffer 基本没有可以释放的时机)
 
-	```Go
-	func f() {
-		var l net.Listener
-		for {
-			c, _ := l.Accept()
-			go func() {
-				var buf = make([]byte, 4096)
-				for {
-					c.Read(buf)
-				}
-			}()
-		}
-	}
-	```
+ ```Go
+ func f() {
+  var l net.Listener
+  for {
+   c, _ := l.Accept()
+   go func() {
+    var buf = make([]byte, 4096)
+    for {
+     c.Read(buf)
+    }
+   }()
+  }
+ }
+ ```
 
 3. TCP Writer Buffer 占用的内存(**易优化**，因为活跃连接不多)
 
@@ -704,6 +704,6 @@ BenchmarkSteal-16              1        1386661490 ns/op        10764864792 B/op
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/golang-profile/  
 

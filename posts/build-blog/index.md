@@ -48,7 +48,7 @@ GitHub Pages 是一个免费的静态网站托管服务，它允许用户通过 
 需要创建两个仓库，一个用于网站源码管理(`A`)，一个用于网站部署(`B`):
 
 - `A` 可以是 `public`，也可以是 `private`；
-- `B` 仓库的名称必须是 `<username>.github.io`（`username` 是 Github `Accout` 中`username`，不是 `profile` 中的 `Name`），同时还需要添加 `README.md`，例如：**`kydance.github.io`**.
+- `B` 仓库的名称必须是 `<username>.github.io`（`username` 是 Github `Accout` 中`username`，不是 `profile` 中的 `Name`），同时还需要添加 `README.md`，例如：**`kydenul.github.io`**.
 
 ---
 
@@ -57,7 +57,7 @@ GitHub Pages 是一个免费的静态网站托管服务，它允许用户通过 
 首先，使用 Git 将 `A` 拉取下来：
 
 ```bash
-$ git clone git@github.com:kydance/blog.git
+$ git clone git@github.com:kydenul/blog.git
 # ...
 ```
 
@@ -183,7 +183,7 @@ $ hugo
 $ git init
 $ git commit -m "first commit"
 $ git branch -M master
-$ git remote add origin https://github.com/kydance/kydance.github.io.git
+$ git remote add origin https://github.com/kydenul/kydenul.github.io.git
 $ git push -u origin master
 # ...
 ```
@@ -285,12 +285,12 @@ NOTE：`blog/public` 中相关文件可以删除，也可以不删除，推荐�
 
 ### 7. Gitalk 评论系统
 
-> **Gitalk 的评论采用的是 PR/Issue 的方式存储评论**，因此，一般需要新建一个专门的 Repo，例如`kydance/gitalk`.
+> **Gitalk 的评论采用的是 PR/Issue 的方式存储评论**，因此，一般需要新建一个专门的 Repo，例如`kydenul/gitalk`.
 
 1. GitHub 申请注册[新应用](https://github.com/settings/applications/new)，并填写以下相关内容：
 
     - `Application name`: 随意
-    - `Homepage URL`: 包含 `http/https` 前缀，例如`https://kydance.github.io`
+    - `Homepage URL`: 包含 `http/https` 前缀，例如`https://kydenul.github.io`
     - `Authorization callback URL`: 和上面 `Homepage URL` 保持一致就行
 
     ![github application](/posts/build-blog/github-application.png)
@@ -305,7 +305,7 @@ NOTE：`blog/public` 中相关文件可以删除，也可以不删除，推荐�
 
         [params.page.comment.gitalk]
             enable = true
-            owner = "lutianen"
+            owner = "kydenul"
             repo = "gitalk"
             clientId = "xxxxxxxxxxxxxxxxxxxx"
             clientSecret = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -370,11 +370,11 @@ NOTE：`blog/public` 中相关文件可以删除，也可以不删除，推荐�
 
 ### Link
 
-{{< link href="https://kydance.github.io" content=kydance.github.io tittle="Welcome to visist 鸢舞杂货铺" >}}
+{{< link href="https://kydenul.github.io" content=kydenul.github.io tittle="Welcome to visist 鸢舞杂货铺" >}}  <!-- markdownlint-disable-line MD034 -->
 
 ---
 
-{{< link "https://kydance.github.io" >}}
+{{< link "https://kydenul.github.io" >}}  <!-- markdownlint-disable-line MD034 -->
 
 ### Admonition
 
@@ -462,6 +462,6 @@ Hugo 的配置文件和文章中的引用图片都是以 static 作为根目录�
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/build-blog/  
 

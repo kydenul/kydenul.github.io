@@ -52,6 +52,6 @@ ffmpeg -i video-100035.m4s -i audio-30280.m4s -codec copy output.mp4
 
 ---
 
-> Author: [kyden](https://github.com/kydance)  
+> Author: [kyden](https://github.com/kydenul)  
 > URL: http://kydenul.github.io/posts/033530b/  
 
