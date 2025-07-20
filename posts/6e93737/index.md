@@ -1,8 +1,10 @@
-# Kafka
+# Apache Kafka 深度解析：分布式流处理平台完全指南
 
 
 {{< admonition type=abstract title="导语" open=true >}}
-**这是导语部分**
+在现代分布式系统架构中，**数据流处理**已成为企业数字化转型的核心驱动力。Apache Kafka 作为业界领先的分布式流处理平台，以其卓越的**高吞吐量**、**低延迟**和**高可用性**特性，在大数据生态系统中扮演着至关重要的角色。
+
+无论是**实时数据管道**构建、**微服务架构**中的消息传递，还是 **大规模日志收集**与**流式计算**，Kafka 都能提供稳定可靠的解决方案。本文将带您深入探索 Kafka 的核心架构设计、技术原理以及在企业级应用中的最佳实践，助您构建更加健壮的数据驱动型应用系统。
 {{< /admonition >}}
 
 <!--more-->
@@ -201,5 +203,5 @@ Kafka 的基本概念源自提交日志。
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://localhost:1313/posts/6e93737/  
+> URL: http://kydenul.github.io/posts/6e93737/  
 

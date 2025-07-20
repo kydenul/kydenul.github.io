@@ -8,8 +8,17 @@
     <language>en</language>
     <managingEditor>kydenul@gmail.com (kyden)</managingEditor>
     <webMaster>kydenul@gmail.com (kyden)</webMaster>
-    <lastBuildDate>Tue, 22 Oct 2024 11:58:44 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Jul 2025 17:53:18 +0800</lastBuildDate>
     <atom:link href="http://kydenul.github.io/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apache Kafka 深度解析：分布式流处理平台完全指南</title>
+      <link>http://kydenul.github.io/posts/6e93737/</link>
+      <pubDate>Sun, 20 Jul 2025 17:53:18 +0800</pubDate><author>kydenul@gmail.com (kyden)</author>
+      <guid>http://kydenul.github.io/posts/6e93737/</guid>
+      <category domain="http://kydenul.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</category>
+      <category domain="http://kydenul.github.io/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">分布式系统</category>
+      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;&lt;p&gt;在现代分布式系统架构中，&lt;strong&gt;数据流处理&lt;/strong&gt;已成为企业数字化转型的核心驱动力。Apache Kafka 作为业界领先的分布式流处理平台，以其卓越的&lt;strong&gt;高吞吐量&lt;/strong&gt;、&lt;strong&gt;低延迟&lt;/strong&gt;和&lt;strong&gt;高可用性&lt;/strong&gt;特性，在大数据生态系统中扮演着至关重要的角色。&lt;/p&gt;&#xA;&lt;p&gt;无论是&lt;strong&gt;实时数据管道&lt;/strong&gt;构建、&lt;strong&gt;微服务架构&lt;/strong&gt;中的消息传递，还是 &lt;strong&gt;大规模日志收集&lt;/strong&gt;与&lt;strong&gt;流式计算&lt;/strong&gt;，Kafka 都能提供稳定可靠的解决方案。本文将带您深入探索 Kafka 的核心架构设计、技术原理以及在企业级应用中的最佳实践，助您构建更加健壮的数据驱动型应用系统。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>Redis 核心精讲：从入门到性能优化</title>
       <link>http://kydenul.github.io/posts/redis/</link>
