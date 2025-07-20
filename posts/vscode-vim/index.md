@@ -394,6 +394,17 @@ License
 curl -sL dub.sh/cursorreset | python3
 ```
 
+## Neogit 报错：`󰊢 | Neogit: fatal: could not read '': No such file or directory`
+
+> **检查当前用户下的 `.gitconfig` 中的 `commit.template` 是否存在，如存在，则其值不能为空**
+>
+> ```bash
+> # 检查命令
+> $ git config --global commit.template
+> ~/.dotfiles/.gitmessage
+>
+> ```
+
 ## Reference
 
 - [Visual Studio Code](https://code.visualstudio.com/)

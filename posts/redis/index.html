@@ -11,7 +11,7 @@
   <meta itemprop="description" content="全面解析 Redis 的核心特性和最佳实践，从基础数据类型到高性能设计原理。深入探讨 Redis 单线程架构的优势，帮助开发者构建高性能的缓存系统和实时应用。通过实例讲解 Redis 在现代应用中的实践方案。">
   <meta itemprop="datePublished" content="2024-10-22T11:58:44+08:00">
   <meta itemprop="dateModified" content="2024-10-22T11:58:44+08:00">
-  <meta itemprop="wordCount" content="1249">
+  <meta itemprop="wordCount" content="2321">
   <meta itemprop="image" content="http://kydenul.github.io/favicon.png">
   <meta itemprop="keywords" content="Redis,NoSQL,缓存,内存数据库,分布式缓存,数据结构,高性能,键值存储,内存存储,数据库优化,实时数据,分布式系统,后端开发,性能优化"><meta property="og:url" content="http://kydenul.github.io/posts/redis/">
   <meta property="og:site_name" content="Kyden&#39;s 博客">
@@ -49,7 +49,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/kydenul.github.io\/posts\/redis\/"
-    },"image": ["http:\/\/kydenul.github.io\/favicon-seo.jpg"],"genre": "posts","keywords": "Redis, NoSQL, 缓存系统, 分布式缓存, 数据库, 高性能, 后端开发, 分布式系统, 性能优化, 实时处理","wordcount":  1249 ,
+    },"image": ["http:\/\/kydenul.github.io\/favicon-seo.jpg"],"genre": "posts","keywords": "Redis, NoSQL, 缓存系统, 分布式缓存, 数据库, 高性能, 后端开发, 分布式系统, 性能优化, 实时处理","wordcount":  2321 ,
     "url": "http:\/\/kydenul.github.io\/posts\/redis\/","datePublished": "2024-10-22T11:58:44+08:00","dateModified": "2024-10-22T11:58:44+08:00","publisher": {
       "@type": "Organization",
       "name": "kyden","logo": "http:\/\/kydenul.github.io"},"author": {
@@ -182,7 +182,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>Redis 核心精讲：从入门到性能优化</span>
       </h1><p class="single-subtitle animate__animated animate__fadeIn">深入理解内存数据库：5种核心数据类型与高性能原理解析</p></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/kydenul" title="Author"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/favicon.ico' alt="kyden" height="16" width="16">&nbsp;kyden</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category" title="Category - 数据库"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 数据库</a>&ensp;<a href="/categories/%E7%BC%93%E5%AD%98%E6%8A%80%E6%9C%AF/" class="post-category" title="Category - 缓存技术"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 缓存技术</a>&ensp;<a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" class="post-category" title="Category - 分布式系统"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 分布式系统</a>&ensp;<a href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/" class="post-category" title="Category - 后端技术"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 后端技术</a>&ensp;<a href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category" title="Category - 性能优化"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 性能优化</a> and <a href="/collections/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/" class="post-collection" title="Collection - 数据库技术"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 数据库技术</a>&ensp;<a href="/collections/%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84/" class="post-collection" title="Collection - 分布式架构"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 分布式架构</a>&ensp;<a href="/collections/%E9%AB%98%E6%80%A7%E8%83%BD%E7%B3%BB%E7%BB%9F/" class="post-collection" title="Collection - 高性能系统"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 高性能系统</a>&ensp;<a href="/collections/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-collection" title="Collection - 后端开发"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 后端开发</a></span></div><div class="post-meta-line"><span title="published on 2024-10-22 11:58:44"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-22">2024-10-22</time></span>&nbsp;<span title="1249 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>3 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Redis 核心精讲：从入门到性能优化"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/kydenul" title="Author"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/favicon.ico' alt="kyden" height="16" width="16">&nbsp;kyden</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category" title="Category - 数据库"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 数据库</a>&ensp;<a href="/categories/%E7%BC%93%E5%AD%98%E6%8A%80%E6%9C%AF/" class="post-category" title="Category - 缓存技术"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 缓存技术</a>&ensp;<a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" class="post-category" title="Category - 分布式系统"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 分布式系统</a>&ensp;<a href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/" class="post-category" title="Category - 后端技术"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 后端技术</a>&ensp;<a href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category" title="Category - 性能优化"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 性能优化</a> and <a href="/collections/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/" class="post-collection" title="Collection - 数据库技术"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 数据库技术</a>&ensp;<a href="/collections/%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84/" class="post-collection" title="Collection - 分布式架构"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 分布式架构</a>&ensp;<a href="/collections/%E9%AB%98%E6%80%A7%E8%83%BD%E7%B3%BB%E7%BB%9F/" class="post-collection" title="Collection - 高性能系统"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 高性能系统</a>&ensp;<a href="/collections/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-collection" title="Collection - 后端开发"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 后端开发</a></span></div><div class="post-meta-line"><span title="published on 2024-10-22 11:58:44"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-22">2024-10-22</time></span>&nbsp;<span title="2321 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>5 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Redis 核心精讲：从入门到性能优化"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -196,9 +196,31 @@
       <ol>
         <li><a href="#string-字符串类型">String 字符串类型</a></li>
         <li><a href="#list-列表类型">List 列表类型</a></li>
+        <li><a href="#hash-哈希类型">Hash 哈希类型</a></li>
+        <li><a href="#set-集合类型">Set 集合类型</a></li>
+        <li><a href="#zset-有序集合">Zset 有序集合</a></li>
       </ol>
     </li>
-    <li><a href="#iii-常见问题">III. 常见问题</a></li>
+    <li><a href="#特殊数据类型">特殊数据类型</a>
+      <ol>
+        <li><a href="#geospatial-地理位置">Geospatial 地理位置</a></li>
+        <li><a href="#hyperloglog">HyperLogLog</a></li>
+        <li><a href="#bitmap">Bitmap</a></li>
+      </ol>
+    </li>
+    <li><a href="#rdb-持久化">RDB 持久化</a>
+      <ol>
+        <li><a href="#优点">优点</a></li>
+        <li><a href="#缺点">缺点</a></li>
+        <li><a href="#实现步骤">实现步骤</a></li>
+      </ol>
+    </li>
+    <li><a href="#iii-常见问题">III. 常见问题</a>
+      <ol>
+        <li><a href="#1-redis-为什么是单线程">1. Redis 为什么是单线程？</a></li>
+        <li><a href="#2-redis-为什么单线程还这么快">2. Redis 为什么单线程还这么快？</a></li>
+      </ol>
+    </li>
     <li><a href="#iv-使用场景">IV. 使用场景</a>
       <ol>
         <li><a href="#缓存-cache">缓存 Cache</a></li>
@@ -241,6 +263,7 @@
   </a>
 </h3><p>Value 可以是字符串、也可以是数字</p>
 <p>使用场景：计数（点赞数、粉丝数）、缓存</p>
+<hr>
 <h3 id="list-列表类型" class="heading-element"><span>List 列表类型</span>
   <a href="#list-%e5%88%97%e8%a1%a8%e7%b1%bb%e5%9e%8b" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -249,7 +272,7 @@
 <p>List 的 Key 的底层实现就是一个链表，其中链表的每一个节点都保存了一个整数值.</p>
 <p>Redis 链表实现的特性：</p>
 <ul>
-<li>双向：链表节点都有 <code>prev</code> 和 <code>next</code> 指针 -&gt; 获取某个节点的前继节点和后继节点的复杂度都是O(1)</li>
+<li>双向：链表节点都有 <code>prev</code> 和 <code>next</code> 指针 -&gt; 获取某个节点的前继节点和后继节点的复杂度都是<code>O(1)</code></li>
 <li>无环：链表头节点的 <code>prev</code> 指针和表尾节点的 <code>next</code> 指针都指向 <code>NULL</code></li>
 <li>表头指针 / 表尾指针：List 结构中存在 <code>head</code> 和 <code>tail</code> 指针</li>
 <li>长度计数器：List 结构中存在 <code>len</code> 属性</li>
@@ -258,22 +281,118 @@
 </ul>
 <p>使用场景：列表（关注列表、粉丝列表、消息列表，&hellip;）</p>
 <hr>
+<h3 id="hash-哈希类型" class="heading-element"><span>Hash 哈希类型</span>
+  <a href="#hash-%e5%93%88%e5%b8%8c%e7%b1%bb%e5%9e%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>本质和 String 类型没有太大区别，还是一个简单的 key-value！</p>
+<p>hash 更加适合对象的存储，String 更适合字符串存储</p>
+<p>使用场景：存储用户信息、商品信息</p>
+<hr>
+<h3 id="set-集合类型" class="heading-element"><span>Set 集合类型</span>
+  <a href="#set-%e9%9b%86%e5%90%88%e7%b1%bb%e5%9e%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Set 中的元素不能重复且无序</p>
+<p>使用场景：共同关注、共同粉丝、公共喜好等</p>
+<hr>
+<h3 id="zset-有序集合" class="heading-element"><span>Zset 有序集合</span>
+  <a href="#zset-%e6%9c%89%e5%ba%8f%e9%9b%86%e5%90%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Redis中，zset（有序集合）是一种特殊的数据类型，既可以像普通的集合（set）一样存储多个元素，还可以给每个元素赋一个分数（score），并根据分数对元素进行排序。在 set 中，元素必须是唯一的，但分数可以重复；</p>
+<p>特点</p>
+<ul>
+<li>元素按照分数从小到大排序，可以通过指定范围获取分数在某个区间内的元素；</li>
+<li>元素是唯一的，每个元素都有一个唯一的标识符，称为成员（member）；</li>
+<li>元素的分数可以是浮点数，用于区分元素之间的顺序；分数越小的元素越靠前；</li>
+<li>zset 中的元素可以动态添加、删除、修改分数，可以使用类似于集合（set）的命令来操作；</li>
+<li>zset 支持交集、并集等操作，可以对多个 zset 进行操作，得到一个新的 zset；</li>
+</ul>
+<p>使用场景：排行榜、弹幕消息等</p>
+<hr>
+<h2 id="特殊数据类型" class="heading-element"><span>特殊数据类型</span>
+  <a href="#%e7%89%b9%e6%ae%8a%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="geospatial-地理位置" class="heading-element"><span>Geospatial 地理位置</span>
+  <a href="#geospatial-%e5%9c%b0%e7%90%86%e4%bd%8d%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>一种数据类型，可以存储和搜索坐标信息；适用于在给定的半径或矩形范围内查找附近的点；</p>
+<p>Redis 提供了 GEO命令，实际上基于有序集合数据类型，通过 geohash 算法将维度和经度编码到有序集合的分数中来实现 geospatial 索引；</p>
+<hr>
+<h3 id="hyperloglog" class="heading-element"><span>HyperLogLog</span>
+  <a href="#hyperloglog" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>基数，不重复的元素，可以接受误差；</p>
+<p>Redis中 HyperLogLog 是用来做基数统计的，优点是在输入元素的数量或体积非常非常大时，计算基数所需的空间总是固定的、并且是很小的。</p>
+<p>Redis 中，每个 HyperLogLog 键只需要花费 12 KB 内存，就可以计算 $2^64$ 个不同元素的基数；</p>
+<p>HyperLogLog 只会根据输入元素来计算基数，而不会存储输入元素本身，所以不能像集合那样，返回输入的各个元素</p>
+<p>需要有一定的容错，错误率为 0.81</p>
+<hr>
+<h3 id="bitmap" class="heading-element"><span>Bitmap</span>
+  <a href="#bitmap" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Redis 中 bitmap，基于 string 类型进行的位操作，可以把一个字符串当作一个位向量来处理，也可以对一个或多个字符串进行位运算；</p>
+<hr>
+<h2 id="rdb-持久化" class="heading-element"><span>RDB 持久化</span>
+  <a href="#rdb-%e6%8c%81%e4%b9%85%e5%8c%96" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>RDB（Redis DataBase），Redis 会单独创建一个（fork）一个子进程来进行持久化，会先将数据写入到一个临时文件中，待持久化过程结束，然后用这个临时文件替换上次的持久化文件；
+整个过程中，主进程不进行任何 IO 操作，确保了极高的性能</p>
+<p>生成的 RDB 文件（dump.rdb，可修改）是一个未经压缩的二进制文件，通过该文件可以还原生成 RDB 文件时的数据库状态；</p>
+<p>比 AOF 方式更高效，但 AOF 文件的更新频率更高</p>
+<h3 id="优点" class="heading-element"><span>优点</span>
+  <a href="#%e4%bc%98%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>每次修改都会进行持久化，文件完整性更好；</li>
+<li>默认每秒同步一次，可能丢失一秒的数据；</li>
+</ul>
+<h3 id="缺点" class="heading-element"><span>缺点</span>
+  <a href="#%e7%bc%ba%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>相对于数据文件来说，AOF 远远大于 rdb，修复速度比 RDB 慢；</li>
+<li>AOF 运行效率比 RDB 慢，故默认 RDB 持久化；</li>
+</ul>
+<h3 id="实现步骤" class="heading-element"><span>实现步骤</span>
+  <a href="#%e5%ae%9e%e7%8e%b0%e6%ad%a5%e9%aa%a4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li>命令追加：append</li>
+<li>文件写入</li>
+<li>文件同步：sync</li>
+</ol>
+<hr>
 <h2 id="iii-常见问题" class="heading-element"><span>III. 常见问题</span>
   <a href="#iii-%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><ol>
-<li>
-<p>Redis 为什么是单线程？</p>
-<p>官方表示：Redis 是基于内存操作的，CPU不是Redis的性能瓶颈，Redis的瓶颈是根据机器的内存和网络带宽，既然可以用单线程实现，就没必要使用多线程了。</p>
-<p>Redis 的提供数据为 100000+ (10W+) 的QPS，非常快</p>
-</li>
-<li>
-<p>Redis 为什么单线程还这么快？</p>
-<p>多线程（CPU上下文切换）不一定比单线程效率高！！！Redis 是将所有的数据全部存放在内存中的，所有说单线程去操作效率就是最高的，多线程（CPU上下文切换，是一个耗时操作）；</p>
-<p>对于内存系统来说，如果没有上下文切换效率就是最高的！多次读写都是在一个CPU上完成的，在内存情况下就是最佳方案！</p>
-</li>
-</ol>
+</h2><h3 id="1-redis-为什么是单线程" class="heading-element"><span>1. Redis 为什么是单线程？</span>
+  <a href="#1-redis-%e4%b8%ba%e4%bb%80%e4%b9%88%e6%98%af%e5%8d%95%e7%ba%bf%e7%a8%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><pre><code>官方表示：Redis 是基于内存操作的，CPU不是Redis的性能瓶颈，Redis的瓶颈是根据机器的内存和网络带宽，既然可以用单线程实现，就没必要使用多线程了。
+
+Redis 的提供数据为 100000+ (10W+) 的QPS，非常快
+</code></pre>
+<hr>
+<h3 id="2-redis-为什么单线程还这么快" class="heading-element"><span>2. Redis 为什么单线程还这么快？</span>
+  <a href="#2-redis-%e4%b8%ba%e4%bb%80%e4%b9%88%e5%8d%95%e7%ba%bf%e7%a8%8b%e8%bf%98%e8%bf%99%e4%b9%88%e5%bf%ab" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><pre><code>多线程（CPU上下文切换）不一定比单线程效率高！！！Redis 是将所有的数据全部存放在内存中的，所有说单线程去操作效率就是最高的，多线程（CPU上下文切换，是一个耗时操作）；
+
+对于内存系统来说，如果没有上下文切换效率就是最高的！多次读写都是在一个CPU上完成的，在内存情况下就是最佳方案！
+</code></pre>
 <hr>
 <h2 id="iv-使用场景" class="heading-element"><span>IV. 使用场景</span>
   <a href="#iv-%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" class="heading-mark">
@@ -376,7 +495,7 @@
 
   <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.147.8"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.148.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024 - 2025</span><span class="author" itemprop="copyrightHolder">
               <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">

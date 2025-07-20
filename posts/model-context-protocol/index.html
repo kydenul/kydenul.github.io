@@ -11,7 +11,7 @@
   <meta itemprop="description" content="深入探索 Anthropic 提出的 Model Context Protocol (MCP)，了解其如何连接 AI 模型与各类专业工具、知识库和计算资源，实现 AI 能力的弹性扩展。">
   <meta itemprop="datePublished" content="2025-04-29T15:16:47+08:00">
   <meta itemprop="dateModified" content="2025-04-29T15:16:47+08:00">
-  <meta itemprop="wordCount" content="8822">
+  <meta itemprop="wordCount" content="8825">
   <meta itemprop="image" content="http://kydenul.github.io/favicon.png">
   <meta itemprop="keywords" content="MCP,Model Context Protocol,Anthropic,AI 扩展,JSON-RPC,LLM"><meta property="og:url" content="http://kydenul.github.io/posts/model-context-protocol/">
   <meta property="og:site_name" content="Kyden&#39;s 博客">
@@ -47,7 +47,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/kydenul.github.io\/posts\/model-context-protocol\/"
-    },"image": ["http:\/\/kydenul.github.io\/favicon-seo.jpg"],"genre": "posts","keywords": "AI, MCP, 协议, 开发工具","wordcount":  8822 ,
+    },"image": ["http:\/\/kydenul.github.io\/favicon-seo.jpg"],"genre": "posts","keywords": "AI, MCP, 协议, 开发工具","wordcount":  8825 ,
     "url": "http:\/\/kydenul.github.io\/posts\/model-context-protocol\/","datePublished": "2025-04-29T15:16:47+08:00","dateModified": "2025-04-29T15:16:47+08:00","publisher": {
       "@type": "Organization",
       "name": "kyden","logo": "http:\/\/kydenul.github.io"},"author": {
@@ -136,7 +136,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>Model Context Protocol (MCP): 扩展 AI 能力的新范式</span>
       </h1><p class="single-subtitle animate__animated animate__fadeIn">打破 AI 模型的封闭性，实现能力的弹性扩展</p></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/kydenul" title="Author"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/favicon.ico' alt="kyden" height="16" width="16">&nbsp;kyden</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF/" class="post-category" title="Category - 技术前沿"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 技术前沿</a></span></div><div class="post-meta-line"><span title="published on 2025-04-29 15:16:47"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-04-29">2025-04-29</time></span>&nbsp;<span title="8822 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 8900 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>18 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Model Context Protocol (MCP): 扩展 AI 能力的新范式"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/kydenul" title="Author"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/favicon.ico' alt="kyden" height="16" width="16">&nbsp;kyden</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF/" class="post-category" title="Category - 技术前沿"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 技术前沿</a></span></div><div class="post-meta-line"><span title="published on 2025-04-29 15:16:47"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-04-29">2025-04-29</time></span>&nbsp;<span title="8825 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 8900 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>18 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Model Context Protocol (MCP): 扩展 AI 能力的新范式"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -1764,6 +1764,7 @@ MCP 就像是为 AI 模型设计的多功能扩展坞，让大语言模型能够
 <li><a href="https://pkg.go.dev/net/rpc/jsonrpc"target="_blank" rel="external nofollow noopener noreferrer">Golang 中的内建 JSON-RPC<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 <li><a href="https://github.com/modelcontextprotocol/inspector"target="_blank" rel="external nofollow noopener noreferrer">Server Inspector 工具<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 <li><a href="https://github.com/mark3labs/mcp-go"target="_blank" rel="external nofollow noopener noreferrer">MCP Go 客户端库<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://platform.moonshot.cn/console/api-keys"target="_blank" rel="external nofollow noopener noreferrer">KIMI - API<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 </ul></div><hr class="awesome-hr" />
     <h2 id="see-also">Related Content</h2>
     <ul><li>
@@ -1815,7 +1816,7 @@ MCP 就像是为 AI 模型设计的多功能扩展坞，让大语言模型能够
 
   <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.147.8"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.148.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024 - 2025</span><span class="author" itemprop="copyrightHolder">
               <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">

@@ -936,6 +936,7 @@ MCP 协议仍处于早期发展阶段，但其潜力已经显现。随着生态�
 - [Golang 中的内建 JSON-RPC](https://pkg.go.dev/net/rpc/jsonrpc)
 - [Server Inspector 工具](https://github.com/modelcontextprotocol/inspector)
 - [MCP Go 客户端库](https://github.com/mark3labs/mcp-go)
+- [KIMI - API](https://platform.moonshot.cn/console/api-keys)
 
 
 ---
