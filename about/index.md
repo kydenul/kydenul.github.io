@@ -72,5 +72,5 @@ events:
 ---
 
 > Author: <no value>  
-> URL: http://kydenul.github.io/about/  
+> URL: https://kydenul.github.io/about/  
 

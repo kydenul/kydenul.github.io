@@ -873,5 +873,5 @@ golangci-lint run ./... 2>&1 | reviewdog -f=golangci-lint -reporter=local
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/golang-linter/  
+> URL: https://kydenul.github.io/posts/golang-linter/  
 

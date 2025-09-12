@@ -189,5 +189,5 @@ func main() {
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/golang-context/  
+> URL: https://kydenul.github.io/posts/golang-context/  
 

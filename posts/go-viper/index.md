@@ -288,5 +288,5 @@ func init() {
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/go-viper/  
+> URL: https://kydenul.github.io/posts/go-viper/  
 

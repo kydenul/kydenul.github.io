@@ -675,5 +675,5 @@ func main() {
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/golang-zap/  
+> URL: https://kydenul.github.io/posts/golang-zap/  
 

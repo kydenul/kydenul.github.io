@@ -44,5 +44,5 @@
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/make/  
+> URL: https://kydenul.github.io/posts/make/  
 

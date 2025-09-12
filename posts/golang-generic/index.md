@@ -11,5 +11,5 @@
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/golang-generic/  
+> URL: https://kydenul.github.io/posts/golang-generic/  
 

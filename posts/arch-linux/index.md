@@ -935,5 +935,5 @@ wpspdf 依赖于 libtiff5.so.5 以支撑其 PDF 功能。
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/arch-linux/  
+> URL: https://kydenul.github.io/posts/arch-linux/  
 

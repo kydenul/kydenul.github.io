@@ -572,5 +572,5 @@ Options 模式的优点：
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/design-pattern/  
+> URL: https://kydenul.github.io/posts/design-pattern/  
 

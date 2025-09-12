@@ -219,5 +219,5 @@ $ go build -v -gcflags='-m' ./main.go
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/golang-escape-analysis/  
+> URL: https://kydenul.github.io/posts/golang-escape-analysis/  
 

@@ -97,4 +97,4 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
-Sitemap: http://kydenul.github.io/sitemap.xml
+Sitemap: https://kydenul.github.io/sitemap.xml

@@ -942,5 +942,5 @@ MCP 协议仍处于早期发展阶段，但其潜力已经显现。随着生态�
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/model-context-protocol/  
+> URL: https://kydenul.github.io/posts/model-context-protocol/  
 

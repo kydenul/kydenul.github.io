@@ -705,5 +705,5 @@ BenchmarkSteal-16              1        1386661490 ns/op        10764864792 B/op
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://kydenul.github.io/posts/golang-profile/  
+> URL: https://kydenul.github.io/posts/golang-profile/  
 
