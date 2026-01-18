@@ -1,8 +1,12 @@
-# Openai Whisper
+# OpenAI Whisper 完全指南：高效实现语音识别与字幕生成
 
 
 {{< admonition type=abstract title="导语" open=true >}}
-**这是导语部分**
+在现代内容创作和开发场景中，语音识别和字幕生成已成为提升效率的关键技术。OpenAI Whisper 作为目前最先进的自动语音识别（ASR）系统之一，凭借其卓越的多语言识别能力和高准确度，已成为语音转文字领域的标杆工具。
+
+Whisper.cpp 作为 Whisper 的 C++ 实现，在保持高精度的同时，大幅提升了推理速度，使其在普通硬件上也能流畅运行。无论是视频字幕制作、会议记录转录，还是实时语音识别应用，Whisper 都能提供可靠的解决方案。
+
+本文将带你全面了解 Whisper 和 Whisper.cpp 的各项功能，从基础安装到高级配置，从模型选择到实战应用，帮助你在 macOS 上构建高效的语音识别工作流，实现从音频到字幕的自动化转换。
 {{< /admonition >}}
 
 <!--more-->
@@ -239,5 +243,5 @@ FFmpeg 会自动识别 MP4 中的音频流，然后将其转换为 WAV 格式，
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://localhost:1313/posts/9bc9991/  
+> URL: https://kydenul.github.io/posts/9bc9991/  
 
