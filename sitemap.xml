@@ -1,37 +1,187 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kydenul.github.io/categories/ai-%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/collections/ai-%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/ai-%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/apple-silicon/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/asr/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/categories/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/collections/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/ffmpeg/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/macos/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/categories/macos-%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/openai-whisper/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/posts/9bc9991/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/posts/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/whisper.cpp/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/%E5%AD%97%E5%B9%95%E5%88%B6%E4%BD%9C/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/%E5%AD%97%E5%B9%95%E7%94%9F%E6%88%90/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/collections/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/collections/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/categories/%E8%AF%AD%E9%9F%B3%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/%E8%AF%AD%E9%9F%B3%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2026-01-18T17:11:59+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://kydenul.github.io/posts/6e93737/</loc>
     <lastmod>2025-07-20T17:53:18+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://kydenul.github.io/categories/</loc>
-    <lastmod>2025-07-20T17:53:18+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://kydenul.github.io/tags/kafka/</loc>
-    <lastmod>2025-07-20T17:53:18+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://kydenul.github.io/</loc>
-    <lastmod>2025-07-20T17:53:18+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://kydenul.github.io/posts/</loc>
-    <lastmod>2025-07-20T17:53:18+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://kydenul.github.io/tags/</loc>
     <lastmod>2025-07-20T17:53:18+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -139,12 +289,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://kydenul.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-04-29T15:16:47+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://kydenul.github.io/categories/%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF/</loc>
     <lastmod>2025-04-29T15:16:47+08:00</lastmod>
     <changefreq>daily</changefreq>
@@ -152,12 +296,6 @@
   </url>
   <url>
     <loc>https://kydenul.github.io/tags/bilibili/</loc>
-    <lastmod>2025-02-15T14:15:55+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://kydenul.github.io/tags/ffmpeg/</loc>
     <lastmod>2025-02-15T14:15:55+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -182,12 +320,6 @@
   </url>
   <url>
     <loc>https://kydenul.github.io/tags/channel/</loc>
-    <lastmod>2024-12-20T22:37:36+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://kydenul.github.io/collections/</loc>
     <lastmod>2024-12-20T22:37:36+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -386,24 +518,6 @@
   </url>
   <url>
     <loc>https://kydenul.github.io/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E8%83%BD/</loc>
-    <lastmod>2024-11-06T11:53:42+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://kydenul.github.io/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2024-11-06T11:53:42+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://kydenul.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2024-11-06T11:53:42+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://kydenul.github.io/collections/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2024-11-06T11:53:42+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

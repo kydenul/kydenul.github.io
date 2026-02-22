@@ -4,12 +4,24 @@
     <title>FFmpeg - Tag  Kyden&#39;s 博客</title>
     <link>https://kydenul.github.io/tags/ffmpeg/</link>
     <description>Kyden&#39;s Blog Site</description>
-    <generator>Hugo 0.153.4 &amp; FixIt v0.3.19</generator>
+    <generator>Hugo 0.155.3 &amp; FixIt v0.3.19</generator>
     <language>en</language>
     <managingEditor>kydenul@gmail.com (kyden)</managingEditor>
     <webMaster>kydenul@gmail.com (kyden)</webMaster>
-    <lastBuildDate>Sat, 15 Feb 2025 14:15:55 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 17:11:59 +0800</lastBuildDate>
     <atom:link href="https://kydenul.github.io/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAI Whisper 完全指南：高效实现语音识别与字幕生成</title>
+      <link>https://kydenul.github.io/posts/9bc9991/</link>
+      <pubDate>Sun, 18 Jan 2026 17:11:59 +0800</pubDate><author>kydenul@gmail.com (kyden)</author>
+      <guid>https://kydenul.github.io/posts/9bc9991/</guid>
+      <category domain="https://kydenul.github.io/categories/ai-%E5%B7%A5%E5%85%B7/">AI 工具</category>
+      <category domain="https://kydenul.github.io/categories/%E8%AF%AD%E9%9F%B3%E6%8A%80%E6%9C%AF/">语音技术</category>
+      <category domain="https://kydenul.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</category>
+      <category domain="https://kydenul.github.io/categories/macos-%E5%BC%80%E5%8F%91/">MacOS 开发</category>
+      <category domain="https://kydenul.github.io/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/">实用教程</category>
+      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;&lt;p&gt;在现代内容创作和开发场景中，语音识别和字幕生成已成为提升效率的关键技术。OpenAI Whisper 作为目前最先进的自动语音识别（ASR）系统之一，凭借其卓越的多语言识别能力和高准确度，已成为语音转文字领域的标杆工具。&lt;/p&gt;&#xA;&lt;p&gt;Whisper.cpp 作为 Whisper 的 C++ 实现，在保持高精度的同时，大幅提升了推理速度，使其在普通硬件上也能流畅运行。无论是视频字幕制作、会议记录转录，还是实时语音识别应用，Whisper 都能提供可靠的解决方案。&lt;/p&gt;&#xA;&lt;p&gt;本文将带你全面了解 Whisper 和 Whisper.cpp 的各项功能，从基础安装到高级配置，从模型选择到实战应用，帮助你在 macOS 上构建高效的语音识别工作流，实现从音频到字幕的自动化转换。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>使用 FFmpeg 转换哔哩哔哩缓存视频为 MP4 格式</title>
       <link>https://kydenul.github.io/posts/033530b/</link>
