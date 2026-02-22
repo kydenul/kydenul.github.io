@@ -175,6 +175,60 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://kydenul.github.io/tags/ai-%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
+    <lastmod>2025-12-14T15:35:27+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/ai-%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2025-12-14T15:35:27+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/claude-code/</loc>
+    <lastmod>2025-12-14T15:35:27+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/posts/ea6aa43/</loc>
+    <lastmod>2025-12-14T15:35:27+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/cli-%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2025-12-14T15:35:27+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/slash-commands/</loc>
+    <lastmod>2025-12-14T15:35:27+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/sub-agents/</loc>
+    <lastmod>2025-12-14T15:35:27+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/</loc>
+    <lastmod>2025-12-14T15:35:27+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kydenul.github.io/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/</loc>
+    <lastmod>2025-12-14T15:35:27+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://kydenul.github.io/posts/6e93737/</loc>
     <lastmod>2025-07-20T17:53:18+08:00</lastmod>
     <changefreq>daily</changefreq>
@@ -1328,12 +1382,6 @@
   </url>
   <url>
     <loc>https://kydenul.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%BE%E7%BD%AE/</loc>
-    <lastmod>2024-08-25T14:10:44+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://kydenul.github.io/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/</loc>
     <lastmod>2024-08-25T14:10:44+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

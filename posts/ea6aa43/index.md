@@ -1,8 +1,12 @@
-# Claude Code Guide
+# Claude Code 完全指南：从 Slash Commands 到 Sub Agents 的高效开发实践
 
 
 {{< admonition type=abstract title="导语" open=true >}}
-**这是导语部分**
+在 AI 辅助编程迅速发展的今天，**Claude Code** 作为 Anthropic 推出的命令行 AI 编程助手，凭借其强大的**代码理解能力**、**多工具协作机制**和灵活的**扩展体系**，正在成为越来越多开发者日常工作流中不可或缺的一环。
+
+与传统的代码补全工具不同，Claude Code 提供了两大核心扩展机制：**Slash Commands** 和 **Sub Agents**。Slash Commands 允许开发者将常用的提示语和工作流封装为可复用的斜杠指令，实现一键触发复杂操作；Sub Agents 则通过预配置的 AI 子代理，将代码审查、API 设计、SQL 优化等专业任务委派给独立的专家角色，既保持主对话的简洁性，又能获得专业深度的输出。
+
+本文将带你全面了解 Claude Code 的这两大扩展能力，从内置命令速查到自定义 Slash Commands 的创建技巧，从 Sub Agents 的配置原理到开发者常用子代理推荐，帮助你构建高效且个性化的 AI 编程工作流。
 {{< /admonition >}}
 
 <!--more-->
@@ -242,5 +246,5 @@ the subagent should follow.
 ---
 
 > Author: [kyden](https://github.com/kydenul)  
-> URL: http://localhost:1313/posts/ea6aa43/  
+> URL: https://kydenul.github.io/posts/ea6aa43/  
 

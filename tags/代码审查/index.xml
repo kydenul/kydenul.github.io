@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>代码审查 - Tag  Kyden&#39;s 博客</title>
+    <link>https://kydenul.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/</link>
+    <description>Kyden&#39;s Blog Site</description>
+    <generator>Hugo 0.155.3 &amp; FixIt v0.3.19</generator>
+    <language>en</language>
+    <managingEditor>kydenul@gmail.com (kyden)</managingEditor>
+    <webMaster>kydenul@gmail.com (kyden)</webMaster>
+    <lastBuildDate>Sun, 14 Dec 2025 15:35:27 +0800</lastBuildDate>
+    <atom:link href="https://kydenul.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Code 完全指南：从 Slash Commands 到 Sub Agents 的高效开发实践</title>
+      <link>https://kydenul.github.io/posts/ea6aa43/</link>
+      <pubDate>Sun, 14 Dec 2025 15:35:27 +0800</pubDate><author>kydenul@gmail.com (kyden)</author>
+      <guid>https://kydenul.github.io/posts/ea6aa43/</guid>
+      <category domain="https://kydenul.github.io/categories/ai-%E5%B7%A5%E5%85%B7/">AI 工具</category>
+      <category domain="https://kydenul.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</category>
+      <category domain="https://kydenul.github.io/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/">实用教程</category>
+      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;&lt;p&gt;在 AI 辅助编程迅速发展的今天，&lt;strong&gt;Claude Code&lt;/strong&gt; 作为 Anthropic 推出的命令行 AI 编程助手，凭借其强大的&lt;strong&gt;代码理解能力&lt;/strong&gt;、&lt;strong&gt;多工具协作机制&lt;/strong&gt;和灵活的&lt;strong&gt;扩展体系&lt;/strong&gt;，正在成为越来越多开发者日常工作流中不可或缺的一环。&lt;/p&gt;&#xA;&lt;p&gt;与传统的代码补全工具不同，Claude Code 提供了两大核心扩展机制：&lt;strong&gt;Slash Commands&lt;/strong&gt; 和 &lt;strong&gt;Sub Agents&lt;/strong&gt;。Slash Commands 允许开发者将常用的提示语和工作流封装为可复用的斜杠指令，实现一键触发复杂操作；Sub Agents 则通过预配置的 AI 子代理，将代码审查、API 设计、SQL 优化等专业任务委派给独立的专家角色，既保持主对话的简洁性，又能获得专业深度的输出。&lt;/p&gt;&#xA;&lt;p&gt;本文将带你全面了解 Claude Code 的这两大扩展能力，从内置命令速查到自定义 Slash Commands 的创建技巧，从 Sub Agents 的配置原理到开发者常用子代理推荐，帮助你构建高效且个性化的 AI 编程工作流。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
