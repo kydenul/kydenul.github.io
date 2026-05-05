@@ -220,12 +220,11 @@
   </ol>
 </nav></div>
       </div><div class="content" id="content"><div class="details admonition abstract open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-clipboard-list" aria-hidden="true"></i>导语<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">想要写出优雅且高效的 Go 代码，仅仅了解语法是远远不够的。本文将带你深入探索 Go 语言的设计哲学和最佳实践，从代码格式化、命名规范到控制结构的巧妙运用，帮助你掌握编写地道 Go 代码的精髓。无论你是 Go 新手还是有经验的开发者，都能从中获得实用的编程技巧和深刻的设计思想。</div>
-  </div>
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-clipboard-list" aria-hidden="true"></i>导语<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content">想要写出优雅且高效的 Go 代码，仅仅了解语法是远远不够的。本文将带你深入探索 Go 语言的设计哲学和最佳实践，从代码格式化、命名规范到控制结构的巧妙运用，帮助你掌握编写地道 Go 代码的精髓。无论你是 Go 新手还是有经验的开发者，都能从中获得实用的编程技巧和深刻的设计思想。</div>
+    </div>
 </div>
-<h2 id="formatting-格式化" class="heading-element"><span>Formatting 格式化</span>
+<h2 class="heading-element" id="formatting-格式化"><span>Formatting 格式化</span>
   <a href="#formatting-%e6%a0%bc%e5%bc%8f%e5%8c%96" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -235,7 +234,7 @@
 <li>Line length 行长度：Go 对行的长度没有限制</li>
 <li>Parentheses 括号：控制结构（<code>if</code>, <code>for</code>, <code>switch</code>）在语法上并不需要圆括号</li>
 </ul>
-<h2 id="commentary-注释" class="heading-element"><span>Commentary 注释</span>
+<h2 class="heading-element" id="commentary-注释"><span>Commentary 注释</span>
   <a href="#commentary-%e6%b3%a8%e9%87%8a" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -291,11 +290,11 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">*/</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">regex</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="names-命名" class="heading-element"><span>Names 命名</span>
+</div><h2 class="heading-element" id="names-命名"><span>Names 命名</span>
   <a href="#names-%e5%91%bd%e5%90%8d" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><h3 id="package-names-包名" class="heading-element"><span>Package names 包名</span>
+</h2><h3 class="heading-element" id="package-names-包名"><span>Package names 包名</span>
   <a href="#package-names-%e5%8c%85%e5%90%8d" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -304,7 +303,7 @@
 <p>包名是导入时所需的唯一默认名称，它并不需要在所有源码中保持唯一，即便在少数发生冲突的情况下，也可为导入的包选择一个别名来局部使用。</p>
 <p>另一个约定：<strong>包名应为其源码目录的基本名称</strong>。例如，<code>src/pkg/encoding/base64</code> 中的包应作为 <code>encoding/basee64</code> 导入，其包名应为 <code>base64</code> 而不是 <code>encoding_base64</code> / <code>encodingBase64</code>.</p>
 <p><em>长命名并不会使包更具有可读性，反而一份有用的说明文档通常比额外的长名更具价值。</em></p>
-<h3 id="getter--setter" class="heading-element"><span>Getter / Setter</span>
+<h3 class="heading-element" id="getter--setter"><span>Getter / Setter</span>
   <a href="#getter--setter" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -327,25 +326,25 @@
 </span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">o</span><span class="w"> </span><span class="o">*</span><span class="nx">Object</span><span class="p">)</span><span class="w"> </span><span class="nf">Ower</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">o</span><span class="p">.</span><span class="nx">ower</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">o</span><span class="w"> </span><span class="o">*</span><span class="nx">Object</span><span class="p">)</span><span class="w"> </span><span class="nf">SetOwer</span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">o</span><span class="p">.</span><span class="nx">ower</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="interface-names-接口名" class="heading-element"><span>Interface names 接口名</span>
+</div><h3 class="heading-element" id="interface-names-接口名"><span>Interface names 接口名</span>
   <a href="#interface-names-%e6%8e%a5%e5%8f%a3%e5%90%8d" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>按照规定，只包含一个方法的接口应当以该方法的名称加上 <code>er</code> 后缀来命名，如 <code>Reader</code> / <code>Writer</code> / <code>Formater</code> 等。</p>
 <p>字符串转换方法命名应为 <code>String</code> 而非 <code>ToString</code></p>
-<h3 id="mixedcaps-驼峰记法" class="heading-element"><span>MixedCaps 驼峰记法</span>
+<h3 class="heading-element" id="mixedcaps-驼峰记法"><span>MixedCaps 驼峰记法</span>
   <a href="#mixedcaps-%e9%a9%bc%e5%b3%b0%e8%ae%b0%e6%b3%95" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>Go 中约定使用驼峰记法</p>
-<h2 id="分号" class="heading-element"><span>分号</span>
+<h2 class="heading-element" id="分号"><span>分号</span>
   <a href="#%e5%88%86%e5%8f%b7" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>和 C 一样，Go 的正式语法使用分号 <code>;</code> 来结束语句，但 Go 的分号不一定出现在源码中，而是词法分析器会使用一条简单的规则来自动插入分号</p>
 <p>规则：<strong>如在新行前的最后一个标记为标识符（<code>int</code>/<code>float64</code>等）、数值或字符串常量之类的基本字面或<code>break</code>、<code>continue</code>、<code>fallthrough</code>、<code>return</code>、<code>++</code>、<code>--</code>、<code>)</code>、<code>}</code> 之一，则词法分析器将始终在该标记后面插入分号</strong>，即<strong>如果新行前的标记为语句的末尾，则插入分号<code>;</code></strong>。</p>
 <p>通常，Go 程序只在诸如 <code>for</code> 循环子句这样的地方使用分号，来以此将初始化器、条件及增量元素分开；</p>
-<h2 id="control-structures-控制结构" class="heading-element"><span>Control structures 控制结构</span>
+<h2 class="heading-element" id="control-structures-控制结构"><span>Control structures 控制结构</span>
   <a href="#control-structures-%e6%8e%a7%e5%88%b6%e7%bb%93%e6%9e%84" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -448,7 +447,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">err</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="function-函数" class="heading-element"><span>Function 函数</span>
+</div><h2 class="heading-element" id="function-函数"><span>Function 函数</span>
   <a href="#function-%e5%87%bd%e6%95%b0" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -502,7 +501,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="nx">result</span><span class="p">),</span><span class="w"> </span><span class="kc">nil</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="data-数据" class="heading-element"><span>Data 数据</span>
+</div><h2 class="heading-element" id="data-数据"><span>Data 数据</span>
   <a href="#data-%e6%95%b0%e6%8d%ae" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -527,7 +526,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1">// 惯用法</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="array-数组" class="heading-element"><span>Array 数组</span>
+</div><h3 class="heading-element" id="array-数组"><span>Array 数组</span>
   <a href="#array-%e6%95%b0%e7%bb%84" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -561,25 +560,23 @@
 </span></span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nf">Sum</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">aV</span><span class="p">))</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>Go array<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><p>在 C 语言中，数组变量是指向第一个元素的指针，但 Go 语言中并不是。</p>
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>Go array<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content"><p>在 C 语言中，数组变量是指向第一个元素的指针，但 Go 语言中并不是。</p>
 <p>Go 语言中，数组变量属于值类型（value type），因此当一个数组变量呗赋值或传递时，实际上会复制整个数组 -&gt;</p>
 <p>为了避免复制数组，一般传递指向数组的指针: <code>func f(pa *[3]uint8) { ... }</code></p>
 </div>
-  </div>
+    </div>
 </div>
 <div class="details admonition tip open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>Go array<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><p>Go 中的数组类型定义了长度和元素类型。
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>Go array<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content"><p>Go 中的数组类型定义了长度和元素类型。
 例如，<code>[2]int</code> 类型表示由 2 个 int 整型组成的数组。</p>
 <p>数组以索引方式访问（a[i] 访问数组 a 的第 i 个元素）。
 数组的长度固定，且是数组类型的一部分 -&gt; 长度不同的 2 个数组不可以相互赋值，因为它们属于不同的类型。</p>
 </div>
-  </div>
+    </div>
 </div>
-<h3 id="slice-切片" class="heading-element"><span>Slice 切片</span>
+<h3 class="heading-element" id="slice-切片"><span>Slice 切片</span>
   <a href="#slice-%e5%88%87%e7%89%87" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -606,9 +603,8 @@
 切片的容量可通过内建函数 <code>cap</code> 获得，它将给出该切片可取得的最大长度。</p>
 <p>尽管 Append 可修改 slice 的元素，但切片自身（其运行时数据结构包含指针、长度和容量）是通过值传递的.</p>
 <div class="details admonition tip open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>Go slice<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><p>Go 中 slice 容量指的是当前切片以及预分配的内存能够容纳的元素个数.</p>
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>Go slice<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content"><p>Go 中 slice 容量指的是当前切片以及预分配的内存能够容纳的元素个数.</p>
 <p>若数据超出其容量，则会重新分配该切片，返回值即为所得的切片。</p>
 <p>为了减少内存分配、拷贝的次数，在容量较小时，一般是以 2 的倍数进行扩大（2 -&gt; 4 -&gt; 8 -&gt; 16），
 当达到 2048 时，为避免申请的内存过大，从而浪费空间 =&gt; <a href="https://github.com/golang/go/blob/release-branch.go1.20/src/runtime/slice.go#L157"target="_blank" rel="external nofollow noopener noreferrer">Go 语言 1.20 实现如下<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>：</p>
@@ -748,9 +744,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div></div>
-  </div>
+    </div>
 </div>
-<h4 id="二维数组" class="heading-element"><span>二维数组</span>
+<h4 class="heading-element" id="二维数组"><span>二维数组</span>
   <a href="#%e4%ba%8c%e7%bb%b4%e6%95%b0%e7%bb%84" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -790,7 +786,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nx">pic</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="w"> </span><span class="nx">pixels</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">picxels</span><span class="p">[:</span><span class="nx">XSize</span><span class="p">],</span><span class="w"> </span><span class="nx">pixels</span><span class="p">[</span><span class="nx">XSize</span><span class="p">:]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="切片操作及性能" class="heading-element"><span>切片操作及性能</span>
+</div><h4 class="heading-element" id="切片操作及性能"><span>切片操作及性能</span>
   <a href="#%e5%88%87%e7%89%87%e6%93%8d%e4%bd%9c%e5%8f%8a%e6%80%a7%e8%83%bd" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -859,7 +855,7 @@ wiki - <a href="https://github.com/golang/go/wiki/SliceTricks"target="_blank" re
 <p>需要注意的是，底层数组没有发生改变，第 0 个位置的内存仍旧没有释放。
 如果有大量这样的操作，头部的内存会一直被占用。</p>
 </blockquote>
-<h3 id="map" class="heading-element"><span>Map</span>
+<h3 class="heading-element" id="map"><span>Map</span>
   <a href="#map" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -868,7 +864,7 @@ wiki - <a href="https://github.com/golang/go/wiki/SliceTricks"target="_blank" re
 <strong>若试图通过映射中不存在的键来取值，就会返回与该映射中项的类型对应的零值</strong></p>
 <p>要删除 map 中的某项，可使用内建函数 <code>delete</code>，它以映射及要被删除的键为实参。
 即便对应的键不在该 map 中，此操作也是安全的。</p>
-<h2 id="reference" class="heading-element"><span>Reference</span>
+<h2 class="heading-element" id="reference"><span>Reference</span>
   <a href="#reference" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -889,18 +885,18 @@ wiki - <a href="https://github.com/golang/go/wiki/SliceTricks"target="_blank" re
       </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/effective-go/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/blob/master/content/posts/effective-go/effective-go.md?plain=1" title="View source"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/edit/master/content/posts/effective-go/effective-go.md" title="Edit this page"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/issues/new?title=[BUG]%20Go&#43;%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93%EF%BC%9A%E7%BC%96%E5%86%99%E4%BC%98%E9%9B%85%E9%AB%98%E6%95%88%E7%9A%84&#43;Golang&#43;%E4%BB%A3%E7%A0%81&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cGo&#43;%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93%EF%BC%9A%E7%BC%96%E5%86%99%E4%BC%98%E9%9B%85%E9%AB%98%E6%95%88%E7%9A%84&#43;Golang&#43;%E4%BB%A3%E7%A0%81%7c%0A%7cURL%7chttps://kydenul.github.io/posts/effective-go/%7c%0A%7cFilename%7chttps://github.com/kydenul/kydenul.github.io/blob/master/content/posts/effective-go/effective-go.md?plain=1%7c" title="Report issue"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码" data-via="kydenul" data-hashtags="Go,Golang,编程规范,最佳实践,代码风格,编程技巧,性能优化,设计模式,工程实践,开发指南"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://kydenul.github.io/posts/effective-go/" data-hashtag="Go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://kydenul.github.io/posts/effective-go/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://kydenul.github.io/posts/effective-go/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码" data-via="kydenul" data-hashtags="Go,Golang,编程规范,最佳实践,代码风格,编程技巧,性能优化,设计模式,工程实践,开发指南"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://kydenul.github.io/posts/effective-go/" data-hashtag="Go"><i class="fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://kydenul.github.io/posts/effective-go/"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码" data-web><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://kydenul.github.io/posts/effective-go/"><i class="fa-brands fa-reddit" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LINE</title><path d="M19.365 9.863c.349.0.63.285.63.631.0.345-.281.63-.63.63H17.61v1.125h1.755c.349.0.63.283.63.63.0.344-.281.629-.63.629h-2.386c-.345.0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346.0.627.285.627.63.0.349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211.0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346.0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195.0.375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345.0.63.285.63.63v4.771zm-5.741.0c0 .344-.282.629-.631.629-.345.0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346.0.628.285.628.63v4.771zm-2.466.629H4.917c-.345.0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348.0.63.285.63.63v4.141h1.756c.348.0.629.283.629.63.0.344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943.0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码" data-description="从命名规范到代码组织，从语法特性到工程实践，全方位讲解如何编写符合 Go 语言哲学的高质量代码。适合想要提升 Go 编程水平的开发者阅读。"><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码"><i class="fa-brands fa-weibo" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码" data-description="从命名规范到代码组织，从语法特性到工程实践，全方位讲解如何编写符合 Go 语言哲学的高质量代码。适合想要提升 Go 编程水平的开发者阅读。"><i class="fa-brands fa-blogger" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on 百度" data-sharer="baidu" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Baidu</title><path d="M9.154.0C7.71.0 6.54 1.658 6.54 3.707c0 2.051 1.171 3.71 2.615 3.71 1.446.0 2.614-1.659 2.614-3.71C11.768 1.658 10.6.0 9.154.0zm7.025.594C14.86.58 13.347 2.589 13.2 3.927c-.187 1.745.25 3.487 2.179 3.735 1.933.25 3.175-1.806 3.422-3.364.252-1.555-.995-3.364-2.362-3.674a1.218 1.218.0 00-.261-.03zM3.582 5.535a2.811 2.811.0 00-.156.008c-2.118.19-2.428 3.24-2.428 3.24-.287 1.41.686 4.425 3.297 3.864 2.617-.561 2.262-3.68 2.183-4.362-.125-1.018-1.292-2.773-2.896-2.75zm16.534 1.753c-2.308.0-2.617 2.119-2.617 3.616.0 1.43.121 3.425 2.988 3.362s2.553-3.238 2.553-3.988c0-.745-.62-2.99-2.924-2.99zm-8.264 2.478c-1.424.014-2.708.925-3.323 1.947-1.118 1.868-2.863 3.05-3.112 3.363-.25.309-3.61 2.116-2.864 5.42.746 3.301 3.365 3.237 3.365 3.237s1.93.19 4.171-.31c2.24-.495 4.17.123 4.17.123s5.233 1.748 6.665-1.616c1.43-3.364-.808-5.109-.808-5.109s-2.99-2.306-4.736-4.798c-1.072-1.665-2.348-2.268-3.528-2.257zm-2.234 3.84 1.542.024v8.197H7.758c-1.47-.291-2.055-1.292-2.13-1.462-.072-.173-.488-.976-.268-2.343.635-2.049 2.447-2.196 2.447-2.196h1.81zm3.964 2.39v3.881c.096.413.612.488.612.488h1.614v-4.343h1.689v5.782h-3.915c-1.517-.39-1.59-1.465-1.59-1.465v-4.317zm-5.458 1.147c-.66.197-.978.708-1.05.928-.076.22-.247.78-.1 1.269.294 1.095 1.248 1.144 1.248 1.144h1.37v-3.34z"/></svg></a>
-  <a href="javascript:void(0);" title="Share on OK.RU" data-sharer="okru" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码"><i class="fa-brands fa-odnoklassniki fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on OK.RU" data-sharer="okru" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码"><i class="fa-brands fa-odnoklassniki" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码"><i class="fa-brands fa-evernote" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://kydenul.github.io/posts/effective-go/" data-title="Go 语言编程之道：编写优雅高效的 Golang 代码"><i class="fa-brands fa-skype" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -946,10 +942,10 @@ wiki - <a href="https://github.com/golang/go/wiki/SliceTricks"target="_blank" re
 
   <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.155.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.161.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024 - 2026</span><span class="author" itemprop="copyrightHolder">
-              <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">
+              <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times variant-numeric ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">
           <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>

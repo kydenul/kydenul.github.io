@@ -210,22 +210,20 @@
   </ol>
 </nav></div>
       </div><div class="content" id="content"><div class="details admonition abstract open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-clipboard-list" aria-hidden="true"></i>导语<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">配置管理看似简单，但要做好却不容易。如何选择合适的配置方式？如何实现配置热重载？如何优雅地处理多环境配置？本文将带你探索 Go 生态中最受欢迎的配置管理解决方案 Viper，通过实战案例和最佳实践，帮助你构建一个灵活、强大、易维护的配置管理系统。从配置文件格式的选择到 Viper 的高级特性，一文掌握配置管理的精髓。</div>
-  </div>
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-clipboard-list" aria-hidden="true"></i>导语<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content">配置管理看似简单，但要做好却不容易。如何选择合适的配置方式？如何实现配置热重载？如何优雅地处理多环境配置？本文将带你探索 Go 生态中最受欢迎的配置管理解决方案 Viper，通过实战案例和最佳实践，帮助你构建一个灵活、强大、易维护的配置管理系统。从配置文件格式的选择到 Viper 的高级特性，一文掌握配置管理的精髓。</div>
+    </div>
 </div>
 <figure><img src="/posts/go-viper/logo.png">
 </figure>
 
 <p><strong>对于一个 Go 应用程序，同城需要解析以下类别的配置：命令行选项、命令行参数、配置文件</strong>，而对于一个非命令行工具的应用程序，不需要考虑读取命令行参数这类场景，其需要的配置内容都可以通过命令行选项或配置文件加载到程序中。</p>
 <div class="details admonition tip open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>Tips<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">命令行工具可能会有子命令，例如 <code>kubectr create</code> 中的 <code>create</code> 就是一个命令行参数</div>
-  </div>
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>Tips<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content">命令行工具可能会有子命令，例如 <code>kubectr create</code> 中的 <code>create</code> 就是一个命令行参数</div>
+    </div>
 </div>
-<h2 id="为何选择配置文件作为配置项的读取方式" class="heading-element"><span>为何选择配置文件作为配置项的读取方式？</span>
+<h2 class="heading-element" id="为何选择配置文件作为配置项的读取方式"><span>为何选择配置文件作为配置项的读取方式？</span>
   <a href="#%e4%b8%ba%e4%bd%95%e9%80%89%e6%8b%a9%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e4%bd%9c%e4%b8%ba%e9%85%8d%e7%bd%ae%e9%a1%b9%e7%9a%84%e8%af%bb%e5%8f%96%e6%96%b9%e5%bc%8f" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -240,14 +238,13 @@
 <li><strong>方便新增配置项</strong>：多数情况下，配置项新增只需在配置文件中新增一行即可，不需要修改源码；</li>
 </ul>
 <div class="details admonition tip open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>总结<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">命令行工具可能会有子命令，例如 <code>kubectr create</code> 中的 <code>create</code> 就是一个命令行参数
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>总结<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content">命令行工具可能会有子命令，例如 <code>kubectr create</code> 中的 <code>create</code> 就是一个命令行参数
 总结：当配置项少的时候（比如 5 个以内），可以从命令行选项中读取。
 参数较多的时候，建议使用配置文件，配置文件更易部署、维护、热加载、层次表达更清晰。</div>
-  </div>
+    </div>
 </div>
-<h2 id="viper-的核心功能" class="heading-element"><span>Viper 的核心功能</span>
+<h2 class="heading-element" id="viper-的核心功能"><span>Viper 的核心功能</span>
   <a href="#viper-%e7%9a%84%e6%a0%b8%e5%bf%83%e5%8a%9f%e8%83%bd" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -262,7 +259,7 @@
 <li><strong>默认值</strong>: Viper 可以为任何配置项设置默认值</li>
 </ul>
 <hr>
-<h3 id="为何选择-yaml-作为配置文件的格式" class="heading-element"><span>为何选择 YAML 作为配置文件的格式？</span>
+<h3 class="heading-element" id="为何选择-yaml-作为配置文件的格式"><span>为何选择 YAML 作为配置文件的格式？</span>
   <a href="#%e4%b8%ba%e4%bd%95%e9%80%89%e6%8b%a9-yaml-%e4%bd%9c%e4%b8%ba%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e7%9a%84%e6%a0%bc%e5%bc%8f" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -277,11 +274,11 @@
 <p>最终配置：使用 YAML 格式的配置文件，并采用 <code>viper</code> 来读取配置</p>
 </blockquote>
 <hr>
-<h2 id="viper-示例" class="heading-element"><span>Viper 示例</span>
+<h2 class="heading-element" id="viper-示例"><span>Viper 示例</span>
   <a href="#viper-%e7%a4%ba%e4%be%8b" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><h3 id="工程结构" class="heading-element"><span>工程结构</span>
+</h2><h3 class="heading-element" id="工程结构"><span>工程结构</span>
   <a href="#%e5%b7%a5%e7%a8%8b%e7%bb%93%e6%9e%84" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -302,7 +299,7 @@
 </span></span><span class="line"><span class="cl">├── go.sum
 </span></span><span class="line"><span class="cl">└── main.go</span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="cfgyaml-配置内容" class="heading-element"><span><code>cfg.yaml</code> 配置内容</span>
+</div><h3 class="heading-element" id="cfgyaml-配置内容"><span><code>cfg.yaml</code> 配置内容</span>
   <a href="#cfgyaml-%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -327,7 +324,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;user&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">passwd</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;passwd&#34;</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="viper-读取配置" class="heading-element"><span>Viper 读取配置</span>
+</div><h3 class="heading-element" id="viper-读取配置"><span>Viper 读取配置</span>
   <a href="#viper-%e8%af%bb%e5%8f%96%e9%85%8d%e7%bd%ae" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -434,7 +431,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="使用-viper-读取配置文件内容" class="heading-element"><span>使用 viper 读取配置文件内容</span>
+<h2 class="heading-element" id="使用-viper-读取配置文件内容"><span>使用 viper 读取配置文件内容</span>
   <a href="#%e4%bd%bf%e7%94%a8-viper-%e8%af%bb%e5%8f%96%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e5%86%85%e5%ae%b9" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -609,7 +606,7 @@
 <li>如果没有指定，则读取 <code>$HOME/.kydendemo.yaml</code>，找到则读取；
 若 <code>cfgFile == &quot;&quot;</code>，且没有找到配置文件，则调用 <code>viper.ReadInConfig()</code> 读取配置文件时报错；</li>
 </ul>
-<h2 id="动态加载配置" class="heading-element"><span>动态加载配置</span>
+<h2 class="heading-element" id="动态加载配置"><span>动态加载配置</span>
   <a href="#%e5%8a%a8%e6%80%81%e5%8a%a0%e8%bd%bd%e9%85%8d%e7%bd%ae" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -689,7 +686,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="p">}(</span><span class="nx">DynamicConfig</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="reference" class="heading-element"><span>Reference</span>
+</div><h2 class="heading-element" id="reference"><span>Reference</span>
   <a href="#reference" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -710,18 +707,18 @@
       </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/go-viper/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/blob/master/content/posts/go-viper/go-viper.md?plain=1" title="View source"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/edit/master/content/posts/go-viper/go-viper.md" title="Edit this page"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/issues/new?title=[BUG]%20Go&#43;%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9AViper&#43;%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cGo&#43;%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9AViper&#43;%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%7c%0A%7cURL%7chttps://kydenul.github.io/posts/go-viper/%7c%0A%7cFilename%7chttps://github.com/kydenul/kydenul.github.io/blob/master/content/posts/go-viper/go-viper.md?plain=1%7c" title="Report issue"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通" data-via="kydenul" data-hashtags="Go,Golang,Viper,配置管理,配置工具,开发工具,最佳实践,项目实战,应用开发,工程实践"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://kydenul.github.io/posts/go-viper/" data-hashtag="Go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://kydenul.github.io/posts/go-viper/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://kydenul.github.io/posts/go-viper/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通" data-via="kydenul" data-hashtags="Go,Golang,Viper,配置管理,配置工具,开发工具,最佳实践,项目实战,应用开发,工程实践"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://kydenul.github.io/posts/go-viper/" data-hashtag="Go"><i class="fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://kydenul.github.io/posts/go-viper/"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通" data-web><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://kydenul.github.io/posts/go-viper/"><i class="fa-brands fa-reddit" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LINE</title><path d="M19.365 9.863c.349.0.63.285.63.631.0.345-.281.63-.63.63H17.61v1.125h1.755c.349.0.63.283.63.63.0.344-.281.629-.63.629h-2.386c-.345.0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346.0.627.285.627.63.0.349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211.0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346.0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195.0.375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345.0.63.285.63.63v4.771zm-5.741.0c0 .344-.282.629-.631.629-.345.0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346.0.628.285.628.63v4.771zm-2.466.629H4.917c-.345.0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348.0.63.285.63.63v4.141h1.756c.348.0.629.283.629.63.0.344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943.0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通" data-description="深入探讨 Go 应用程序的配置管理最佳实践，从配置文件选型到 Viper 的高级特性，全方位讲解如何实现优雅的配置管理方案。包含热重载、环境变量、配置文件等多种场景的实战指南。"><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通"><i class="fa-brands fa-weibo" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通" data-description="深入探讨 Go 应用程序的配置管理最佳实践，从配置文件选型到 Viper 的高级特性，全方位讲解如何实现优雅的配置管理方案。包含热重载、环境变量、配置文件等多种场景的实战指南。"><i class="fa-brands fa-blogger" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on 百度" data-sharer="baidu" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Baidu</title><path d="M9.154.0C7.71.0 6.54 1.658 6.54 3.707c0 2.051 1.171 3.71 2.615 3.71 1.446.0 2.614-1.659 2.614-3.71C11.768 1.658 10.6.0 9.154.0zm7.025.594C14.86.58 13.347 2.589 13.2 3.927c-.187 1.745.25 3.487 2.179 3.735 1.933.25 3.175-1.806 3.422-3.364.252-1.555-.995-3.364-2.362-3.674a1.218 1.218.0 00-.261-.03zM3.582 5.535a2.811 2.811.0 00-.156.008c-2.118.19-2.428 3.24-2.428 3.24-.287 1.41.686 4.425 3.297 3.864 2.617-.561 2.262-3.68 2.183-4.362-.125-1.018-1.292-2.773-2.896-2.75zm16.534 1.753c-2.308.0-2.617 2.119-2.617 3.616.0 1.43.121 3.425 2.988 3.362s2.553-3.238 2.553-3.988c0-.745-.62-2.99-2.924-2.99zm-8.264 2.478c-1.424.014-2.708.925-3.323 1.947-1.118 1.868-2.863 3.05-3.112 3.363-.25.309-3.61 2.116-2.864 5.42.746 3.301 3.365 3.237 3.365 3.237s1.93.19 4.171-.31c2.24-.495 4.17.123 4.17.123s5.233 1.748 6.665-1.616c1.43-3.364-.808-5.109-.808-5.109s-2.99-2.306-4.736-4.798c-1.072-1.665-2.348-2.268-3.528-2.257zm-2.234 3.84 1.542.024v8.197H7.758c-1.47-.291-2.055-1.292-2.13-1.462-.072-.173-.488-.976-.268-2.343.635-2.049 2.447-2.196 2.447-2.196h1.81zm3.964 2.39v3.881c.096.413.612.488.612.488h1.614v-4.343h1.689v5.782h-3.915c-1.517-.39-1.59-1.465-1.59-1.465v-4.317zm-5.458 1.147c-.66.197-.978.708-1.05.928-.076.22-.247.78-.1 1.269.294 1.095 1.248 1.144 1.248 1.144h1.37v-3.34z"/></svg></a>
-  <a href="javascript:void(0);" title="Share on OK.RU" data-sharer="okru" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通"><i class="fa-brands fa-odnoklassniki fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on OK.RU" data-sharer="okru" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通"><i class="fa-brands fa-odnoklassniki" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通"><i class="fa-brands fa-evernote" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://kydenul.github.io/posts/go-viper/" data-title="Go 配置管理最佳实践：Viper 从入门到精通"><i class="fa-brands fa-skype" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -767,10 +764,10 @@
 
   <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.155.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.161.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024 - 2026</span><span class="author" itemprop="copyrightHolder">
-              <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">
+              <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times variant-numeric ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">
           <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>

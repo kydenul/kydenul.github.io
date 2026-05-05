@@ -11,7 +11,7 @@
   <meta itemprop="description" content="深入解析 Go 语言 GMP 调度模型的设计理念和实现原理，从进程、线程到协程的演进，详细讲解 Goroutine 调度机制、任务窃取、阻塞处理等核心概念。通过源码分析和实例说明，帮助你全面理解 Go 的并发调度系统。">
   <meta itemprop="datePublished" content="2024-05-15T13:41:49+08:00">
   <meta itemprop="dateModified" content="2024-05-15T13:41:49+08:00">
-  <meta itemprop="wordCount" content="8114">
+  <meta itemprop="wordCount" content="8111">
   <meta itemprop="image" content="https://kydenul.github.io/favicon.png">
   <meta itemprop="keywords" content="Go,Golang,GMP模型,goroutine,并发编程,调度器,Go调度器,线程调度,并发模型,性能优化,系统编程,协程,多线程,并发控制"><meta property="og:url" content="https://kydenul.github.io/posts/golang-gmp/">
   <meta property="og:site_name" content="Kyden&#39;s 博客">
@@ -49,7 +49,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/kydenul.github.io\/posts\/golang-gmp\/"
-    },"image": ["https:\/\/kydenul.github.io\/favicon-seo.jpg"],"genre": "posts","keywords": "Go, Golang, GMP, 并发编程, 系统编程, 性能优化, 调度器, 线程管理, 高性能, 底层原理","wordcount":  8114 ,
+    },"image": ["https:\/\/kydenul.github.io\/favicon-seo.jpg"],"genre": "posts","keywords": "Go, Golang, GMP, 并发编程, 系统编程, 性能优化, 调度器, 线程管理, 高性能, 底层原理","wordcount":  8111 ,
     "url": "https:\/\/kydenul.github.io\/posts\/golang-gmp\/","datePublished": "2024-05-15T13:41:49+08:00","dateModified": "2024-05-15T13:41:49+08:00","publisher": {
       "@type": "Organization",
       "name": "kyden","logo": "https:\/\/kydenul.github.io"},"author": {
@@ -182,7 +182,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>图解 Go 调度器：GMP 模型深度剖析</span>
       </h1><p class="single-subtitle animate__animated animate__fadeIn">从进程到协程：深入理解 Go 并发调度的核心机制</p></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/kydenul" title="Author"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/favicon.ico' alt="kyden" height="16" width="16">&nbsp;kyden</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/go%E8%AF%AD%E8%A8%80/" class="post-category" title="Category - Go语言"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Go语言</a>&ensp;<a href="/categories/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/" class="post-category" title="Category - 系统编程"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 系统编程</a>&ensp;<a href="/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="post-category" title="Category - 并发编程"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 并发编程</a>&ensp;<a href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category" title="Category - 性能优化"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 性能优化</a>&ensp;<a href="/categories/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86/" class="post-category" title="Category - 编程原理"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 编程原理</a> and <a href="/collections/go%E8%BF%9B%E9%98%B6/" class="post-collection" title="Collection - Go进阶"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Go进阶</a>&ensp;<a href="/collections/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/" class="post-collection" title="Collection - 系统编程"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 系统编程</a>&ensp;<a href="/collections/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-collection" title="Collection - 性能优化"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 性能优化</a>&ensp;<a href="/collections/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="post-collection" title="Collection - 并发编程"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 并发编程</a></span></div><div class="post-meta-line"><span title="published on 2024-05-15 13:41:49"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-05-15">2024-05-15</time></span>&nbsp;<span title="8114 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 8200 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>17 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="图解 Go 调度器：GMP 模型深度剖析"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/kydenul" title="Author"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/favicon.ico' alt="kyden" height="16" width="16">&nbsp;kyden</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/go%E8%AF%AD%E8%A8%80/" class="post-category" title="Category - Go语言"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Go语言</a>&ensp;<a href="/categories/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/" class="post-category" title="Category - 系统编程"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 系统编程</a>&ensp;<a href="/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="post-category" title="Category - 并发编程"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 并发编程</a>&ensp;<a href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category" title="Category - 性能优化"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 性能优化</a>&ensp;<a href="/categories/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86/" class="post-category" title="Category - 编程原理"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 编程原理</a> and <a href="/collections/go%E8%BF%9B%E9%98%B6/" class="post-collection" title="Collection - Go进阶"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Go进阶</a>&ensp;<a href="/collections/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/" class="post-collection" title="Collection - 系统编程"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 系统编程</a>&ensp;<a href="/collections/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-collection" title="Collection - 性能优化"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 性能优化</a>&ensp;<a href="/collections/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="post-collection" title="Collection - 并发编程"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 并发编程</a></span></div><div class="post-meta-line"><span title="published on 2024-05-15 13:41:49"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-05-15">2024-05-15</time></span>&nbsp;<span title="8111 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 8200 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>17 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="图解 Go 调度器：GMP 模型深度剖析"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -235,16 +235,15 @@
   </ol>
 </nav></div>
       </div><div class="content" id="content"><div class="details admonition abstract open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-clipboard-list" aria-hidden="true"></i>导语<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">Go 语言因其强大的并发特性而备受欢迎，而这一切的基础都在于其独特的 GMP 调度模型。本文将带你揭开 Go 调度器的神秘面纱，从操作系统的进程、线程概念开始，一步步深入理解 Goroutine 的工作原理。通过图解和源码分析，让你真正理解 Go 是如何实现高效的并发调度，以及为什么 Go 的并发编程如此简单优雅。无论你是 Go 开发新手还是经验丰富的工程师，这篇文章都能帮你更深入地理解 Go 的并发机制。</div>
-  </div>
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-clipboard-list" aria-hidden="true"></i>导语<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content">Go 语言因其强大的并发特性而备受欢迎，而这一切的基础都在于其独特的 GMP 调度模型。本文将带你揭开 Go 调度器的神秘面纱，从操作系统的进程、线程概念开始，一步步深入理解 Goroutine 的工作原理。通过图解和源码分析，让你真正理解 Go 是如何实现高效的并发调度，以及为什么 Go 的并发编程如此简单优雅。无论你是 Go 开发新手还是经验丰富的工程师，这篇文章都能帮你更深入地理解 Go 的并发机制。</div>
+    </div>
 </div>
-<h2 id="i-processthreadco-routine" class="heading-element"><span>I. Process、Thread、Co-routine</span>
+<h2 class="heading-element" id="i-processthreadco-routine"><span>I. Process、Thread、Co-routine</span>
   <a href="#i-processthreadco-routine" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><h3 id="进程-process" class="heading-element"><span>进程 Process</span>
+</h2><h3 class="heading-element" id="进程-process"><span>进程 Process</span>
   <a href="#%e8%bf%9b%e7%a8%8b-process" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -256,7 +255,7 @@
 <li>进程调度算法：先来先服务调度算法、短作业优先调度算法、最短剩余作业优先调度算法、最高响应比优先调度算法、最高优先级优先调度算法、时间片轮转算法（公平调度，$20 - 50 ms$）、多级反馈队列调度算法($最高优先级 + 时间片轮转$)；</li>
 </ul>
 <hr>
-<h3 id="线程-thread" class="heading-element"><span>线程 Thread</span>
+<h3 class="heading-element" id="线程-thread"><span>线程 Thread</span>
   <a href="#%e7%ba%bf%e7%a8%8b-thread" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -267,7 +266,7 @@
 <ul>
 <li>线程是进程的一个实体，是进程的一条执行路径；</li>
 <li>线程是比进程更小的独立运行的基本单位</li>
-<li><strong>一个程序至少存在一个进程，一个进程可以有多个($&gt;=1$)线程</strong></li>
+<li><strong>一个程序至少存在一个进程，一个进程可以有多个($>=1$)线程</strong></li>
 </ul>
 <blockquote>
 <p><strong>进程与线程的区别</strong></p>
@@ -283,20 +282,20 @@
 </ul>
 </blockquote>
 <hr>
-<h3 id="协程-co-routine" class="heading-element"><span>协程 Co-routine</span>
+<h3 class="heading-element" id="协程-co-routine"><span>协程 Co-routine</span>
   <a href="#%e5%8d%8f%e7%a8%8b-co-routine" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p><strong>协程</strong>，又称 &ldquo;微线程&rdquo;，表现为一个可以 suspend 和 resume 的函数。</p>
 <p>实现协程的关键点：<strong>在于如何保存、恢复和切换上下文</strong>，协程切换只涉及基本的CPU上下文切换（CPU寄存器）.</p>
 <p>所有的协程共用的都是一个栈，即系统栈，也就并不需要我们自行去给协程分配栈，因为是函数调用，我们当然也不必去显示的保存寄存器的值；</p>
-<h4 id="co-routine-分类" class="heading-element"><span>Co-routine 分类</span>
+<h4 class="heading-element" id="co-routine-分类"><span>Co-routine 分类</span>
   <a href="#co-routine-%e5%88%86%e7%b1%bb" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h4><p><strong>有栈 (stackful) 协程</strong>：实现类似于内核态线程的实现，不同协程的切换还是要切换对应的栈上下文，只是不用陷入内核，例如 goroutine、libco</p>
 <p><strong>无栈 (stackless) 协程</strong>：无栈协程的上下文都会放到公共内存中，在协程切换时使用状态机来切换，而不用切换对应的上下文（都已经在堆中），相比有栈协程更轻量，例如 C++20、Rust、JavaScript；<strong><mark class="mark-default">本质就是一个状态机（state machine），即同一协程协程的切换本质不过是指令指针寄存器的改变</mark></strong></p>
-<h4 id="co-routine-特点" class="heading-element"><span>Co-routine 特点</span>
+<h4 class="heading-element" id="co-routine-特点"><span>Co-routine 特点</span>
   <a href="#co-routine-%e7%89%b9%e7%82%b9" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -308,7 +307,7 @@
 <li>协程的执行效率极高，和多线程相比，线程数量越多，协程的性能优势越明显；</li>
 </ul>
 <hr>
-<h2 id="ii-gmp" class="heading-element"><span>II. GMP</span>
+<h2 class="heading-element" id="ii-gmp"><span>II. GMP</span>
   <a href="#ii-gmp" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -352,11 +351,11 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 </span></span></span><span class="line"><span class="cl"><span class="nb">close</span><span class="p">(</span><span class="nx">ch</span><span class="p">)</span><span class="w"> </span><span class="c1">// 关闭 channel</span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h3 id="golang-调度" class="heading-element"><span>Golang 调度</span>
+<h3 class="heading-element" id="golang-调度"><span>Golang 调度</span>
   <a href="#golang-%e8%b0%83%e5%ba%a6" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><h4 id="调度组件" class="heading-element"><span>调度组件</span>
+</h3><h4 class="heading-element" id="调度组件"><span>调度组件</span>
   <a href="#%e8%b0%83%e5%ba%a6%e7%bb%84%e4%bb%b6" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1101,7 +1100,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 <li>在 <code>p</code> 的结构中，<code>runq [256]guintptr</code> 就是 local run queue，大小为 256 array，用于存放等待运行的 G</li>
 </ul>
 <hr>
-<h4 id="调度流程" class="heading-element"><span>调度流程</span>
+<h4 class="heading-element" id="调度流程"><span>调度流程</span>
   <a href="#%e8%b0%83%e5%ba%a6%e6%b5%81%e7%a8%8b" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1121,7 +1120,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 <blockquote>
 <p>由于将 Golang 的调度流程看作<strong>生产者-消费者</strong>流程，因此接下来将分别从生产者、消费者两个方面深入了解。</p>
 </blockquote>
-<h5 id="goroutine-的生产端" class="heading-element"><span><strong>Goroutine</strong> 的生产端</span>
+<h5 class="heading-element" id="goroutine-的生产端"><span><strong>Goroutine</strong> 的生产端</span>
   <a href="#goroutine-%e7%9a%84%e7%94%9f%e4%ba%a7%e7%ab%af" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1129,7 +1128,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 <figure><img src="/posts/golang-GMP/Goroutine-Producer.svg">
 </figure>
 
-<h5 id="goroutine-的消费端" class="heading-element"><span><strong>Goroutine</strong> 的消费端</span>
+<h5 class="heading-element" id="goroutine-的消费端"><span><strong>Goroutine</strong> 的消费端</span>
   <a href="#goroutine-%e7%9a%84%e6%b6%88%e8%b4%b9%e7%ab%af" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1142,7 +1141,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 </figure>
 
 <hr>
-<h3 id="goroutine-切换成本" class="heading-element"><span>Goroutine 切换成本</span>
+<h3 class="heading-element" id="goroutine-切换成本"><span>Goroutine 切换成本</span>
   <a href="#goroutine-%e5%88%87%e6%8d%a2%e6%88%90%e6%9c%ac" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1196,7 +1195,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h3 id="runtime-可拦截-goroutine-阻塞场景解析" class="heading-element"><span>runtime 可拦截 goroutine 阻塞场景解析</span>
+<h3 class="heading-element" id="runtime-可拦截-goroutine-阻塞场景解析"><span>runtime 可拦截 goroutine 阻塞场景解析</span>
   <a href="#runtime-%e5%8f%af%e6%8b%a6%e6%88%aa-goroutine-%e9%98%bb%e5%a1%9e%e5%9c%ba%e6%99%af%e8%a7%a3%e6%9e%90" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1205,7 +1204,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 <p>显然，当 goroutine 发生可被 runtime 拦截的阻塞时，GMP 模型并不会阻塞调度循环，
 而是把 goroutine 挂起，即让 <code>g</code> 先进某个数据结构，待 <code>ready</code> 后在继续执行，并不会占用线程，
 同时线程会进入 <code>schedule</code>，继续消费队列，执行其他的 <code>g</code>.</p>
-<h4 id="场景-i-延迟" class="heading-element"><span>场景 I: 延迟</span>
+<h4 class="heading-element" id="场景-i-延迟"><span>场景 I: 延迟</span>
   <a href="#%e5%9c%ba%e6%99%af-i-%e5%bb%b6%e8%bf%9f" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1270,7 +1269,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 </div>
 </div><p>显然，在 <code>runtime.timeSleep</code> 函数中，获取到的当前 <code>g</code> 被挂在 <code>runtime.timer.arg</code> 上，然后被挂起。</p>
 <hr>
-<h4 id="场景-ii-channel-send--recv-chan--select" class="heading-element"><span>场景 II: Channel send / recv (<code>chan</code> / <code>select</code>)</span>
+<h4 class="heading-element" id="场景-ii-channel-send--recv-chan--select"><span>场景 II: Channel send / recv (<code>chan</code> / <code>select</code>)</span>
   <a href="#%e5%9c%ba%e6%99%af-ii-channel-send--recv-chan--select" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1596,7 +1595,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h4 id="场景-iii-net-read--recv" class="heading-element"><span>场景 III: Net read / recv</span>
+<h4 class="heading-element" id="场景-iii-net-read--recv"><span>场景 III: Net read / recv</span>
   <a href="#%e5%9c%ba%e6%99%af-iii-net-read--recv" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1729,7 +1728,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 </div>
 </div><p>有关 <code>net.Conn</code> 读写详细内容，可参考<a href="https://lutianen.github.io/netpoll-of-network-program-for-golang/"target="_blank" rel="external nofollow noopener noreferrer">Netpoll of Network Program for Golang<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <hr>
-<h4 id="场景-iv-锁阻塞" class="heading-element"><span>场景 IV: 锁阻塞</span>
+<h4 class="heading-element" id="场景-iv-锁阻塞"><span>场景 IV: 锁阻塞</span>
   <a href="#%e5%9c%ba%e6%99%af-iv-%e9%94%81%e9%98%bb%e5%a1%9e" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1924,19 +1923,19 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 </div><figure><img src="/posts/golang-GMP/Kyden-blog-semTable.svg">
 </figure>
 
-<h3 id="runtime-不可拦截-goroutine-阻塞场景解析" class="heading-element"><span>runtime 不可拦截 goroutine 阻塞场景解析</span>
+<h3 class="heading-element" id="runtime-不可拦截-goroutine-阻塞场景解析"><span>runtime 不可拦截 goroutine 阻塞场景解析</span>
   <a href="#runtime-%e4%b8%8d%e5%8f%af%e6%8b%a6%e6%88%aa-goroutine-%e9%98%bb%e5%a1%9e%e5%9c%ba%e6%99%af%e8%a7%a3%e6%9e%90" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p><code>time.Sleep</code> / <code>channel send</code> / <code>channel recv</code> / <code>select</code> / <code>net read</code> / <code>net write</code> / <code>sync.Mutex</code> 等阻塞场景可被 runtime 拦截，然而仍存在一些阻塞情况是 runtime 无法拦截的，例如：<strong>在执行 C 代码或阻塞在 syscall 上时，必须占用一个线程</strong>。</p>
 <hr>
-<h2 id="iii-sysmon" class="heading-element"><span>III. Sysmon</span>
+<h2 class="heading-element" id="iii-sysmon"><span>III. Sysmon</span>
   <a href="#iii-sysmon" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>system monitor，高优先级，在专有线程中执行，不需要绑定 <code>p</code>.</p>
 <hr>
-<h2 id="iv-summary" class="heading-element"><span>IV. Summary</span>
+<h2 class="heading-element" id="iv-summary"><span>IV. Summary</span>
   <a href="#iv-summary" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1971,7 +1970,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 </li>
 </ul>
 <hr>
-<h2 id="v-q--a" class="heading-element"><span>V. Q &amp; A</span>
+<h2 class="heading-element" id="v-q--a"><span>V. Q &amp; A</span>
   <a href="#v-q--a" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1989,7 +1988,7 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 </li>
 </ul>
 <hr>
-<h2 id="vi-reference" class="heading-element"><span>VI. Reference</span>
+<h2 class="heading-element" id="vi-reference"><span>VI. Reference</span>
   <a href="#vi-reference" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -2023,18 +2022,18 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
       </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/golang-gmp/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/blob/master/content/posts/golang-GMP/golang-GMP.md?plain=1" title="View source"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/edit/master/content/posts/golang-GMP/golang-GMP.md" title="Edit this page"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/issues/new?title=[BUG]%20%E5%9B%BE%E8%A7%A3&#43;Go&#43;%E8%B0%83%E5%BA%A6%E5%99%A8%EF%BC%9AGMP&#43;%E6%A8%A1%E5%9E%8B%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7c%E5%9B%BE%E8%A7%A3&#43;Go&#43;%E8%B0%83%E5%BA%A6%E5%99%A8%EF%BC%9AGMP&#43;%E6%A8%A1%E5%9E%8B%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90%7c%0A%7cURL%7chttps://kydenul.github.io/posts/golang-gmp/%7c%0A%7cFilename%7chttps://github.com/kydenul/kydenul.github.io/blob/master/content/posts/golang-GMP/golang-GMP.md?plain=1%7c" title="Report issue"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析" data-via="kydenul" data-hashtags="Go,Golang,GMP,并发编程,系统编程,性能优化,调度器,线程管理,高性能,底层原理"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://kydenul.github.io/posts/golang-gmp/" data-hashtag="Go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://kydenul.github.io/posts/golang-gmp/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://kydenul.github.io/posts/golang-gmp/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析" data-via="kydenul" data-hashtags="Go,Golang,GMP,并发编程,系统编程,性能优化,调度器,线程管理,高性能,底层原理"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://kydenul.github.io/posts/golang-gmp/" data-hashtag="Go"><i class="fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://kydenul.github.io/posts/golang-gmp/"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析" data-web><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://kydenul.github.io/posts/golang-gmp/"><i class="fa-brands fa-reddit" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LINE</title><path d="M19.365 9.863c.349.0.63.285.63.631.0.345-.281.63-.63.63H17.61v1.125h1.755c.349.0.63.283.63.63.0.344-.281.629-.63.629h-2.386c-.345.0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346.0.627.285.627.63.0.349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211.0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346.0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195.0.375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345.0.63.285.63.63v4.771zm-5.741.0c0 .344-.282.629-.631.629-.345.0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346.0.628.285.628.63v4.771zm-2.466.629H4.917c-.345.0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348.0.63.285.63.63v4.141h1.756c.348.0.629.283.629.63.0.344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943.0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析" data-description="深入解析 Go 语言 GMP 调度模型的设计理念和实现原理，从进程、线程到协程的演进，详细讲解 Goroutine 调度机制、任务窃取、阻塞处理等核心概念。通过源码分析和实例说明，帮助你全面理解 Go 的并发调度系统。"><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析"><i class="fa-brands fa-weibo" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析" data-description="深入解析 Go 语言 GMP 调度模型的设计理念和实现原理，从进程、线程到协程的演进，详细讲解 Goroutine 调度机制、任务窃取、阻塞处理等核心概念。通过源码分析和实例说明，帮助你全面理解 Go 的并发调度系统。"><i class="fa-brands fa-blogger" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on 百度" data-sharer="baidu" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Baidu</title><path d="M9.154.0C7.71.0 6.54 1.658 6.54 3.707c0 2.051 1.171 3.71 2.615 3.71 1.446.0 2.614-1.659 2.614-3.71C11.768 1.658 10.6.0 9.154.0zm7.025.594C14.86.58 13.347 2.589 13.2 3.927c-.187 1.745.25 3.487 2.179 3.735 1.933.25 3.175-1.806 3.422-3.364.252-1.555-.995-3.364-2.362-3.674a1.218 1.218.0 00-.261-.03zM3.582 5.535a2.811 2.811.0 00-.156.008c-2.118.19-2.428 3.24-2.428 3.24-.287 1.41.686 4.425 3.297 3.864 2.617-.561 2.262-3.68 2.183-4.362-.125-1.018-1.292-2.773-2.896-2.75zm16.534 1.753c-2.308.0-2.617 2.119-2.617 3.616.0 1.43.121 3.425 2.988 3.362s2.553-3.238 2.553-3.988c0-.745-.62-2.99-2.924-2.99zm-8.264 2.478c-1.424.014-2.708.925-3.323 1.947-1.118 1.868-2.863 3.05-3.112 3.363-.25.309-3.61 2.116-2.864 5.42.746 3.301 3.365 3.237 3.365 3.237s1.93.19 4.171-.31c2.24-.495 4.17.123 4.17.123s5.233 1.748 6.665-1.616c1.43-3.364-.808-5.109-.808-5.109s-2.99-2.306-4.736-4.798c-1.072-1.665-2.348-2.268-3.528-2.257zm-2.234 3.84 1.542.024v8.197H7.758c-1.47-.291-2.055-1.292-2.13-1.462-.072-.173-.488-.976-.268-2.343.635-2.049 2.447-2.196 2.447-2.196h1.81zm3.964 2.39v3.881c.096.413.612.488.612.488h1.614v-4.343h1.689v5.782h-3.915c-1.517-.39-1.59-1.465-1.59-1.465v-4.317zm-5.458 1.147c-.66.197-.978.708-1.05.928-.076.22-.247.78-.1 1.269.294 1.095 1.248 1.144 1.248 1.144h1.37v-3.34z"/></svg></a>
-  <a href="javascript:void(0);" title="Share on OK.RU" data-sharer="okru" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析"><i class="fa-brands fa-odnoklassniki fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on OK.RU" data-sharer="okru" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析"><i class="fa-brands fa-odnoklassniki" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析"><i class="fa-brands fa-evernote" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://kydenul.github.io/posts/golang-gmp/" data-title="图解 Go 调度器：GMP 模型深度剖析"><i class="fa-brands fa-skype" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -2080,10 +2079,10 @@ channel 作为一种引用类型，声明时需要指定传输数据类型，声
 
   <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.155.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.161.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024 - 2026</span><span class="author" itemprop="copyrightHolder">
-              <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">
+              <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times variant-numeric ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">
           <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>

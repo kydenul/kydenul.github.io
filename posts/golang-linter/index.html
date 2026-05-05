@@ -307,12 +307,11 @@
   </ol>
 </nav></div>
       </div><div class="content" id="content"><div class="details admonition abstract open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-clipboard-list" aria-hidden="true"></i>导语<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">在追求高质量 Go 代码的道路上，Linter 工具是你最可靠的伙伴。从代码风格的统一到潜在 bug 的预防，从性能隐患的发现到最佳实践的保证，一个优秀的 Linter 配置可以帮你规避 80% 的常见问题。本文将带你全面了解 Go 生态中最实用的 12 个 Linter 工具，通过实例讲解它们的特点和使用方法，帮助你打造一个强大的代码质量保障体系。无论是个人项目还是团队协作，这些工具都能帮你写出更好的 Go 代码。</div>
-  </div>
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-clipboard-list" aria-hidden="true"></i>导语<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content">在追求高质量 Go 代码的道路上，Linter 工具是你最可靠的伙伴。从代码风格的统一到潜在 bug 的预防，从性能隐患的发现到最佳实践的保证，一个优秀的 Linter 配置可以帮你规避 80% 的常见问题。本文将带你全面了解 Go 生态中最实用的 12 个 Linter 工具，通过实例讲解它们的特点和使用方法，帮助你打造一个强大的代码质量保障体系。无论是个人项目还是团队协作，这些工具都能帮你写出更好的 Go 代码。</div>
+    </div>
 </div>
-<h2 id="目录" class="heading-element"><span>目录</span>
+<h2 class="heading-element" id="目录"><span>目录</span>
   <a href="#%e7%9b%ae%e5%bd%95" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -333,27 +332,27 @@
 <li><a href="#xiii-summary">Summary</a></li>
 <li><a href="#xiv-reference">Reference</a></li>
 </ul>
-<h2 id="o-说明" class="heading-element"><span>O. 说明</span>
+<h2 class="heading-element" id="o-说明"><span>O. 说明</span>
   <a href="#o-%e8%af%b4%e6%98%8e" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><ul>
 <li>如特殊说明，文中代码已在在 Mac 和 Linux 系统下进行测试</li>
 </ul>
-<h2 id="i-何为-linter" class="heading-element"><span>I. 何为 Linter？</span>
+<h2 class="heading-element" id="i-何为-linter"><span>I. 何为 Linter？</span>
   <a href="#i-%e4%bd%95%e4%b8%ba-linter" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>Linter 是一种静态代码分析工具，用于在编译前检查代码中的错误、风格问题及潜在的 Bug。
 在 Golang 生态中，Linter 工具帮助开发者在早期阶段就发现问题，从而避免后期修复的高成本。</p>
 <hr>
-<h2 id="ii-gocyclo" class="heading-element"><span>II. Gocyclo</span>
+<h2 class="heading-element" id="ii-gocyclo"><span>II. Gocyclo</span>
   <a href="#ii-gocyclo" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>Gocyclo 是一款用于分析 Go 代码中函数圈复杂度的 Linter 工具，帮助开发者识别需要重构的复杂函数。
 通过降低圈复杂度，代码变得更加简洁、易读且更易维护。</p>
-<h3 id="函数圈复杂度cyclomatic-complexities" class="heading-element"><span>函数圈复杂度(cyclomatic complexities)</span>
+<h3 class="heading-element" id="函数圈复杂度cyclomatic-complexities"><span>函数圈复杂度(cyclomatic complexities)</span>
   <a href="#%e5%87%bd%e6%95%b0%e5%9c%88%e5%a4%8d%e6%9d%82%e5%ba%a6cyclomatic-complexities" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -370,7 +369,7 @@
 </blockquote>
 <p>Gocyclo 可以作为单独的命令行工具使用，也可以与其他 Linter 工具(如 golangci-lint)集成使用，提供更全面的代码质量检查。
 同时，它也可以集成到 CI/CD 流程中，帮助团队持续改善代码质量。</p>
-<h3 id="安装" class="heading-element"><span>安装</span>
+<h3 class="heading-element" id="安装"><span>安装</span>
   <a href="#%e5%ae%89%e8%a3%85" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -381,7 +380,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">go install github.com/fzipp/gocyclo/cmd/gocyclo@latest</span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="如何使用-gocyclo-linter-" class="heading-element"><span>如何使用 Gocyclo linter ？</span>
+</div><h3 class="heading-element" id="如何使用-gocyclo-linter-"><span>如何使用 Gocyclo linter ？</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-gocyclo-linter-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -418,7 +417,7 @@
 </span></span><span class="line"><span class="cl">The output fields <span class="k">for</span> each line are:
 </span></span><span class="line"><span class="cl">&lt;complexity&gt; &lt;package&gt; &lt;<span class="k">function</span>&gt; &lt;file:line:column&gt;</span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="使用示例" class="heading-element"><span>使用示例</span>
+</div><h4 class="heading-element" id="使用示例"><span>使用示例</span>
   <a href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -505,14 +504,14 @@
 </span></span><span class="line"><span class="cl"><span class="m">2</span> main f gocyclo-test/main.go:24:1</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="iii-bodyclose" class="heading-element"><span>III. bodyclose</span>
+<h2 class="heading-element" id="iii-bodyclose"><span>III. bodyclose</span>
   <a href="#iii-bodyclose" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>在 Go 中，即使读取了所有的响应内容，也需要显式关闭响应体以释放资源，否则可能导致资源泄漏、连接池耗尽，进而影响应用性能。</p>
 <p><code>bodyclose</code> 主要关注于 HTTP 响应体的正确关闭，通过检查 <code>resp.Body</code> 是否被正确关闭。
 它既可以单独使用，也可以集成到其他 linter 工具（例如 golangci-lint）中。</p>
-<h3 id="安装-1" class="heading-element"><span>安装</span>
+<h3 class="heading-element" id="安装-1"><span>安装</span>
   <a href="#%e5%ae%89%e8%a3%85-1" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -523,7 +522,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">go install github.com/timakin/bodyclose@latest</span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="如何使用-bodyclose-" class="heading-element"><span>如何使用 bodyclose ?</span>
+</div><h3 class="heading-element" id="如何使用-bodyclose-"><span>如何使用 bodyclose ?</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-bodyclose-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -546,7 +545,7 @@
 </span></span><span class="line"><span class="cl"> bodyclose <span class="nb">help</span>     <span class="c1"># general help, including listing analyzers and flags</span>
 </span></span><span class="line"><span class="cl"> bodyclose <span class="nb">help</span> name <span class="c1"># help on specific analyzer and its flags</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="使用示例-1" class="heading-element"><span>使用示例</span>
+</div><h4 class="heading-element" id="使用示例-1"><span>使用示例</span>
   <a href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b-1" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -677,7 +676,7 @@
 </div>
 </div></blockquote>
 <hr>
-<h2 id="iv-sqlrows" class="heading-element"><span>IV. sqlrows</span>
+<h2 class="heading-element" id="iv-sqlrows"><span>IV. sqlrows</span>
   <a href="#iv-sqlrows" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -690,7 +689,7 @@
 </ul>
 <p><code>sqlrows</code> 的<a href="https://github.com/gostaticanalysis/sqlrows"target="_blank" rel="external nofollow noopener noreferrer">官方介绍<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>：
 <code>sqlrows</code> is a static code analyzer which helps uncover bugs by reporting a diagnostic for mistakes of <code>sql.Rows</code> usage.</p>
-<h3 id="安装-2" class="heading-element"><span>安装</span>
+<h3 class="heading-element" id="安装-2"><span>安装</span>
   <a href="#%e5%ae%89%e8%a3%85-2" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -701,7 +700,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">go install github.com/gostaticanalysis/sqlrows@latest</span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="如何使用-sqlrows-" class="heading-element"><span>如何使用 sqlrows ?</span>
+</div><h3 class="heading-element" id="如何使用-sqlrows-"><span>如何使用 sqlrows ?</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-sqlrows-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -804,19 +803,19 @@
 </span></span><span class="line"><span class="cl">./main.go:9:33: rows.Close must be called</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="v-funlen" class="heading-element"><span>V. funlen</span>
+<h2 class="heading-element" id="v-funlen"><span>V. funlen</span>
   <a href="#v-funlen" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p><code>funlen</code>，用于检查函数的长度，确保函数的可读性和可维护性。
 默认情况下，funlen 将函数的最大行数限制(<code>lines</code>)为 60 行，最大语句数(<code>statements</code>)限制为 40 条。</p>
 <p>通常，funlen 会结合 golangci-lint 使用， 并集成到开发工作流中，提升代码质量.</p>
-<h3 id="安装-3" class="heading-element"><span>安装</span>
+<h3 class="heading-element" id="安装-3"><span>安装</span>
   <a href="#%e5%ae%89%e8%a3%85-3" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>funlen 可以通过 golangci-lint 安装: <code>go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest</code></p>
-<h3 id="如何使用-funlen-" class="heading-element"><span>如何使用 funlen ？</span>
+<h3 class="heading-element" id="如何使用-funlen-"><span>如何使用 funlen ？</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-funlen-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -843,7 +842,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lines</span><span class="p">:</span><span class="w"> </span><span class="m">60</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">statements</span><span class="p">:</span><span class="w"> </span><span class="m">40</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="使用示例-2" class="heading-element"><span>使用示例</span>
+</div><h4 class="heading-element" id="使用示例-2"><span>使用示例</span>
   <a href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b-2" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -934,7 +933,7 @@
 </span></span><span class="line"><span class="cl">main.go:12: Function <span class="s1">&#39;f&#39;</span> has too many statements <span class="o">(</span><span class="m">7</span> &gt; 4<span class="o">)</span> <span class="o">(</span>funlen<span class="o">)</span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="vi-goconst" class="heading-element"><span>VI. goconst</span>
+<h2 class="heading-element" id="vi-goconst"><span>VI. goconst</span>
   <a href="#vi-goconst" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -942,7 +941,7 @@
 这些字符串通常是相同的文本，开发者通过将重复的字符串提取为常量，代码变得更加清晰，减少了硬编码的出现，降低了出错的可能性。
 可以根据项目需求自定义 goconst 的行为，例如设置字符串的最小长度、最小出现次数等。</p>
 <p>goconst 通常作为 golangci-lint 的一部分使用。</p>
-<h3 id="如何使用-goconst-" class="heading-element"><span>如何使用 goconst ?</span>
+<h3 class="heading-element" id="如何使用-goconst-"><span>如何使用 goconst ?</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-goconst-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -969,7 +968,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">min-len</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">min-occurrences</span><span class="p">:</span><span class="w"> </span><span class="m">3</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="使用示例-3" class="heading-element"><span>使用示例</span>
+</div><h4 class="heading-element" id="使用示例-3"><span>使用示例</span>
   <a href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b-3" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1048,13 +1047,13 @@
 </span></span><span class="line"><span class="cl">         ^</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="vii-ineffassign" class="heading-element"><span>VII. ineffassign</span>
+<h2 class="heading-element" id="vii-ineffassign"><span>VII. ineffassign</span>
   <a href="#vii-ineffassign" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>ineffassign，主要用于检测代码中对现有变量的赋值操作是否未被使用。
 这种未使用的赋值通常是代码中的潜在错误，可能导致逻辑上的混乱或资源的浪费。</p>
-<h3 id="如何使用-ineffassign-" class="heading-element"><span>如何使用 ineffassign ?</span>
+<h3 class="heading-element" id="如何使用-ineffassign-"><span>如何使用 ineffassign ?</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-ineffassign-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1072,7 +1071,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">enable</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">ineffassign</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="使用示例-4" class="heading-element"><span>使用示例</span>
+</div><h4 class="heading-element" id="使用示例-4"><span>使用示例</span>
   <a href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b-4" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1125,14 +1124,14 @@
 </span></span><span class="line"><span class="cl">    ^</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="viii-lll" class="heading-element"><span>VIII. lll</span>
+<h2 class="heading-element" id="viii-lll"><span>VIII. lll</span>
   <a href="#viii-lll" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>通过限制行的长度，lll 有助于确保代码在查看时不会横向滚动，提升代码的可读性。</p>
 <p>lll，主要用于检查代码行的长度，检查每一行的长度是否超过指定的最大值。
 默认情况下，lll 将最大行长度限制为 120 个字符。</p>
-<h3 id="如何使用-lll-" class="heading-element"><span>如何使用 lll ?</span>
+<h3 class="heading-element" id="如何使用-lll-"><span>如何使用 lll ?</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-lll-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1158,7 +1157,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">lll</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">line-length</span><span class="p">:</span><span class="w"> </span><span class="m">80</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="使用示例-5" class="heading-element"><span>使用示例</span>
+</div><h4 class="heading-element" id="使用示例-5"><span>使用示例</span>
   <a href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b-5" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1197,7 +1196,7 @@
 <p>使用反引号（`）定义多行字符串，允许字符串跨越多行而不需要使用连接符</p>
 </blockquote>
 <hr>
-<h2 id="ix-errcheck" class="heading-element"><span>IX. errcheck</span>
+<h2 class="heading-element" id="ix-errcheck"><span>IX. errcheck</span>
   <a href="#ix-errcheck" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1207,7 +1206,7 @@
 <li>除了检查函数返回的错误,还可以检查类型断言是否被忽略</li>
 <li>可以检查是否将错误赋值给了空白标识符</li>
 </ul>
-<h3 id="如何使用-" class="heading-element"><span>如何使用 ?</span>
+<h3 class="heading-element" id="如何使用-"><span>如何使用 ?</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1231,7 +1230,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">exclude-functions</span><span class="p">:</span><span class="w">  </span><span class="c"># 指定要忽略检查的函数列表</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># ...</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="使用示例-6" class="heading-element"><span>使用示例</span>
+</div><h4 class="heading-element" id="使用示例-6"><span>使用示例</span>
   <a href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b-6" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1332,12 +1331,12 @@
 </span></span><span class="line"><span class="cl">    ^</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="x-whitespace" class="heading-element"><span>X. whitespace</span>
+<h2 class="heading-element" id="x-whitespace"><span>X. whitespace</span>
   <a href="#x-whitespace" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p><code>whitespace</code> 是一个 Go 语言的 linter，主要用于检查代码中不必要的空行，即检查函数、条件语句（如 <code>if</code>、<code>for</code>）等开头和结尾的多余空行。</p>
-<h3 id="如何使用-whitespace-" class="heading-element"><span>如何使用 whitespace ?</span>
+<h3 class="heading-element" id="如何使用-whitespace-"><span>如何使用 whitespace ?</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-whitespace-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1355,7 +1354,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">enable</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">whitespace</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="使用示例-7" class="heading-element"><span>使用示例</span>
+</div><h4 class="heading-element" id="使用示例-7"><span>使用示例</span>
   <a href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b-7" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1440,7 +1439,7 @@
 </span></span><span class="line"><span class="cl">^</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="xi-golangci-lint" class="heading-element"><span>XI. GolangCI-Lint</span>
+<h2 class="heading-element" id="xi-golangci-lint"><span>XI. GolangCI-Lint</span>
   <a href="#xi-golangci-lint" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1449,7 +1448,7 @@
 <p><a href="https://golangci-lint.run/"target="_blank" rel="external nofollow noopener noreferrer"><code>golangci-lint</code> is a fast Go linters runner. It runs linters in parallel, uses caching, supports YAML configuration, integrates with all major IDEs, and includes over a hundred linters.<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 </blockquote>
 <p><code>golangci-lint</code> 是一款快速的 Go 语言 linter，它并行运行多个 linter 程序，使用缓存，支持 YAML 配置，与所有主流集成开发环境集成，并包含一百多个 linter 程序。</p>
-<h3 id="安装-4" class="heading-element"><span>安装</span>
+<h3 class="heading-element" id="安装-4"><span>安装</span>
   <a href="#%e5%ae%89%e8%a3%85-4" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1466,7 +1465,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># Verify</span>
 </span></span><span class="line"><span class="cl">golangci-lint --version</span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="如何使用-golangci-lint-" class="heading-element"><span>如何使用 golangci-lint ?</span>
+</div><h3 class="heading-element" id="如何使用-golangci-lint-"><span>如何使用 golangci-lint ?</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-golangci-lint-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1483,7 +1482,7 @@
 </div><figure><img src="/posts/golang-linter/golangci-lint-default.png">
 </figure>
 
-<h3 id="visual-studio-code-集成" class="heading-element"><span>Visual Studio Code 集成</span>
+<h3 class="heading-element" id="visual-studio-code-集成"><span>Visual Studio Code 集成</span>
   <a href="#visual-studio-code-%e9%9b%86%e6%88%90" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1514,7 +1513,7 @@
 <blockquote>
 <p><a href="https://golangci-lint.run/welcome/integrations/"target="_blank" rel="external nofollow noopener noreferrer">Golangci-lint 同样支持 GoLang、NeoVim 等流行 IDE 集成.<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 </blockquote>
-<h3 id="golangciyml-参考配置" class="heading-element"><span><code>.golangci.yml</code> 参考配置</span>
+<h3 class="heading-element" id="golangciyml-参考配置"><span><code>.golangci.yml</code> 参考配置</span>
   <a href="#golangciyml-%e5%8f%82%e8%80%83%e9%85%8d%e7%bd%ae" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1629,13 +1628,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">_test.go</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>更多详细信息，请参考<a href="https://golangci-lint.run/"target="_blank" rel="external nofollow noopener noreferrer">官方文档<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<h2 id="xii-reviewdog" class="heading-element"><span>XII. reviewdog</span>
+<h2 class="heading-element" id="xii-reviewdog"><span>XII. reviewdog</span>
   <a href="#xii-reviewdog" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>A code review dog who keeps your codebase healthy.</p>
 <p><code>reviewdog</code> 是一个用于自动化代码审查的工具，旨在通过集成各种 linter 工具来简化代码质量检查。它能够将 lint 工具的输出结果作为评论发布到代码托管服务（如 GitHub、GitLab 等），从而提高代码审查的效率和准确性。</p>
-<h3 id="功能" class="heading-element"><span>功能</span>
+<h3 class="heading-element" id="功能"><span>功能</span>
   <a href="#%e5%8a%9f%e8%83%bd" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1646,7 +1645,7 @@
 <li>多种报告模式：支持多种报告模式，如 GitHub PR 评论、GitHub Checks、GitLab 合并请求讨论等。</li>
 <li>本地运行：除了在 CI/CD 环境中运行外，reviewdog 也可以在本地环境中使用，方便开发者在提交代码前进行检查。</li>
 </ul>
-<h3 id="安装-5" class="heading-element"><span>安装</span>
+<h3 class="heading-element" id="安装-5"><span>安装</span>
   <a href="#%e5%ae%89%e8%a3%85-5" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1685,11 +1684,11 @@
 </span></span><span class="line"><span class="cl">reviewdog/reviewdog info found version: 0.20.1 <span class="k">for</span> v0.20.1/Darwin/arm64
 </span></span><span class="line"><span class="cl">reviewdog/reviewdog info installed /Users/kyden/go/bin/reviewdog</span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="如何使用-reviewdog-" class="heading-element"><span>如何使用 reviewdog ?</span>
+</div><h3 class="heading-element" id="如何使用-reviewdog-"><span>如何使用 reviewdog ?</span>
   <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-reviewdog-" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><h4 id="本地使用" class="heading-element"><span>本地使用</span>
+</h3><h4 class="heading-element" id="本地使用"><span>本地使用</span>
   <a href="#%e6%9c%ac%e5%9c%b0%e4%bd%bf%e7%94%a8" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1703,21 +1702,21 @@
 </div><blockquote>
 <p><a href="https://github.com/reviewdog/reviewdog?tab=readme-ov-file#reporter-local--reporterlocal-default"target="_blank" rel="external nofollow noopener noreferrer">官方示例<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 </blockquote>
-<h3 id="github-action" class="heading-element"><span>Github Action</span>
+<h3 class="heading-element" id="github-action"><span>Github Action</span>
   <a href="#github-action" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><h4 id="1-创建-github-actions-工作流" class="heading-element"><span>1. 创建 GitHub Actions 工作流</span>
+</h3><h4 class="heading-element" id="1-创建-github-actions-工作流"><span>1. 创建 GitHub Actions 工作流</span>
   <a href="#1-%e5%88%9b%e5%bb%ba-github-actions-%e5%b7%a5%e4%bd%9c%e6%b5%81" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h4><p>在项目根目录下创建一个 GitHub Actions 工作流文件，<code>.github/workflows/reviewdog.yml</code></p>
-<h4 id="2-配置-golangciyml" class="heading-element"><span>2. 配置 .golangci.yml</span>
+<h4 class="heading-element" id="2-配置-golangciyml"><span>2. 配置 .golangci.yml</span>
   <a href="#2-%e9%85%8d%e7%bd%ae-golangciyml" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h4><p>在项目根目录下创建一个 <code>.golangci.yml</code> 配置文件，配置需要启用的 linter</p>
-<h4 id="3-提交代码" class="heading-element"><span>3. 提交代码</span>
+<h4 class="heading-element" id="3-提交代码"><span>3. 提交代码</span>
   <a href="#3-%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1725,14 +1724,14 @@
 <blockquote>
 <p><a href="https://github.com/reviewdog/reviewdog?tab=readme-ov-file#github-actions"target="_blank" rel="external nofollow noopener noreferrer">更多内容请参考官方示例<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 </blockquote>
-<h2 id="xiii-summary" class="heading-element"><span>XIII. Summary</span>
+<h2 class="heading-element" id="xiii-summary"><span>XIII. Summary</span>
   <a href="#xiii-summary" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p><strong>综上所述，Golang 生态中有众多优秀的 Linter 工具，它们能够有效地检查代码质量，提高项目的可维护性和可靠性。
 开发者可以根据项目需求，选择合适的 Linter 工具，并将其集成到 CI/CD 流程中，持续改善代码质量。
 未来，随着 Golang 社区的不断发展，相信会有更多优秀的 Linter 工具问世，为 Golang 开发者提供更加强大的代码分析能力。</strong></p>
-<h2 id="xiv-reference" class="heading-element"><span>XIV. Reference</span>
+<h2 class="heading-element" id="xiv-reference"><span>XIV. Reference</span>
   <a href="#xiv-reference" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1756,18 +1755,18 @@
       </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/golang-linter/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/blob/master/content/posts/golang-linter/golang-linter.md?plain=1" title="View source"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/edit/master/content/posts/golang-linter/golang-linter.md" title="Edit this page"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/issues/new?title=[BUG]%20Go&#43;%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%AE%88%E6%8A%A4%E8%80%85%EF%BC%9A12&#43;%E4%B8%AA%E5%BF%85%E5%A4%87&#43;Linter&#43;%E5%B7%A5%E5%85%B7%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cGo&#43;%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%AE%88%E6%8A%A4%E8%80%85%EF%BC%9A12&#43;%E4%B8%AA%E5%BF%85%E5%A4%87&#43;Linter&#43;%E5%B7%A5%E5%85%B7%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%7c%0A%7cURL%7chttps://kydenul.github.io/posts/golang-linter/%7c%0A%7cFilename%7chttps://github.com/kydenul/kydenul.github.io/blob/master/content/posts/golang-linter/golang-linter.md?plain=1%7c" title="Report issue"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南" data-via="kydenul" data-hashtags="Go,Golang,Linter,代码检查,静态分析,代码质量,CI/CD,最佳实践,开发工具,工程实践"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://kydenul.github.io/posts/golang-linter/" data-hashtag="Go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://kydenul.github.io/posts/golang-linter/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://kydenul.github.io/posts/golang-linter/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南" data-via="kydenul" data-hashtags="Go,Golang,Linter,代码检查,静态分析,代码质量,CI/CD,最佳实践,开发工具,工程实践"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://kydenul.github.io/posts/golang-linter/" data-hashtag="Go"><i class="fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://kydenul.github.io/posts/golang-linter/"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南" data-web><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://kydenul.github.io/posts/golang-linter/"><i class="fa-brands fa-reddit" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LINE</title><path d="M19.365 9.863c.349.0.63.285.63.631.0.345-.281.63-.63.63H17.61v1.125h1.755c.349.0.63.283.63.63.0.344-.281.629-.63.629h-2.386c-.345.0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346.0.627.285.627.63.0.349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211.0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346.0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195.0.375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345.0.63.285.63.63v4.771zm-5.741.0c0 .344-.282.629-.631.629-.345.0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346.0.628.285.628.63v4.771zm-2.466.629H4.917c-.345.0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348.0.63.285.63.63v4.141h1.756c.348.0.629.283.629.63.0.344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943.0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南" data-description="全面介绍 Go 语言最实用的 12 个 Linter 工具，从基础的代码规范检查到高级的静态分析。通过实例讲解每个工具的特点、配置方法和最佳实践，帮助你在项目中建立完善的代码质量保证体系。包含 GolangCI-Lint 和 reviewdog 的 CI/CD 集成指南。"><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南"><i class="fa-brands fa-weibo" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南" data-description="全面介绍 Go 语言最实用的 12 个 Linter 工具，从基础的代码规范检查到高级的静态分析。通过实例讲解每个工具的特点、配置方法和最佳实践，帮助你在项目中建立完善的代码质量保证体系。包含 GolangCI-Lint 和 reviewdog 的 CI/CD 集成指南。"><i class="fa-brands fa-blogger" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on 百度" data-sharer="baidu" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Baidu</title><path d="M9.154.0C7.71.0 6.54 1.658 6.54 3.707c0 2.051 1.171 3.71 2.615 3.71 1.446.0 2.614-1.659 2.614-3.71C11.768 1.658 10.6.0 9.154.0zm7.025.594C14.86.58 13.347 2.589 13.2 3.927c-.187 1.745.25 3.487 2.179 3.735 1.933.25 3.175-1.806 3.422-3.364.252-1.555-.995-3.364-2.362-3.674a1.218 1.218.0 00-.261-.03zM3.582 5.535a2.811 2.811.0 00-.156.008c-2.118.19-2.428 3.24-2.428 3.24-.287 1.41.686 4.425 3.297 3.864 2.617-.561 2.262-3.68 2.183-4.362-.125-1.018-1.292-2.773-2.896-2.75zm16.534 1.753c-2.308.0-2.617 2.119-2.617 3.616.0 1.43.121 3.425 2.988 3.362s2.553-3.238 2.553-3.988c0-.745-.62-2.99-2.924-2.99zm-8.264 2.478c-1.424.014-2.708.925-3.323 1.947-1.118 1.868-2.863 3.05-3.112 3.363-.25.309-3.61 2.116-2.864 5.42.746 3.301 3.365 3.237 3.365 3.237s1.93.19 4.171-.31c2.24-.495 4.17.123 4.17.123s5.233 1.748 6.665-1.616c1.43-3.364-.808-5.109-.808-5.109s-2.99-2.306-4.736-4.798c-1.072-1.665-2.348-2.268-3.528-2.257zm-2.234 3.84 1.542.024v8.197H7.758c-1.47-.291-2.055-1.292-2.13-1.462-.072-.173-.488-.976-.268-2.343.635-2.049 2.447-2.196 2.447-2.196h1.81zm3.964 2.39v3.881c.096.413.612.488.612.488h1.614v-4.343h1.689v5.782h-3.915c-1.517-.39-1.59-1.465-1.59-1.465v-4.317zm-5.458 1.147c-.66.197-.978.708-1.05.928-.076.22-.247.78-.1 1.269.294 1.095 1.248 1.144 1.248 1.144h1.37v-3.34z"/></svg></a>
-  <a href="javascript:void(0);" title="Share on OK.RU" data-sharer="okru" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南"><i class="fa-brands fa-odnoklassniki fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on OK.RU" data-sharer="okru" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南"><i class="fa-brands fa-odnoklassniki" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南"><i class="fa-brands fa-evernote" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://kydenul.github.io/posts/golang-linter/" data-title="Go 代码质量守护者：12 个必备 Linter 工具完全指南"><i class="fa-brands fa-skype" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -1813,10 +1812,10 @@
 
   <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.155.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.161.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024 - 2026</span><span class="author" itemprop="copyrightHolder">
-              <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">
+              <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times variant-numeric ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">
           <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>

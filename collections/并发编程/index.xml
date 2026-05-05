@@ -4,7 +4,7 @@
     <title>并发编程 - Collection  Kyden&#39;s 博客</title>
     <link>https://kydenul.github.io/collections/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</link>
     <description>Kyden&#39;s Blog Site</description>
-    <generator>Hugo 0.155.3 &amp; FixIt v0.3.19</generator>
+    <generator>Hugo 0.161.1 &amp; FixIt v0.3.19</generator>
     <language>en</language>
     <managingEditor>kydenul@gmail.com (kyden)</managingEditor>
     <webMaster>kydenul@gmail.com (kyden)</webMaster>
@@ -20,7 +20,7 @@
       <category domain="https://kydenul.github.io/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</category>
       <category domain="https://kydenul.github.io/categories/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86/">编程原理</category>
       <category domain="https://kydenul.github.io/categories/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">最佳实践</category>
-      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;并发编程是 Go 语言最引以为豪的特性之一，但如何正确、高效地使用并发特性却是每个 Go 开发者必须面对的挑战。本文将带你深入探索 Go 并发编程的核心机制，从锁的选择到协程的生命周期管理，通过实战案例和性能数据，帮你掌握并发编程的精髓。无论是构建高并发服务还是优化性能瓶颈，这篇文章都能给你带来实用的指导。&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;并发编程是 Go 语言最引以为豪的特性之一，但如何正确、高效地使用并发特性却是每个 Go 开发者必须面对的挑战。本文将带你深入探索 Go 并发编程的核心机制，从锁的选择到协程的生命周期管理，通过实战案例和性能数据，帮你掌握并发编程的精髓。无论是构建高并发服务还是优化性能瓶颈，这篇文章都能给你带来实用的指导。&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>深入理解 Go Context：优雅的并发控制与请求管理</title>
@@ -32,7 +32,7 @@
       <category domain="https://kydenul.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务</category>
       <category domain="https://kydenul.github.io/categories/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91/">服务端开发</category>
       <category domain="https://kydenul.github.io/categories/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">最佳实践</category>
-      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;在现代 Go 应用中，Context 是实现并发控制和请求管理的核心机制。它不仅能够优雅地传递请求上下文，还能有效管理 goroutine 的生命周期，实现超时控制和优雅退出。本文将带你深入理解 Context 的设计理念和最佳实践，通过实例讲解如何在实际项目中运用 Context 来构建可靠、高效的并发应用。从链路追踪到资源管理，一文掌握 Context 的精髓。&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;在现代 Go 应用中，Context 是实现并发控制和请求管理的核心机制。它不仅能够优雅地传递请求上下文，还能有效管理 goroutine 的生命周期，实现超时控制和优雅退出。本文将带你深入理解 Context 的设计理念和最佳实践，通过实例讲解如何在实际项目中运用 Context 来构建可靠、高效的并发应用。从链路追踪到资源管理，一文掌握 Context 的精髓。&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>图解 Go 调度器：GMP 模型深度剖析</title>
@@ -44,7 +44,7 @@
       <category domain="https://kydenul.github.io/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</category>
       <category domain="https://kydenul.github.io/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</category>
       <category domain="https://kydenul.github.io/categories/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86/">编程原理</category>
-      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;Go 语言因其强大的并发特性而备受欢迎，而这一切的基础都在于其独特的 GMP 调度模型。本文将带你揭开 Go 调度器的神秘面纱，从操作系统的进程、线程概念开始，一步步深入理解 Goroutine 的工作原理。通过图解和源码分析，让你真正理解 Go 是如何实现高效的并发调度，以及为什么 Go 的并发编程如此简单优雅。无论你是 Go 开发新手还是经验丰富的工程师，这篇文章都能帮你更深入地理解 Go 的并发机制。&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;Go 语言因其强大的并发特性而备受欢迎，而这一切的基础都在于其独特的 GMP 调度模型。本文将带你揭开 Go 调度器的神秘面纱，从操作系统的进程、线程概念开始，一步步深入理解 Goroutine 的工作原理。通过图解和源码分析，让你真正理解 Go 是如何实现高效的并发调度，以及为什么 Go 的并发编程如此简单优雅。无论你是 Go 开发新手还是经验丰富的工程师，这篇文章都能帮你更深入地理解 Go 的并发机制。&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

@@ -225,17 +225,16 @@
   </ol>
 </nav></div>
       </div><div class="content" id="content"><div class="details admonition abstract open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-clipboard-list" aria-hidden="true"></i>导语<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">并发编程是 Go 语言最引以为豪的特性之一，但如何正确、高效地使用并发特性却是每个 Go 开发者必须面对的挑战。本文将带你深入探索 Go 并发编程的核心机制，从锁的选择到协程的生命周期管理，通过实战案例和性能数据，帮你掌握并发编程的精髓。无论是构建高并发服务还是优化性能瓶颈，这篇文章都能给你带来实用的指导。</div>
-  </div>
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-clipboard-list" aria-hidden="true"></i>导语<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content">并发编程是 Go 语言最引以为豪的特性之一，但如何正确、高效地使用并发特性却是每个 Go 开发者必须面对的挑战。本文将带你深入探索 Go 并发编程的核心机制，从锁的选择到协程的生命周期管理，通过实战案例和性能数据，帮你掌握并发编程的精髓。无论是构建高并发服务还是优化性能瓶颈，这篇文章都能给你带来实用的指导。</div>
+    </div>
 </div>
-<h2 id="读写锁与互斥锁" class="heading-element"><span>读写锁与互斥锁</span>
+<h2 class="heading-element" id="读写锁与互斥锁"><span>读写锁与互斥锁</span>
   <a href="#%e8%af%bb%e5%86%99%e9%94%81%e4%b8%8e%e4%ba%92%e6%96%a5%e9%94%81" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>Go 语言标准库 <code>sync</code> 提供了 2 种锁，互斥锁(<code>sync.Mutex</code>)和读写锁(<code>sync.RWMutex</code>)。</p>
-<h3 id="互斥锁syncmutex" class="heading-element"><span>互斥锁(<code>sync.Mutex</code>)</span>
+<h3 class="heading-element" id="互斥锁syncmutex"><span>互斥锁(<code>sync.Mutex</code>)</span>
   <a href="#%e4%ba%92%e6%96%a5%e9%94%81syncmutex" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -243,9 +242,8 @@
 Go 语言标准库 <code>sync</code> 提供了 <code>sync.Mutex</code> 类型，它有两个方法：<code>Lock()</code> 和 <code>Unlock()</code>，分别用于获取和释放锁。
 可以在代码前调用 <code>Lock()</code> 方法获取锁，在代码后调用 <code>Unlock()</code> 方法释放锁，也可以使用 <code>defer</code> 语句在函数退出时自动释放锁(可以保证互斥锁一定会被释放)。</p>
 <div class="details admonition info open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-circle-info" aria-hidden="true"></i>互斥锁如何实现公平？<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><p>互斥锁有两种状态：正常状态和饥饿状态。</p>
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-circle-info" aria-hidden="true"></i>互斥锁如何实现公平？<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content"><p>互斥锁有两种状态：正常状态和饥饿状态。</p>
 <p>在正常状态下，所有等待锁的 goroutine 按照FIFO顺序等待。
 唤醒的 goroutine 不会直接拥有锁，而是会和新请求锁的 goroutine 竞争锁的拥有。
 新请求锁的 goroutine 具有优势：它正在 CPU 上执行，而且可能有好几个，所以刚刚唤醒的 goroutine 有很大可能在锁竞争中失败。在这种情况下，这个被唤醒的 goroutine 会加入到等待队列的前面。 如果一个等待的 goroutine 超过 1ms 没有获取锁，那么它将会把锁转变为饥饿模式。</p>
@@ -253,9 +251,9 @@ Go 语言标准库 <code>sync</code> 提供了 <code>sync.Mutex</code> 类型，
 <p>如果一个等待的 goroutine 获取了锁，并且满足一以下其中的任何一个条件：(1)它是队列中的最后一个；(2)它等待的时候小于1ms。它会将锁的状态转换为正常状态。</p>
 <p>正常状态有很好的性能表现，饥饿模式也是非常重要的，因为它能阻止尾部延迟的现象。</p>
 </div>
-  </div>
+    </div>
 </div>
-<h3 id="读写锁syncrwmutex" class="heading-element"><span>读写锁(<code>sync.RWMutex</code>)</span>
+<h3 class="heading-element" id="读写锁syncrwmutex"><span>读写锁(<code>sync.RWMutex</code>)</span>
   <a href="#%e8%af%bb%e5%86%99%e9%94%81syncrwmutex" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -266,9 +264,8 @@ Go 语言标准库 <code>sync</code> 提供了 <code>sync.Mutex</code> 类型，
 <p><strong>读写锁的存在是为了解决读多写少的性能问题</strong>：读场景较多时，读写锁可有效减少锁阻塞的时间。</p>
 </blockquote>
 <div class="details admonition tip open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i><code>sync.Mutex</code> 与 <code>sync.RWMutex</code> 性能对比<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><p>读写操作耗时 1 微秒：</p>
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i><code>sync.Mutex</code> 与 <code>sync.RWMutex</code> 性能对比<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content"><p>读写操作耗时 1 微秒：</p>
 <ul>
 <li>读写比为 9:1 时，<code>sync.RWMutex</code> 性能约为 <code>sync.Mutex</code> 的 8 倍</li>
 <li>读写比为 1:9 时，<code>sync.RWMutex</code> 与 <code>sync.Mutex</code> 性能相当</li>
@@ -277,14 +274,14 @@ Go 语言标准库 <code>sync</code> 提供了 <code>sync.Mutex</code> 类型，
 <p>读写操作耗时 0.1 微秒：<code>sync.RWMutex</code> 性能优势下降到 3 倍</p>
 <p>读写操作耗时 10 微秒：<code>sync.RWMutex</code> 的性能与 1 微秒时基本一致</p>
 </div>
-  </div>
+    </div>
 </div>
-<h2 id="协程超时返回" class="heading-element"><span>协程超时返回</span>
+<h2 class="heading-element" id="协程超时返回"><span>协程超时返回</span>
   <a href="#%e5%8d%8f%e7%a8%8b%e8%b6%85%e6%97%b6%e8%bf%94%e5%9b%9e" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>超时控制在网络编程中时非常常见的，利用 <code>context.WithTimeout</code> 和 <code>time.After</code> 可以轻松实现超时返回。</p>
-<h3 id="timeafter-实现超时控制" class="heading-element"><span><code>time.After</code> 实现超时控制</span>
+<h3 class="heading-element" id="timeafter-实现超时控制"><span><code>time.After</code> 实现超时控制</span>
   <a href="#timeafter-%e5%ae%9e%e7%8e%b0%e8%b6%85%e6%97%b6%e6%8e%a7%e5%88%b6" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -392,7 +389,7 @@ Go 语言标准库 <code>sync</code> 提供了 <code>sync.Mutex</code> 类型，
 </div><p>不难发现，最终程序存在 1002 个协程，说明在主协程退出前，即使 1000 个子协程都执行完成，但子协程并没有正常退出，原因如下：
 <strong>当超时发生时，select 接收到 <code>time.After</code> 的超时信号，<code>done</code> 则没有了接收方（receiver），
 由于没有接受者且无缓冲区，发送者（sender）<code>done</code> 会一直阻塞，导致协程不能退出，随着时间的积累，造成内存耗尽，程序崩溃</strong></p>
-<h4 id="解决方案-创建有缓冲区的-channel" class="heading-element"><span>解决方案: 创建有缓冲区的 channel</span>
+<h4 class="heading-element" id="解决方案-创建有缓冲区的-channel"><span>解决方案: 创建有缓冲区的 channel</span>
   <a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88-%e5%88%9b%e5%bb%ba%e6%9c%89%e7%bc%93%e5%86%b2%e5%8c%ba%e7%9a%84-channel" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -445,7 +442,7 @@ Go 语言标准库 <code>sync</code> 提供了 <code>sync.Mutex</code> 类型，
 </span></span><span class="line"><span class="cl">PASS
 </span></span><span class="line"><span class="cl">ok      ziwi    3.966s</span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="解决方案-使用-select-尝试发送" class="heading-element"><span>解决方案: 使用 select 尝试发送</span>
+</div><h4 class="heading-element" id="解决方案-使用-select-尝试发送"><span>解决方案: 使用 select 尝试发送</span>
   <a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88-%e4%bd%bf%e7%94%a8-select-%e5%b0%9d%e8%af%95%e5%8f%91%e9%80%81" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -493,14 +490,14 @@ Go 语言标准库 <code>sync</code> 提供了 <code>sync.Mutex</code> 类型，
 </span></span><span class="line"><span class="cl">➜</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="channel-关闭原则" class="heading-element"><span>Channel 关闭原则</span>
+<h2 class="heading-element" id="channel-关闭原则"><span>Channel 关闭原则</span>
   <a href="#channel-%e5%85%b3%e9%97%ad%e5%8e%9f%e5%88%99" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><blockquote>
 <p><strong>一个常用的使用 Go channel 的原则是：不要在数据接收方或在有多个发送者的情况下关闭通道，也就是只应该让一个通道唯一的发送者关闭通道</strong></p>
 </blockquote>
-<h3 id="粗鲁关闭非常不推荐" class="heading-element"><span>粗鲁关闭（非常不推荐）</span>
+<h3 class="heading-element" id="粗鲁关闭非常不推荐"><span>粗鲁关闭（非常不推荐）</span>
   <a href="#%e7%b2%97%e9%b2%81%e5%85%b3%e9%97%ad%e9%9d%9e%e5%b8%b8%e4%b8%8d%e6%8e%a8%e8%8d%90" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -531,7 +528,7 @@ Go 语言标准库 <code>sync</code> 提供了 <code>sync.Mutex</code> 类型，
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="channel-忘记关闭" class="heading-element"><span>channel 忘记关闭</span>
+<h2 class="heading-element" id="channel-忘记关闭"><span>channel 忘记关闭</span>
   <a href="#channel-%e5%bf%98%e8%ae%b0%e5%85%b3%e9%97%ad" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -615,7 +612,7 @@ Go 语言标准库 <code>sync</code> 提供了 <code>sync.Mutex</code> 类型，
 </div>
 </div><p>根据测试结果，不难发现，子协程多了一个，即有一个协程没有得到释放。
 显然，这个子协程是 <code>sendTasks</code> 中的 <code>go do(taskCh)</code>，它一直处于阻塞状态，等待接收任务，直到程序结束也没有释放。</p>
-<h3 id="解决方案" class="heading-element"><span>解决方案</span>
+<h3 class="heading-element" id="解决方案"><span>解决方案</span>
   <a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -679,20 +676,19 @@ Go 语言标准库 <code>sync</code> 提供了 <code>sync.Mutex</code> 类型，
 <li><code>sendTasks</code> 函数中，任务发送结束之后，使用 <code>close(taskCh)</code> 将 channel taskCh 关闭</li>
 </ul>
 <div class="details admonition tip open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>关于 channel 与 Goroutine 的垃圾回收<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">一个通道被其发送数据协程队列和接收数据协程队列中的所有协程引用着。
+    <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>关于 channel 与 Goroutine 的垃圾回收<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div><div class="details-content">
+      <div class="admonition-content">一个通道被其发送数据协程队列和接收数据协程队列中的所有协程引用着。
 因此，如果一个通道的这两个队列只要有一个不为空，则此通道肯定不会被垃圾回收。
 另一方面，如果一个协程处于一个通道的某个协程队列之中，则此协程也肯定不会被垃圾回收，即使此通道仅被此协程所引用。
 事实上，一个协程只有在退出后才能被垃圾回收。</div>
-  </div>
+    </div>
 </div>
 <hr>
-<h2 id="常见问题" class="heading-element"><span>常见问题</span>
+<h2 class="heading-element" id="常见问题"><span>常见问题</span>
   <a href="#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><h3 id="1-kill-goroutine-可能吗" class="heading-element"><span>1. Kill goroutine 可能吗？</span>
+</h2><h3 class="heading-element" id="1-kill-goroutine-可能吗"><span>1. Kill goroutine 可能吗？</span>
   <a href="#1-kill-goroutine-%e5%8f%af%e8%83%bd%e5%90%97" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -725,18 +721,18 @@ It can only commit a cooperative suicide.)</p>
       </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/golang-concurrecy-programming/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/blob/master/content/posts/golang-concurrecy-programming/golang-concurrecy-programming.md?plain=1" title="View source"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/edit/master/content/posts/golang-concurrecy-programming/golang-concurrecy-programming.md" title="Edit this page"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/kydenul/kydenul.github.io/issues/new?title=[BUG]%20Go&#43;%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97%EF%BC%9A%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cGo&#43;%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97%EF%BC%9A%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%7c%0A%7cURL%7chttps://kydenul.github.io/posts/golang-concurrecy-programming/%7c%0A%7cFilename%7chttps://github.com/kydenul/kydenul.github.io/blob/master/content/posts/golang-concurrecy-programming/golang-concurrecy-programming.md?plain=1%7c" title="Report issue"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化" data-via="kydenul" data-hashtags="Go,Golang,并发编程,goroutine,channel,并发控制,并发模式,性能优化,最佳实践,高并发"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-hashtag="Go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化" data-via="kydenul" data-hashtags="Go,Golang,并发编程,goroutine,channel,并发控制,并发模式,性能优化,最佳实践,高并发"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-hashtag="Go"><i class="fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化" data-web><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/"><i class="fa-brands fa-reddit" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LINE</title><path d="M19.365 9.863c.349.0.63.285.63.631.0.345-.281.63-.63.63H17.61v1.125h1.755c.349.0.63.283.63.63.0.344-.281.629-.63.629h-2.386c-.345.0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346.0.627.285.627.63.0.349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211.0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346.0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195.0.375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345.0.63.285.63.63v4.771zm-5.741.0c0 .344-.282.629-.631.629-.345.0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346.0.628.285.628.63v4.771zm-2.466.629H4.917c-.345.0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348.0.63.285.63.63v4.141h1.756c.348.0.629.283.629.63.0.344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943.0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化" data-description="深入探讨 Go 并发编程的核心概念和实战技巧，从互斥锁、读写锁的原理到超时控制的优雅实现。通过实例讲解并发安全、性能优化和常见陷阱的解决方案，帮助你构建高性能的并发应用。"><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化"><i class="fa-brands fa-weibo" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化" data-description="深入探讨 Go 并发编程的核心概念和实战技巧，从互斥锁、读写锁的原理到超时控制的优雅实现。通过实例讲解并发安全、性能优化和常见陷阱的解决方案，帮助你构建高性能的并发应用。"><i class="fa-brands fa-blogger" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on 百度" data-sharer="baidu" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Baidu</title><path d="M9.154.0C7.71.0 6.54 1.658 6.54 3.707c0 2.051 1.171 3.71 2.615 3.71 1.446.0 2.614-1.659 2.614-3.71C11.768 1.658 10.6.0 9.154.0zm7.025.594C14.86.58 13.347 2.589 13.2 3.927c-.187 1.745.25 3.487 2.179 3.735 1.933.25 3.175-1.806 3.422-3.364.252-1.555-.995-3.364-2.362-3.674a1.218 1.218.0 00-.261-.03zM3.582 5.535a2.811 2.811.0 00-.156.008c-2.118.19-2.428 3.24-2.428 3.24-.287 1.41.686 4.425 3.297 3.864 2.617-.561 2.262-3.68 2.183-4.362-.125-1.018-1.292-2.773-2.896-2.75zm16.534 1.753c-2.308.0-2.617 2.119-2.617 3.616.0 1.43.121 3.425 2.988 3.362s2.553-3.238 2.553-3.988c0-.745-.62-2.99-2.924-2.99zm-8.264 2.478c-1.424.014-2.708.925-3.323 1.947-1.118 1.868-2.863 3.05-3.112 3.363-.25.309-3.61 2.116-2.864 5.42.746 3.301 3.365 3.237 3.365 3.237s1.93.19 4.171-.31c2.24-.495 4.17.123 4.17.123s5.233 1.748 6.665-1.616c1.43-3.364-.808-5.109-.808-5.109s-2.99-2.306-4.736-4.798c-1.072-1.665-2.348-2.268-3.528-2.257zm-2.234 3.84 1.542.024v8.197H7.758c-1.47-.291-2.055-1.292-2.13-1.462-.072-.173-.488-.976-.268-2.343.635-2.049 2.447-2.196 2.447-2.196h1.81zm3.964 2.39v3.881c.096.413.612.488.612.488h1.614v-4.343h1.689v5.782h-3.915c-1.517-.39-1.59-1.465-1.59-1.465v-4.317zm-5.458 1.147c-.66.197-.978.708-1.05.928-.076.22-.247.78-.1 1.269.294 1.095 1.248 1.144 1.248 1.144h1.37v-3.34z"/></svg></a>
-  <a href="javascript:void(0);" title="Share on OK.RU" data-sharer="okru" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化"><i class="fa-brands fa-odnoklassniki fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on OK.RU" data-sharer="okru" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化"><i class="fa-brands fa-odnoklassniki" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化"><i class="fa-brands fa-evernote" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://kydenul.github.io/posts/golang-concurrecy-programming/" data-title="Go 并发编程实战指南：从理论到性能优化"><i class="fa-brands fa-skype" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -782,10 +778,10 @@ It can only commit a cooperative suicide.)</p>
 
   <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.155.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered order-1">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.161.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.19"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024 - 2026</span><span class="author" itemprop="copyrightHolder">
-              <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">
+              <a href="/">kyden</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics order-2"><span class="site-time" title='Website running ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">时光荏苒，本站已陪伴您</span><span class="run-times variant-numeric ms-1">Website running ...</span></span></div><div class="footer-line visitor order-3">
           <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>

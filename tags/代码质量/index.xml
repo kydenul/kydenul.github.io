@@ -4,7 +4,7 @@
     <title>代码质量 - Tag  Kyden&#39;s 博客</title>
     <link>https://kydenul.github.io/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/</link>
     <description>Kyden&#39;s Blog Site</description>
-    <generator>Hugo 0.155.3 &amp; FixIt v0.3.19</generator>
+    <generator>Hugo 0.161.1 &amp; FixIt v0.3.19</generator>
     <language>en</language>
     <managingEditor>kydenul@gmail.com (kyden)</managingEditor>
     <webMaster>kydenul@gmail.com (kyden)</webMaster>
@@ -20,7 +20,7 @@
       <category domain="https://kydenul.github.io/categories/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/">代码质量</category>
       <category domain="https://kydenul.github.io/categories/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">持续集成</category>
       <category domain="https://kydenul.github.io/categories/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">最佳实践</category>
-      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;在追求高质量 Go 代码的道路上，Linter 工具是你最可靠的伙伴。从代码风格的统一到潜在 bug 的预防，从性能隐患的发现到最佳实践的保证，一个优秀的 Linter 配置可以帮你规避 80% 的常见问题。本文将带你全面了解 Go 生态中最实用的 12 个 Linter 工具，通过实例讲解它们的特点和使用方法，帮助你打造一个强大的代码质量保障体系。无论是个人项目还是团队协作，这些工具都能帮你写出更好的 Go 代码。&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;在追求高质量 Go 代码的道路上，Linter 工具是你最可靠的伙伴。从代码风格的统一到潜在 bug 的预防，从性能隐患的发现到最佳实践的保证，一个优秀的 Linter 配置可以帮你规避 80% 的常见问题。本文将带你全面了解 Go 生态中最实用的 12 个 Linter 工具，通过实例讲解它们的特点和使用方法，帮助你打造一个强大的代码质量保障体系。无论是个人项目还是团队协作，这些工具都能帮你写出更好的 Go 代码。&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

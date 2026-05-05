@@ -4,7 +4,7 @@
     <title>实用技能 - Tag  Kyden&#39;s 博客</title>
     <link>https://kydenul.github.io/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E8%83%BD/</link>
     <description>Kyden&#39;s Blog Site</description>
-    <generator>Hugo 0.155.3 &amp; FixIt v0.3.19</generator>
+    <generator>Hugo 0.161.1 &amp; FixIt v0.3.19</generator>
     <language>en</language>
     <managingEditor>kydenul@gmail.com (kyden)</managingEditor>
     <webMaster>kydenul@gmail.com (kyden)</webMaster>
@@ -20,7 +20,7 @@
       <category domain="https://kydenul.github.io/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧</category>
       <category domain="https://kydenul.github.io/categories/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/">文本处理</category>
       <category domain="https://kydenul.github.io/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/">实用教程</category>
-      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;正则表达式是程序员必备的技能之一，它不仅是一种强大的文本处理工具，更是提升开发效率的利器。本文将为你揭开正则表达式的神秘面纱，通过系统的讲解和丰富的实例，帮助你掌握从基础到高级的正则表达式技巧。无论是文本搜索、数据验证，还是复杂的模式匹配，正则表达式都能让你事半功倍。&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;正则表达式是程序员必备的技能之一，它不仅是一种强大的文本处理工具，更是提升开发效率的利器。本文将为你揭开正则表达式的神秘面纱，通过系统的讲解和丰富的实例，帮助你掌握从基础到高级的正则表达式技巧。无论是文本搜索、数据验证，还是复杂的模式匹配，正则表达式都能让你事半功倍。&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

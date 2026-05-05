@@ -4,7 +4,7 @@
     <title>静态网站 - Category  Kyden&#39;s 博客</title>
     <link>https://kydenul.github.io/categories/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</link>
     <description>Kyden&#39;s Blog Site</description>
-    <generator>Hugo 0.155.3 &amp; FixIt v0.3.19</generator>
+    <generator>Hugo 0.161.1 &amp; FixIt v0.3.19</generator>
     <language>en</language>
     <managingEditor>kydenul@gmail.com (kyden)</managingEditor>
     <webMaster>kydenul@gmail.com (kyden)</webMaster>
@@ -20,7 +20,7 @@
       <category domain="https://kydenul.github.io/categories/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/">静态网站</category>
       <category domain="https://kydenul.github.io/categories/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/">网站部署</category>
       <category domain="https://kydenul.github.io/categories/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">最佳实践</category>
-      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;想要拥有一个专业的技术博客，但又担心过程繁琐？本文将教你如何利用 Hugo 的快速建站框架，结合 GitHub Pages 的免费托管服务，在短短 30 分钟内搭建一个美观实用的个人博客网站。无需购买服务器，零基础也能轻松驾驭！&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;想要拥有一个专业的技术博客，但又担心过程繁琐？本文将教你如何利用 Hugo 的快速建站框架，结合 GitHub Pages 的免费托管服务，在短短 30 分钟内搭建一个美观实用的个人博客网站。无需购买服务器，零基础也能轻松驾驭！&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

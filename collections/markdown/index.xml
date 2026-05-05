@@ -4,7 +4,7 @@
     <title>Markdown - Collection  Kyden&#39;s 博客</title>
     <link>https://kydenul.github.io/collections/markdown/</link>
     <description>Kyden&#39;s Blog Site</description>
-    <generator>Hugo 0.155.3 &amp; FixIt v0.3.19</generator>
+    <generator>Hugo 0.161.1 &amp; FixIt v0.3.19</generator>
     <language>en</language>
     <managingEditor>kydenul@gmail.com (kyden)</managingEditor>
     <webMaster>kydenul@gmail.com (kyden)</webMaster>
@@ -19,7 +19,7 @@
       <category domain="https://kydenul.github.io/categories/theme/">Theme</category>
       <category domain="https://kydenul.github.io/categories/markdown/">Markdown</category>
       <category domain="https://kydenul.github.io/categories/software/">Software</category>
-      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;分享一个好看的 Typora 主题&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+      <description>&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-clipboard-list&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;导语&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;分享一个好看的 Typora 主题&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>
