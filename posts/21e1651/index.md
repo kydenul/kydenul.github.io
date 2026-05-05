@@ -85,6 +85,6 @@ A2A 协议围绕几个核心概念构建，以实现 Agent 之间的有效交互
 
 ---
 
-> Author: [kyden](https://github.com/kydenul)  
+> 作者: [kyden](https://github.com/kydenul)  
 > URL: http://localhost:1313/posts/21e1651/  
 
