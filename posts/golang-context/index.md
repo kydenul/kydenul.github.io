@@ -188,6 +188,6 @@ func main() {
 
 ---
 
-> Author: [kyden](https://github.com/kydenul)  
-> URL: https://kydenul.github.io/posts/golang-context/  
+> 作者: [kyden](https://github.com/kydenul)  
+> URL: https://blog.kyden.cc/posts/golang-context/  
 

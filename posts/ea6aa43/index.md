@@ -245,6 +245,6 @@ the subagent should follow.
 
 ---
 
-> Author: [kyden](https://github.com/kydenul)  
-> URL: https://kydenul.github.io/posts/ea6aa43/  
+> 作者: [kyden](https://github.com/kydenul)  
+> URL: https://blog.kyden.cc/posts/ea6aa43/  
 

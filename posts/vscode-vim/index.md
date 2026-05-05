@@ -414,6 +414,6 @@ curl -sL dub.sh/cursorreset | python3
 
 ---
 
-> Author: [kyden](https://github.com/kydenul)  
-> URL: https://kydenul.github.io/posts/vscode-vim/  
+> 作者: [kyden](https://github.com/kydenul)  
+> URL: https://blog.kyden.cc/posts/vscode-vim/  
 

@@ -242,6 +242,6 @@ FFmpeg 会自动识别 MP4 中的音频流，然后将其转换为 WAV 格式，
 
 ---
 
-> Author: [kyden](https://github.com/kydenul)  
-> URL: https://kydenul.github.io/posts/9bc9991/  
+> 作者: [kyden](https://github.com/kydenul)  
+> URL: https://blog.kyden.cc/posts/9bc9991/  
 

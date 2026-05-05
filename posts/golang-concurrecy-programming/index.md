@@ -309,6 +309,6 @@ Github 讨论：[question: is it possible to a goroutine immediately stop anothe
 
 ---
 
-> Author: [kyden](https://github.com/kydenul)  
-> URL: https://kydenul.github.io/posts/golang-concurrecy-programming/  
+> 作者: [kyden](https://github.com/kydenul)  
+> URL: https://blog.kyden.cc/posts/golang-concurrecy-programming/  
 

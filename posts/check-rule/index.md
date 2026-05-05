@@ -275,6 +275,6 @@ service=gdp.aaa.bbb.ccc
 
 ---
 
-> Author: [kyden](https://github.com/kydenul)  
-> URL: https://kydenul.github.io/posts/check-rule/  
+> 作者: [kyden](https://github.com/kydenul)  
+> URL: https://blog.kyden.cc/posts/check-rule/  
 

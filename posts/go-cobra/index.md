@@ -420,6 +420,6 @@ rootCmd.MarkFlagRequired("region")
 
 ---
 
-> Author: [kyden](https://github.com/kydenul)  
-> URL: https://kydenul.github.io/posts/go-cobra/  
+> 作者: [kyden](https://github.com/kydenul)  
+> URL: https://blog.kyden.cc/posts/go-cobra/  
 

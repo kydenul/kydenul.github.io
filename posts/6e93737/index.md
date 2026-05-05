@@ -202,6 +202,6 @@ Kafka 的基本概念源自提交日志。
 
 ---
 
-> Author: [kyden](https://github.com/kydenul)  
-> URL: https://kydenul.github.io/posts/6e93737/  
+> 作者: [kyden](https://github.com/kydenul)  
+> URL: https://blog.kyden.cc/posts/6e93737/  
 

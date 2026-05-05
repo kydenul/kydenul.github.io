@@ -71,6 +71,6 @@ events:
 
 ---
 
-> Author: <no value>  
-> URL: https://kydenul.github.io/about/  
+> 作者: <no value>  
+> URL: https://blog.kyden.cc/about/  
 
